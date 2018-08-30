@@ -79,7 +79,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Run `ng generate component component-name` to generate a new component. You can also use `ng generate serviceWorker|application|class|component|directive|enum|guard|interface|module|pipe|service|universal|appShell|library`.
+
+* To Generate an app-routing Run `ng generate module app-routing --flat --module=app`
 
 ### Build
 
@@ -88,6 +90,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+* To Test all CRUD functionality just go to `localhost:4200/testing`
 
 ### Running end-to-end tests
 
