@@ -109,9 +109,9 @@ The following is a set of guidelines for contributing to the Aptiv Webclient are
 
 Main Developers
 
-Jonathan F. Steele
-Zachary Morgan
-Gilbert Carrillo
+* Jonathan F. Steele
+* Zachary Morgan
+* Gilbert Carrillo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
