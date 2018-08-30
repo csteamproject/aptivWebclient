@@ -1,3 +1,14 @@
+Created by Jonathan Steele
+Senior Project 448
+8/29/2018
+
+# Getting Started
+
+1. `npm install`
+
+2. Make sure it works by running the command: `ng serve`
+
+
 # AptivWebclient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
