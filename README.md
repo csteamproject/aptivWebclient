@@ -20,10 +20,11 @@ This is the front side of the Aptiv Inventory Management application and is the 
 ## Getting Started
 
 1. Run `git clone https://github.com/csteamproject/aptivWebclient.git` should copy down the project to your computer.
-2. Run `npm install` this should grab down any missing node module packages that were not mentioned in the prerequisites.
-3. Run `ng build` it should build without any errors.
-4. Run `ng serve` it should compile without any errors.
-5. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+2. Run `cd aptivWebclient` go into the project folder before running the next commands.
+3. Run `npm install` this should grab down any missing node module packages that were not mentioned in the prerequisites. 
+4. Run `ng build` it should build without any errors.
+5. Run `ng serve` it should compile without any errors.
+6. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Prerequisites
 
