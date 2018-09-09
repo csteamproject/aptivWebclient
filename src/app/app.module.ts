@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found';
 import { TestingComponent } from './testing/testing.component';
+import { AptivComponentsModule } from './components/aptiv-components/aptiv-components.module';
 
 // Providers
 
@@ -25,7 +26,8 @@ import { TestingComponent } from './testing/testing.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AptivComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
