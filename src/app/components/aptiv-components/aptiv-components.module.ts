@@ -5,18 +5,18 @@ import {
   CommonModule
 } from '@angular/common';
 import {
-  AptivInputBoxComponent
-} from './aptiv-input-box/aptiv-input-box.component';
+  AptivTableComponent
+} from './aptiv-table/aptiv-table.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   exports: [
-    AptivInputBoxComponent
+    AptivTableComponent
   ],
   declarations: [
-    AptivInputBoxComponent
+    AptivTableComponent
   ]
 })
 export class AptivComponentsModule {}

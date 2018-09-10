@@ -5,6 +5,8 @@ This is the front side of the Aptiv Inventory Management application and is the 
 # Table of Contents  
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
+    - [How to Install Bootstrap](#how-to-install-bootstrap)
+        - [Installing Bootstrap From NPM](#installing-bootstrap-from-npm)
 - [Installation](#installation)
 - [Usage](#usage)
     - [Development Server](#development-server)
@@ -31,6 +33,28 @@ This is the front side of the Aptiv Inventory Management application and is the 
 - [GIT v.2.0.0](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 - [NodeJS v.8.11.4](https://nodejs.org/en/download/).
 - [Angular v.6.1.5](https://www.npmjs.com/package/@angular/cli).
+
+## How to Install Bootstrap
+https://medium.com/codingthesmartway-com-blog/using-bootstrap-with-angular-c83c3cee3f4a
+
+### Installing Bootstrap From NPM
+
+* First install bootstrap and jquery: `npm install bootstrap@3 jquery --save`
+
+* Then In the `angular.json` file add the following lines:
+
+```
+"styles": [
+    "styles.css",
+    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+  ],
+  "scripts": [
+    "./node_modules/jquery/dist/jquery.min.js",
+    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+  ],
+```
+
+* You should now have Bootstrap on the site.
 
 # Installation
 These are a more detailed area of steps if the Get Started notes were not detailed enough.

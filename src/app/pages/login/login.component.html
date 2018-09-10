@@ -1,3 +1,11 @@
-<h1>Login</h1>
-
-<app-aptiv-input-box></app-aptiv-input-box>
+<div class="text-center">
+  <form class="form-signup">
+    <img class="mb-4" src="../../../assets/Images/aptiv_logo.png" width="300px"/>
+    <h2 class="mb-4">Login</h2>
+    <input type="email" class="form-control mb-1" placeholder="Email address" required autofocus autocomplete="off" />
+    <input type="password" class="form-control mb-1" placeholder="Password" required autocomplete="off" />
+    <div class="mt-2">
+      <button class="btn btn-lg btn-primary btn-block" (click)="TryToLogin()" type="submit">Login</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let Key of Keys">{{Key}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Row of Data">
+      <td *ngFor="let Key of Keys">
+        {{Row[Key]}}
+      </td>
+    </tr>
+  </tbody>
+</table>

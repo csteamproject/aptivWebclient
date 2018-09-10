@@ -9,9 +9,28 @@ import { DevelopersService } from '../../services/developers/developers.service'
 })
 export class MainComponent implements OnInit {
 
-  developers: Developer[];
+  developers: Developer[] = [];
+  // developers: Object[] = [];
 
   constructor(private developersService: DevelopersService) {
+    // this.developers = [{
+    //   ID: 1,
+    //   Name: 'Jonathan Steele',
+    //   Role: 'Programmer',
+    //   Age: 21,
+    //   Updated: new Date(),
+    // }, {
+    //   ID: 2,
+    //   Name: 'Zachary Morgan',
+    //   Role: 'Programmer',
+    //   HairColor: 'black',
+    //   Updated: new Date()
+    // }, {
+    //   ID: 3,
+    //   Name: 'Gilbert Carrillo',
+    //   Role: 'Programmer',
+    //   Updated: new Date()
+    // }];
   }
 
   ngOnInit() {
@@ -20,7 +39,6 @@ export class MainComponent implements OnInit {
       this.developers = data;
       console.log('this.Developers', this.developers);
     });
-
   }
 
 }

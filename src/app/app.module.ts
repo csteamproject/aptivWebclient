@@ -32,4 +32,4 @@ import { AptivComponentsModule } from './components/aptiv-components/aptiv-compo
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

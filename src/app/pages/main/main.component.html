@@ -1,19 +1,2 @@
 <h1>Main</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Role</th>
-      <th>Updated</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let developer of developers">
-      <td>{{developer.id}}</td>
-      <td>{{developer.name}}</td>
-      <td>{{developer.role}}</td>
-      <td>{{developer.updated_at | date}}</td>
-    </tr>
-  </tbody>
-</table>
+<app-aptiv-table [(Data)]="developers"></app-aptiv-table>
