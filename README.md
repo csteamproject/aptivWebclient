@@ -12,6 +12,9 @@ This is the front side of the Aptiv Inventory Management application and is the 
     - [Development Server](#development-server)
     - [Code Scaffolding](#code-scaffolding)
     - [Build](#build)
+    - [Git Scaffolding](#git-scaffolding)
+        - [SourceTree](#sourcetree)
+        - [Git Commands](#git-commands)
     - [Running Unit Tests](#running-unit-tests)
     - [Running End to End Tests](#running-end-to-end-tests)
     - [Further Help](#further-help)
@@ -115,6 +118,70 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+### SourceTree
+You can follow the above rules of the git scaffolding visually through sourcetree.
+
+### Git Commands
+Using Git commands are quick and powerful especially if you can remember them.<br/>
+So following the scaffolding rules we can use the following commands:
+
+#### Open the VSCode Command Terminal:  
+```
+ ^ ~ 
+```
+
+
+#### To Create a new Branch
+
+```
+git checkout -b *branch-name*
+```
+
+#### To Commit Changed Code use the commands [git commit](https://git-scm.com/docs/git-commit) and [git add](https://git-scm.com/docs/git-add)
+
+```
+git add
+```
+
+* `git add` will commit all new files
+
+```
+git commit -a -m "Your Message"
+```
+
+* `git commit -a` will commit all modified files
+
+#### To add all new files and commit all modified files just run the combined command:
+
+```
+git add -A && git commit -m "Your Message"
+```
+
+#### To Push a Branch
+```
+git push
+```
+
+#### To Change Branches 
+
+```
+git checkout *branch-name*
+```
+* NOTE: Be carefult to type the right name or you will go to a nonexisting branch.<br/>
+
+#### To Merge from another branch
+
+```
+git merge *branch-name*
+```
+
+#### When Running into a merge comment it is just requesting for you to put in a message you can do so by typing `i` then when you are done inserting a message you then click `ESC` and then just type: `:wq` which will conclude the merge with a message.
+
+#### To Check for branch names on remote and local:
+```
+git branch -a
+```
 
 ## Running unit tests
 
