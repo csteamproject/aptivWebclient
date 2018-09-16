@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found';
 import { TestingComponent } from './testing/testing.component';
 import { AptivComponentsModule } from './components/aptiv-components/aptiv-components.module';
+import { AccountComponent } from './pages/account/account.component';
 
 // Providers
 
@@ -21,7 +22,8 @@ import { AptivComponentsModule } from './components/aptiv-components/aptiv-compo
     NotFoundComponent,
     LoginComponent,
     MainComponent,
-    TestingComponent
+    TestingComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

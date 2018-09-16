@@ -10,15 +10,144 @@ import { DevelopersService } from '../../services/developers/developers.service'
 export class MainComponent implements OnInit {
 
   developers: Developer[] = [];
-  // developers: Object[] = [];
+   testData: Object[] = [];
 
   constructor(private developersService: DevelopersService) {
-    // this.developers = [{
-    //   ID: 1,
-    //   Name: 'Jonathan Steele',
-    //   Role: 'Programmer',
-    //   Age: 21,
-    //   Updated: new Date(),
+    this.testData = [{
+      ID: 1,
+      Item: 'Computer',
+      Description: 'HP laptop',
+      Updated: new Date(),
+      Region: 'Mexico',
+      Action: 'View | Delete',
+      Comments: '',
+    },
+    {
+      ID: 2,
+      Item: 'Computer',
+      Description: 'HP laptop',
+      Updated: new Date(),
+      Region: 'Mexico',
+      Action: 'View | Delete',
+      Comments: ''
+    },
+    {
+    ID: 3,
+    Item: 'Computer',
+    Description: 'HP laptop',
+    Updated: new Date(),
+    Region: 'Mexico',
+    Action: 'View | Delete',
+    Comments: ''
+  },
+  {
+  ID: 4,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 5,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 6,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 7,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 8,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 9,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 10,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 11,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 12,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 13,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+  ID: 14,
+  Item: 'Computer',
+  Description: 'HP laptop',
+  Updated: new Date(),
+  Region: 'Mexico',
+  Action: 'View | Delete',
+  Comments: ''
+},
+{
+ID: 15,
+Item: 'Computer',
+Description: 'HP laptop',
+Updated: new Date(),
+Region: 'Mexico',
+Action: 'View | Delete',
+Comments: ''
+
     // }, {
     //   ID: 2,
     //   Name: 'Zachary Morgan',
@@ -29,8 +158,9 @@ export class MainComponent implements OnInit {
     //   ID: 3,
     //   Name: 'Gilbert Carrillo',
     //   Role: 'Programmer',
-    //   Updated: new Date()
-    // }];
+    //   Updated: new Date(),
+    //   Action: 'View | Delete'
+    }];
   }
 
   ngOnInit() {

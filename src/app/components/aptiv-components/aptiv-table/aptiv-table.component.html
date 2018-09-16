@@ -1,15 +1,25 @@
-<table>
-  <thead>
-    <tr>
-      <th *ngFor="let Key of Keys">{{Key}}</th>
-      <th>Gilbert Was Here</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let Row of Data">
-      <td *ngFor="let Key of Keys">
-        {{Row[Key]}}
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+  <div>
+
+    <div class="container">
+      <h1 style="margin-top: -10px;">Inventory</h1><br>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+      <table id="myTable" class="table table-striped table-light">
+        <thead>
+          <tr>
+            <th style="background: gray" *ngFor="let Key of Keys">{{Key}}</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr *ngFor="let Row of Data">
+            <td *ngFor="let Key of Keys">
+              {{Row[Key]}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+ 

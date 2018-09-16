@@ -1,0 +1,12 @@
+#frontpage-container{
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+}
+
+#frontpage-container .content{
+    margin: 0 auto;
+    width: 90%;
+    padding: 0px;
+    height: auto;
+}

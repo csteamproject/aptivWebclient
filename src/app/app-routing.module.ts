@@ -17,6 +17,9 @@ import {
 import {
   TestingComponent
 } from './testing/testing.component';
+import {
+  AccountComponent
+} from './pages/account/account.component';
 
 const routes: Routes = [{
   path: 'login',
@@ -31,6 +34,11 @@ const routes: Routes = [{
 }, {
   path: 'testing',
   component: TestingComponent
+  // data: {requiresLogin: true},
+  // canActivate: [ AccessGuard ]
+}, {
+  path: 'account',
+  component: AccountComponent
   // data: {requiresLogin: true},
   // canActivate: [ AccessGuard ]
 }, {
