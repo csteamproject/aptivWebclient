@@ -62,7 +62,6 @@ export class AuthService {
     public getCurrentUser(): User {
       let currentUser: User;
       const jUser = JSON.parse(localStorage.getItem('CurrentUser'));
-      console.log('jUser: ', jUser);
       if (jUser) {
         currentUser = User.Deseralize(jUser);
       }
