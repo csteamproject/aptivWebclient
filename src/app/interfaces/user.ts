@@ -1,9 +1,10 @@
+import { UserToken } from '../classes/user-token';
+
 export interface IUser {
-    Email: string;
-    Username: string;
-    Password: string; // TODO: I believe we need to HASH this, might need to define what a password HASH is.
-    FirstName: string;
-    LastName: string;
-    LastUpdateDT: Date;
-    CreatedDT: Date;
+    id: number;
+    password_digest: string;
+    username: string;
+    created_at: Date;
+    updated_at: Date;
+    token: UserToken;
 }

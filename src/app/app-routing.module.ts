@@ -21,26 +21,28 @@ import {
   AccountComponent
 } from './pages/account/account.component';
 
+// Import Guard
+import { AccessGuard } from './access-guard/access.guard';
+
 const routes: Routes = [{
   path: 'login',
-  component: LoginComponent
-  // data: {requiresLogin: true},
-  // canActivate: [ AccessGuard ]
+  component: LoginComponent,
+  canActivate: [ AccessGuard ]
 }, {
   path: 'main',
-  component: MainComponent
-  // data: {requiresLogin: true},
-  // canActivate: [ AccessGuard ]
+  component: MainComponent,
+  data: {requiresLogin: true},
+  canActivate: [ AccessGuard ]
 }, {
   path: 'testing',
-  component: TestingComponent
-  // data: {requiresLogin: true},
-  // canActivate: [ AccessGuard ]
+  component: TestingComponent,
+  data: {requiresLogin: true},
+  canActivate: [ AccessGuard ]
 }, {
   path: 'account',
-  component: AccountComponent
-  // data: {requiresLogin: true},
-  // canActivate: [ AccessGuard ]
+  component: AccountComponent,
+  data: {requiresLogin: true},
+  canActivate: [ AccessGuard ]
 }, {
   path: '',
   redirectTo: '/login',

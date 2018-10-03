@@ -2,17 +2,18 @@ import { NgModule } from '@angular/core';
 
 // Declarations
 import { AppComponent } from './app.component';
+import { NotFoundComponent } from './not-found';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './pages/main/main.component';
+import { TestingComponent } from './testing/testing.component';
+import { AccountComponent } from './pages/account/account.component';
 
 // Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { NotFoundComponent } from './not-found';
-import { TestingComponent } from './testing/testing.component';
 import { AptivComponentsModule } from './components/aptiv-components/aptiv-components.module';
-import { AccountComponent } from './pages/account/account.component';
+import { FormsModule } from '@angular/forms';
 
 // Providers
 
@@ -29,7 +30,8 @@ import { AccountComponent } from './pages/account/account.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AptivComponentsModule
+    AptivComponentsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
