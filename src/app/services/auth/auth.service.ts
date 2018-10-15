@@ -6,6 +6,7 @@ import {
 import { Observable } from 'rxjs';
 import { UserToken } from '../../classes/user-token';
 import { User } from '../../classes/user/user';
+import { environment } from 'src/environments/environment';
 
 export class Credentials {
   username: string;
@@ -38,8 +39,8 @@ export class AuthService {
               'password': credentials.password
             })
           };
-
-          this.http.post('http://0.0.0.0:3000/sessions', null, httpOptions)
+          // 'http://0.0.0.0:3000/sessions'
+          this.http.post(environment.baseURL + 'sessions', null, httpOptions)
           .subscribe((data: UserToken) => {
               console.log('WORKS: ', data);
               let currentUser = new User();

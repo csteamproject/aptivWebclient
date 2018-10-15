@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "username": "jonathansteele",
+        "password": "Appl3s12!",
+        "firstName": "Jonathan",
+        "lastName": "Steele",
+        "location": 1,
+        "role": 1
+    },
+    {
+        "id": 2,
+        "username": "rdale22",
+        "password": "abc123abc123",
+        "firstName": "Robert",
+        "lastName": "Dale",
+        "location": 1,
+        "role": 1
+    },
+    {
+        "id": 3,
+        "username": "gcarrillo",
+        "password": "Apt!v268",
+        "firstName": "Gilbert",
+        "lastName": "Carrillo",
+        "location": 1,
+        "role": 1
+    },
+    {
+        "id": 4,
+        "username": "Xitally",
+        "password": "Apt!v268",
+        "firstName": "Xitally",
+        "lastName": "Salmon",
+        "location": 1,
+        "role": 1
+    },
+    {
+        "id": 5,
+        "username": "zmorgan",
+        "password": "Apt!v268",
+        "firstName": "Zachary",
+        "lastName": "Morgan",
+        "location": 1,
+        "role": 1
+    },
+    {
+        "id": 6,
+        "username": "vray25",
+        "password": "Apt!v268",
+        "firstName": "Victor",
+        "lastName": "Lozoya",
+        "location": 1,
+        "role": 1
+    }
+]

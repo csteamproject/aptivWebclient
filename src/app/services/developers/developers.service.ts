@@ -10,6 +10,7 @@ import {
 import {
   Observable
 } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,10 @@ export class DevelopersService {
 
   constructor(private http: HttpClient) {}
 
+  // 'http://0.0.0.0:3000/developers'
   getDevelopers() {
     return Observable.create(observer => {
-      this.http.get('http://0.0.0.0:3000/developers')
+      this.http.get(environment.baseURL + 'developers')
         .subscribe((res: Developer[]) => {
           console.log('MainComponent --', res);
           // let Result: Data[] = temp;

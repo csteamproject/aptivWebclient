@@ -32,7 +32,7 @@ export class AptivTableComponent implements OnInit {
     // this.DataValueChange.emit(this.DataValue);
   }
 
-  private Keys: string[] = [];
+  public Keys: string[] = [];
 
   constructor() { }
 
