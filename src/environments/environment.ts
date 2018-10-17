@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:4200/assets/TestData/'
+  testing: true,
+  baseURL: 'http://0.0.0.0:3000/'
+  // baseURL: 'http://localhost:4200/assets/TestData/'
 };
 
 /*

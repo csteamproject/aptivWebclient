@@ -1,8 +1,7 @@
-body{
-
-    background-image: url('../../../assets/Images/darkBackground.jpg'); 
-    background-repeat: no-repeat;
-    
+body {
+    /* background-image: url('../../../assets/Images/darkBackground.jpg'); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 1800px 1200px; */
 }
 .form-signup {
     width: 100%;

@@ -1,0 +1,17 @@
+.BackgroundImage {
+  background-image: url('../../../assets/Images/darkBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    //   background-image: linear-gradient(to bottom right,#305063,#297781); //JFSNOTE: Change Color of gradient right here.
+    background-image: linear-gradient(to bottom right, #305063, #b3b3b3); //JFSNOTE: Change Color of gradient right here.
+    opacity: .6;
+  }
+}
