@@ -1,5 +1,6 @@
 body{
-    background-image: url('src/assets/Images/darkBackground.jpg');
+
+    background-image: url('../../../assets/Images/darkBackground.jpg'); 
     background-repeat: no-repeat;
     
 }
