@@ -1,5 +1,5 @@
 import {
-  Injectable
+  Injectable, OnInit
 } from '@angular/core';
 import {
   HttpClient,
@@ -28,6 +28,7 @@ export class Credentials {
 })
 export class AuthService {
   credentials: Credentials;
+  CurrentUser: User = this.getCurrentUser();
 
   constructor(public http: HttpClient) {
     this.credentials = {
@@ -53,12 +54,11 @@ export class AuthService {
           this.http.post(environment.baseURL + 'sessions', null, httpOptions)
             .subscribe((data: UserToken) => {
               console.log('WORKS: ', data);
-              let currentUser = new User();
-
-              currentUser = new User();
+              const currentUser = new User();
+              currentUser.username = credentials.username; // TODO: might want the username from the API
               currentUser.token = data;
+              this.CurrentUser = currentUser;
               localStorage.setItem('CurrentUser', currentUser.Serialize());
-
               observer.next(data); // and then return data
               observer.complete();
             }, error => {
@@ -69,17 +69,18 @@ export class AuthService {
         } else {
           this.http.get(environment.baseURL + 'Users.json')
             .subscribe((data: User[]) => {
-              if (data.find(u =>
-                  u.username === httpOptions.headers.get('username') &&
-                  u.password === httpOptions.headers.get('password'))) {
-                let currentUser = new User();
-
-                currentUser = new User();
+              const SearchedUser: User = data.find(u =>
+                u.username === httpOptions.headers.get('username') &&
+                u.password === httpOptions.headers.get('password'));
+              if (SearchedUser) {
+                const currentUser = new User();
+                currentUser.username = SearchedUser.username;
                 currentUser.token = {
                   'success': true,
                   'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' +
                     '.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
                 };
+                this.CurrentUser = currentUser;
                 localStorage.setItem('CurrentUser', currentUser.Serialize());
                 observer.next(currentUser.token); // and then return data
                 observer.complete();
@@ -91,6 +92,7 @@ export class AuthService {
   }
 
   public getCurrentUser(): User {
+    console.log('GetCurrentUser Called!!');
     let currentUser: User;
     const jUser = JSON.parse(localStorage.getItem('CurrentUser'));
     if (jUser) {

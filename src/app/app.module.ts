@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AptivComponentsModule } from './components/aptiv-components/aptiv-components.module';
 import { FormsModule } from '@angular/forms';
+import { InventoryTypesComponent } from './pages/inventory-types/inventory-types.component';
 
 // Providers
 
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     MainComponent,
     TestingComponent,
-    AccountComponent
+    AccountComponent,
+    InventoryTypesComponent
   ],
   imports: [
     BrowserModule,

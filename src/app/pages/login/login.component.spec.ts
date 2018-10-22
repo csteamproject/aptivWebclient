@@ -16,12 +16,27 @@ import {
 import {
   MainComponent
 } from '../main/main.component';
-import { TestingComponent } from '../../testing/testing.component';
-import { NotFoundComponent } from '../../not-found';
-import { AccountComponent } from '../account/account.component';
-import { AptivComponentsModule } from '../../components/aptiv-components/aptiv-components.module';
-import { APP_BASE_HREF } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  TestingComponent
+} from '../../testing/testing.component';
+import {
+  NotFoundComponent
+} from '../../not-found';
+import {
+  AccountComponent
+} from '../account/account.component';
+import {
+  AptivComponentsModule
+} from '../../components/aptiv-components/aptiv-components.module';
+import {
+  APP_BASE_HREF
+} from '@angular/common';
+import {
+  HttpClientModule
+} from '@angular/common/http';
+import {
+  InventoryTypesComponent
+} from '../inventory-types/inventory-types.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -34,6 +49,7 @@ describe('LoginComponent', () => {
           MainComponent,
           TestingComponent,
           AccountComponent,
+          InventoryTypesComponent,
           NotFoundComponent
         ],
         imports: [
@@ -42,7 +58,10 @@ describe('LoginComponent', () => {
           AptivComponentsModule,
           HttpClientModule
         ],
-        providers:  [{ provide: APP_BASE_HREF, useValue: '/' }],
+        providers: [{
+          provide: APP_BASE_HREF,
+          useValue: '/'
+        }],
       })
       .compileComponents();
   }));

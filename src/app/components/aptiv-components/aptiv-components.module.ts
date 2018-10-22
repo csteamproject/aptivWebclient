@@ -13,10 +13,14 @@ import {
 import {
   NavBarComponent
 } from './nav-bar/nav-bar.component';
+import {
+  AppRoutingModule
+} from 'src/app/app-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [
     AptivTableComponent,

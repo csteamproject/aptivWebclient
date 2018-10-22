@@ -1,17 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HeaderBarComponent } from './header-bar.component';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
+import {
+  HeaderBarComponent
+} from './header-bar.component';
+import {
+  HttpClientModule
+} from '@angular/common/http';
 
 describe('HeaderBarComponent', () => {
   let component: HeaderBarComponent;
-  let fixture: ComponentFixture<HeaderBarComponent>;
+  let fixture: ComponentFixture < HeaderBarComponent > ;
 
-  beforeEach(async(() => {
+  beforeEach(async (() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ HeaderBarComponent ]
-    })
-    .compileComponents();
+        imports: [
+          RouterTestingModule,
+          HttpClientModule
+        ],
+        declarations: [HeaderBarComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

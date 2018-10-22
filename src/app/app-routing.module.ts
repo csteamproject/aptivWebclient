@@ -20,29 +20,46 @@ import {
 import {
   AccountComponent
 } from './pages/account/account.component';
+import {
+  InventoryTypesComponent
+} from './pages/inventory-types/inventory-types.component';
+import {
+  AccessGuard
+} from './access-guard/access.guard';
 
-// Import Guard
-import { AccessGuard } from './access-guard/access.guard';
 
 const routes: Routes = [{
   path: 'login',
   component: LoginComponent,
-  canActivate: [ AccessGuard ]
+  canActivate: [AccessGuard]
 }, {
   path: 'main',
   component: MainComponent,
-  data: {requiresLogin: true},
-  canActivate: [ AccessGuard ]
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
+}, {
+  path: 'inventory-types',
+  component: InventoryTypesComponent,
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
 }, {
   path: 'testing',
   component: TestingComponent,
-  data: {requiresLogin: true},
-  canActivate: [ AccessGuard ]
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
 }, {
   path: 'account',
   component: AccountComponent,
-  data: {requiresLogin: true},
-  canActivate: [ AccessGuard ]
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
 }, {
   path: '',
   redirectTo: '/login',

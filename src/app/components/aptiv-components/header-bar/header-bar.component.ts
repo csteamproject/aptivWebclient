@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 @Component({
   selector: 'app-header-bar',
   templateUrl: './header-bar.component.html',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderBarComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public auth: AuthService) { }
 
   ngOnInit() {
   }
