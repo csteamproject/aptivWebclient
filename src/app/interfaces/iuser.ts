@@ -4,7 +4,7 @@
 export interface IUser {
     first: string;
     last: string;
-    role: number;
+    role: string;
     success: Boolean;
     token: string;
 }

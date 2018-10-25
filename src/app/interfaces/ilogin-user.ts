@@ -8,5 +8,5 @@ export interface ILoginUser extends IUser, IUserCredentials {
     password: string;
     first: string;
     last: string;
-    role: number;
+    role: string;
 }

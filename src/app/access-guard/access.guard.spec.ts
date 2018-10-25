@@ -68,4 +68,11 @@ describe('AccessGuard', () => {
   it('should ...', inject([AccessGuard], (guard: AccessGuard) => {
     expect(guard).toBeTruthy();
   }));
+
+  it('When going to a page not required to login it should return true', inject([AccessGuard], (guard: AccessGuard) => {
+    // Arrange
+    // Act
+    // const accessTF = guard.canActivate();
+    // Assert
+  }));
 });

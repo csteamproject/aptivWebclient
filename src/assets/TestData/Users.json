@@ -4,41 +4,41 @@
         "password": "abc123abc123",
         "firstName": "Robert",
         "lastName": "Dale",
-        "role": 4
+        "role": "SuperAdmin"
     },
     {
         "username": "vray",
         "password": "abc111abc111",
         "firstName": "Victor",
         "lastName": "Lozoya",
-        "role": 4
+        "role": "SuperAdmin"
     },
     {
         "username": "xsalmon",
         "password": "abc222abc222",
         "firstName": "Xitlally",
         "lastName": "Salmon",
-        "role": 4
+        "role": "SuperAdmin"
     },
     {
         "username": "gcarrillo",
         "password": "abc333abc333",
         "firstName": "Gilbert",
         "lastName": "Carrillo",
-        "role": 4
+        "role": "SuperAdmin"
     },
     {
         "username": "jsteele",
         "password": "abc444abc444",
         "firstName": "Jonathan",
         "lastName": "Steele",
-        "role": 4
+        "role": "SuperAdmin"
     },
     {
         "username": "zmorgan",
         "password": "abc444abc444",
         "firstName": "Zachary",
         "lastName": "Morgan",
-        "role": 4
+        "role": "SuperAdmin"
     }
 ]

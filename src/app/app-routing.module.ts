@@ -43,14 +43,16 @@ const routes: Routes = [{
   path: 'inventory-types',
   component: InventoryTypesComponent,
   data: {
-    requiresLogin: true
+    requiresLogin: true,
+    requiresInventoryManagerRoleTF: true
   },
   canActivate: [AccessGuard]
 }, {
   path: 'testing',
   component: TestingComponent,
   data: {
-    requiresLogin: true
+    requiresLogin: true,
+    requiresSuperAdminRoleTF: true
   },
   canActivate: [AccessGuard]
 }, {

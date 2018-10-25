@@ -3,7 +3,7 @@ import { IUser } from '../../interfaces/iuser';
 export class User implements IUser {
     public first: string;
     public last: string;
-    public role: number;
+    public role: string;
     public success: Boolean;
     public token: string;
 
