@@ -1,10 +1,10 @@
-import { UserToken } from '../classes/user-token';
-
+/**
+ * IUser is what the API returns when proper IUserCredentials are posted through the header to the /sessions controller.
+ */
 export interface IUser {
-    id: number;
-    // password_digest: string;
-    username: string;
-    // created_at: Date;
-    // updated_at: Date;
-    token: UserToken;
+    first: string;
+    last: string;
+    role: number;
+    success: Boolean;
+    token: string;
 }

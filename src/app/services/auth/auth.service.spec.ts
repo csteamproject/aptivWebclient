@@ -4,8 +4,7 @@ import {
   async
 } from '@angular/core/testing';
 import {
-  AuthService,
-  Credentials
+  AuthService
 } from './auth.service';
 import {
   HttpClientModule
@@ -13,9 +12,13 @@ import {
 import {
   User
 } from 'src/app/classes/user/user';
+import { IUserCredentials } from 'src/app/interfaces/iuser-credentials';
 
 describe('AuthService', () => {
-  const cred: Credentials = new Credentials();
+  const cred: IUserCredentials = {
+    username: 'jsteele',
+    password: 'abc444abc444'
+  };
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [AuthService],
@@ -23,10 +26,6 @@ describe('AuthService', () => {
         HttpClientModule
       ]
     });
-
-    cred.username = 'jonathansteele';
-    cred.password = 'Appl3s12!';
-
   });
 
   it('should be created', inject([AuthService], (service: AuthService) => {
@@ -40,7 +39,7 @@ describe('AuthService', () => {
       const user: User = u;
       console.log('Login Test user: ', user);
       // Assert - Check the result
-      expect(user.token.success).toEqual(true);
+      expect(user.success).toEqual(true);
     });
 
   })));
@@ -54,7 +53,7 @@ describe('AuthService', () => {
       const user: User = u;
       console.log('Login Test user: ', user);
       // Assert - Check the result
-      expect(user.token.success).toEqual(false);
+      expect(user.success).toEqual(false);
     });
   })));
 
@@ -70,7 +69,7 @@ describe('AuthService', () => {
       const user = User.Deseralize(lsuser);
       // Assert - Check the result
       expect(lsuser).not.toBeNull();
-      expect(user.username).toEqual('jonathansteele');
+      expect(user.first).toEqual('Jonathan');
     });
   })));
 

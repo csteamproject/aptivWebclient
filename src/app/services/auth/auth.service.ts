@@ -1,5 +1,5 @@
 import {
-  Injectable, OnInit
+  Injectable
 } from '@angular/core';
 import {
   HttpClient,
@@ -9,25 +9,19 @@ import {
   Observable
 } from 'rxjs';
 import {
-  UserToken
-} from '../../classes/user-token';
-import {
   User
 } from '../../classes/user/user';
 import {
   environment
 } from 'src/environments/environment';
-
-export class Credentials {
-  username: string;
-  password: string;
-}
+import { IUserCredentials } from 'src/app/interfaces/iuser-credentials';
+import { ILoginUser } from 'src/app/interfaces/ilogin-user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  credentials: Credentials;
+  credentials: IUserCredentials;
   CurrentUser: User = this.getCurrentUser();
 
   constructor(public http: HttpClient) {
@@ -37,7 +31,7 @@ export class AuthService {
     };
   }
 
-  public login(credentials: Credentials) {
+  public login(credentials: IUserCredentials) {
     if (credentials.username === null || credentials.password === null) {
       return Observable.throw('Please insert credentials');
     } else {
@@ -52,14 +46,12 @@ export class AuthService {
         if (!environment.testing) {
           // 'http://0.0.0.0:3000/sessions'
           this.http.post(environment.baseURL + 'sessions', null, httpOptions)
-            .subscribe((data: UserToken) => {
-              console.log('WORKS: ', data);
-              const currentUser = new User();
-              currentUser.username = credentials.username; // TODO: might want the username from the API
-              currentUser.token = data;
+            .subscribe((user: User) => {
+              const currentUser = User.Deseralize(user);
               this.CurrentUser = currentUser;
-              localStorage.setItem('CurrentUser', currentUser.Serialize());
-              observer.next(data); // and then return data
+              console.log('this.CurrentUser: ', this.CurrentUser);
+              localStorage.setItem('CurrentUser', this.CurrentUser.Serialize());
+              observer.next(user); // and then return data
               observer.complete();
             }, error => {
               console.log('error: ', error);
@@ -68,18 +60,18 @@ export class AuthService {
             });
         } else {
           this.http.get(environment.baseURL + 'Users.json')
-            .subscribe((data: User[]) => {
-              const SearchedUser: User = data.find(u =>
-                u.username === httpOptions.headers.get('username') &&
-                u.password === httpOptions.headers.get('password'));
+            .subscribe((data: ILoginUser[]) => {
+              const SearchedUser: ILoginUser = data.find(iu =>
+                iu.username === httpOptions.headers.get('username') &&
+                iu.password === httpOptions.headers.get('password'));
               if (SearchedUser) {
                 const currentUser = new User();
-                currentUser.username = SearchedUser.username;
-                currentUser.token = {
-                  'success': true,
-                  'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' +
-                    '.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ'
-                };
+                currentUser.first = SearchedUser.first;
+                currentUser.last = SearchedUser.last;
+                currentUser.role = SearchedUser.role;
+                currentUser.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' +
+                '.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
+                currentUser.success = true;
                 this.CurrentUser = currentUser;
                 localStorage.setItem('CurrentUser', currentUser.Serialize());
                 observer.next(currentUser); // and then return data

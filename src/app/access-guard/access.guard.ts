@@ -20,13 +20,15 @@ export class AccessGuard implements CanActivate {
         const auth = this.injector.get(AuthService);
         const currentUser: User = auth.getCurrentUser();
         if (currentUser) {
-          if (currentUser.token.success) {
+          if (currentUser.success) {
             return true;
           } else {
+            console.log('NOT LOGGED IN!!! ', currentUser);
             this.router.navigate(['/login']);
             return false;
           }
         } else {
+          console.log('NOT LOGGED IN!!! ', currentUser);
           this.router.navigate(['/login']);
           return false;
         }

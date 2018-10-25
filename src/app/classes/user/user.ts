@@ -1,14 +1,11 @@
 import { IUser } from '../../interfaces/iuser';
-import { UserToken } from '../user-token';
 
 export class User implements IUser {
-    public id: number;
-    // public password_digest: string;
-    public username: string;
-    public password: string;
-    // public created_at: Date;
-    // public updated_at: Date;
-    public token: UserToken;
+    public first: string;
+    public last: string;
+    public role: number;
+    public success: Boolean;
+    public token: string;
 
     public static Deseralize(obj: Object | string): User {
         const u = new User();

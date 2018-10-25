@@ -1,56 +1,44 @@
 [
     {
-        "id": 1,
-        "username": "jonathansteele",
-        "password": "Appl3s12!",
-        "firstName": "Jonathan",
-        "lastName": "Steele",
-        "location": 1,
-        "role": 1
-    },
-    {
-        "id": 2,
-        "username": "rdale22",
+        "username": "rdale",
         "password": "abc123abc123",
         "firstName": "Robert",
         "lastName": "Dale",
-        "location": 1,
-        "role": 1
+        "role": 4
     },
     {
-        "id": 3,
-        "username": "gcarrillo",
-        "password": "Apt!v268",
-        "firstName": "Gilbert",
-        "lastName": "Carrillo",
-        "location": 1,
-        "role": 1
-    },
-    {
-        "id": 4,
-        "username": "Xitally",
-        "password": "Apt!v268",
-        "firstName": "Xitally",
-        "lastName": "Salmon",
-        "location": 1,
-        "role": 1
-    },
-    {
-        "id": 5,
-        "username": "zmorgan",
-        "password": "Apt!v268",
-        "firstName": "Zachary",
-        "lastName": "Morgan",
-        "location": 1,
-        "role": 1
-    },
-    {
-        "id": 6,
-        "username": "vray25",
-        "password": "Apt!v268",
+        "username": "vray",
+        "password": "abc111abc111",
         "firstName": "Victor",
         "lastName": "Lozoya",
-        "location": 1,
-        "role": 1
+        "role": 4
+    },
+    {
+        "username": "xsalmon",
+        "password": "abc222abc222",
+        "firstName": "Xitlally",
+        "lastName": "Salmon",
+        "role": 4
+    },
+    {
+        "username": "gcarrillo",
+        "password": "abc333abc333",
+        "firstName": "Gilbert",
+        "lastName": "Carrillo",
+        "role": 4
+    },
+    {
+        "username": "jsteele",
+        "password": "abc444abc444",
+        "firstName": "Jonathan",
+        "lastName": "Steele",
+        "role": 4
+    },
+    {
+        "username": "zmorgan",
+        "password": "abc444abc444",
+        "firstName": "Zachary",
+        "lastName": "Morgan",
+        "role": 4
     }
 ]

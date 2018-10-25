@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "name": "Developer"
+        "name": "Standard"
     },
     {
         "id": 2,
-        "name": "Admin"
-    },
-    {
-        "id": 3,
         "name": "Inventory Manager"
     },
     {
+        "id": 3,
+        "name": "Manager"
+    },
+    {
         "id": 4,
-        "name": "User"
+        "name": "Super Admin"
     }
 ]
