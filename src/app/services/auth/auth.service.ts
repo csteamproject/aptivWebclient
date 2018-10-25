@@ -82,7 +82,7 @@ export class AuthService {
                 };
                 this.CurrentUser = currentUser;
                 localStorage.setItem('CurrentUser', currentUser.Serialize());
-                observer.next(currentUser.token); // and then return data
+                observer.next(currentUser); // and then return data
                 observer.complete();
               }
             });
@@ -94,7 +94,7 @@ export class AuthService {
   public getCurrentUser(): User {
     console.log('GetCurrentUser Called!!');
     let currentUser: User;
-    const jUser = JSON.parse(localStorage.getItem('CurrentUser'));
+    const jUser = localStorage.getItem('CurrentUser');
     if (jUser) {
       currentUser = User.Deseralize(jUser);
     }
@@ -103,6 +103,7 @@ export class AuthService {
 
   public logout() {
     return Observable.create(observer => {
+      localStorage.clear();
       observer.next();
       observer.complete();
     });
