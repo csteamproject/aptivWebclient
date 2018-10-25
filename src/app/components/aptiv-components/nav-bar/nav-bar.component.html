@@ -1,22 +1,29 @@
 <div *ngIf="router.url != '/login'">
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background:#d0d3d8 !important">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background:#d0d3d8 !important">
     <!-- Links -->
-  <ul class="navbar-nav">
-    <li style="margin-left: 50px;" class="nav-item">
-      <a style="color: gray;" class="nav-link" [routerLink]="['/main']">Inventory</a>
-    </li>
-    <li style="margin-left: 50px;" class="nav-item">
-      <a style="color: gray;" class="nav-link" [routerLink]="['/inventory-types']">Inventory Types</a>
-    </li>
-    <li style="margin-left: 50px;" class="nav-item">
-      <a  style="color: gray;"class="nav-link" [routerLink]="['/regions']">Regions</a>
-    </li>
-    <li class="nav-item" style="float: right; right: 0; position: absolute; margin-right: 50px; ">
-    <!-- <li style="margin-left: 50px;"  class="nav-item"> -->
-        <a style="color: gray;" class="nav-link" href="#">Admin</a>
+    <ul class="navbar-nav">
+      <li style="margin-left: 50px;" class="nav-item">
+        <a style="color: gray;" class="nav-link" [routerLink]="['/main']">Inventory</a>
       </li>
-  </ul>
-  <br>
-
-</nav>
+      <li *ngIf="auth.CurrentUser.role !== 'Standard'" style="margin-left: 50px;" class="nav-item">
+        <a style="color: gray;" class="nav-link" [routerLink]="['/inventory-types']">Inventory Types</a>
+      </li>
+      <li *ngIf="auth.CurrentUser.role !== 'Standard'" style="margin-left: 50px;" class="nav-item">
+        <a style="color: gray;" class="nav-link" [routerLink]="['/regions']">Regions</a>
+      </li>
+      <li *ngIf="auth.CurrentUser.role !== 'InventoryManager' || auth.CurrentUser.role !== 'Standard'" class="nav-item"
+        style="float: right; right: 0; position: absolute; margin-right: 50px; ">
+        <div class="dropdown">
+          <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" style="color: gray; cursor: pointer">
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" [routerLink]="['/users']">Users</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <br>
+  </nav>
 </div>

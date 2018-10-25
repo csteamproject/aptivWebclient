@@ -4,12 +4,6 @@
     <a class="navbar-brand" [routerLink]="['/main']"><img style="width: 150px; height: 45px; margin-top: -10px;" src="src/assets/Images/aptiv_logo_white.png"></a>
 
     <!-- Links -->
-    <!-- <li style="float: right; right: 0; position: absolute; margin-right: 50px; list-style: none; ">
-      <a *ngIf="auth.CurrentUser" [routerLink]="['/account']" style="color: white">
-        {{auth.CurrentUser.first}} {{auth.CurrentUser.last}}
-        <img style="height: 30px; width: 35px; padding-left: 5px;" src="https://www.logolynx.com/images/logolynx/e5/e5ba79334133d2cb362dd639f755a392.png">
-      </a>
-    </li> -->
     <li style="float: right; right: 0; position: absolute; margin-right: 50px; list-style: none; ">
     <div class="dropdown">
       <a *ngIf="auth.CurrentUser" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
