@@ -1,0 +1,56 @@
+[
+    {
+        "ID": "1",
+        "Item": "Computer",
+        "Description": "HP Laptop",
+        "Updated": "October 12, 2018",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": "needs repair"
+    },
+    {
+        "ID": "2",
+        "Item": "Laptop",
+        "Description": "Macbook Pro",
+        "Updated": "January 13, 2017",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": ""
+    },
+    {
+        "ID": "3",
+        "Item": "Keyboard",
+        "Description": "Corsair Keyboard",
+        "Updated": "March 12, 2018",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": "missing shift key"
+    },
+    {
+        "ID": "4",
+        "Item": "Computer Mouse",
+        "Description": "Wireless logitech mouse",
+        "Updated": "",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": "Order new one soon"
+    },
+    {
+        "ID": "5",
+        "Item": "Hard Drive",
+        "Description": "Intel 256GB SSD",
+        "Updated": "October 27, 2018",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": ""
+    },
+    {
+        "ID": "6",
+        "Item": "Computer",
+        "Description": "HP Laptop",
+        "Updated": "Dale",
+        "Region": "Mexico",
+        "Action": "View | Update | Delete",
+        "Comments:": "needs more ram"
+    }
+]
