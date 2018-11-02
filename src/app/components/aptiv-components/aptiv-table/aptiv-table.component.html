@@ -2,19 +2,31 @@
   <div>
 
     <div class="container">
-      <h1 style="margin-top: -10px;">Inventory</h1><br>
+      <h1 style="margin-top: 10px;">Inventory</h1><br>
       <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
       <table id="myTable" class="table table-striped table-light">
         <thead>
           <tr>
-            <th style="background: gray" *ngFor="let Key of Keys">{{Key}}</th>
+            <th style="background: gray">Name</th>
+            <th style="background: gray">Price</th>
+            <th style="background: gray">Quantity</th>
+            <th style="background: gray">Action</th>
           </tr>
 
         </thead>
         <tbody>
           <tr *ngFor="let Row of Data">
-            <td *ngFor="let Key of Keys">
-              {{Row[Key]}}
+            <td >
+              {{Row.name}}
+            </td>
+            <td >
+              {{Row.price}}
+            </td>
+            <td >
+              {{Row.quantity}}
+            </td>
+            <td >
+              <button>View</button>  <button style="margin-left: 10px;">Delete</button>
             </td>
           </tr>
         </tbody>

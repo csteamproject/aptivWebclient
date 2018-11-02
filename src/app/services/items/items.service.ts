@@ -27,7 +27,10 @@ export class ItemsService {
 
       const httpOptions = {
         headers: new HttpHeaders({
-          'jwt-token': localStorage.getItem('token')
+          'jwt-token': 'eyJhbGciOiJIUzI1NiJ9.'
+          + 'eyJ1c2VyX2lkIjo0LCJhdXRoZW50aWNhdGlvb'
+          + 'l9kYXRlIjoiMjAxOC0xMC0zMSAxNDozMzowMSAtMDYwMCJ9.'
+          + 'JjpIh30fI5Q5XcBoeunhBWeFcuP82WpD45tddMvt5Ro'
         })
       };
 
