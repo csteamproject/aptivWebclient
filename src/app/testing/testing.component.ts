@@ -17,7 +17,7 @@ export class TestingComponent implements OnInit {
     this.developersService.getDevelopers()
     .subscribe(data => {
       this.developers = data;
-      console.log('this.Developers', this.developers);
+      // console.log('this.Developers', this.developers);
     });
   }
 

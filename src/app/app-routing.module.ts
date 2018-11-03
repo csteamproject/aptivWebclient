@@ -9,8 +9,8 @@ import {
   LoginComponent
 } from './pages/login/login.component';
 import {
-  MainComponent
-} from './pages/main/main.component';
+  InventoryComponent
+} from './pages/inventory/inventory.component';
 import {
   NotFoundComponent
 } from './not-found';
@@ -33,8 +33,8 @@ const routes: Routes = [{
   component: LoginComponent,
   canActivate: [AccessGuard]
 }, {
-  path: 'main',
-  component: MainComponent,
+  path: 'inventory',
+  component: InventoryComponent,
   data: {
     requiresLogin: true
   },

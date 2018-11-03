@@ -24,15 +24,15 @@ export class DevelopersService {
     return Observable.create(observer => {
       this.http.get(environment.baseURL + 'developers')
         .subscribe((res: Developer[]) => {
-          console.log('MainComponent --', res);
+          // console.log('InventoryComponent --', res);
           // let Result: Data[] = temp;
           const Developers: Developer[] = res;
-          console.log('data: ', Developers);
+          // console.log('data: ', Developers);
 
           observer.next(Developers);
           observer.complete();
         }, (error) => {
-          console.log('There was an error', error);
+          // console.log('There was an error', error);
           const Developer1: Developer = ({
             id: 1,
             name: 'Jonathan Steele',

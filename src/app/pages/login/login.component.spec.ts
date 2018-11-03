@@ -14,8 +14,8 @@ import {
   AppRoutingModule
 } from '../../app-routing.module';
 import {
-  MainComponent
-} from '../main/main.component';
+  InventoryComponent
+} from '../inventory/inventory.component';
 import {
   TestingComponent
 } from '../../testing/testing.component';
@@ -46,7 +46,7 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
         declarations: [
           LoginComponent,
-          MainComponent,
+          InventoryComponent,
           TestingComponent,
           AccountComponent,
           InventoryTypesComponent,

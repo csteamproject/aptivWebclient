@@ -29,11 +29,11 @@ export class LoginComponent implements OnInit {
 
   TryToLogin(credentials) {
     this.auth.login(credentials).subscribe(data => {
-      console.log('LoginComponent: ', data);
+      // console.log('LoginComponent: ', data);
       // if (true) { // TODO: Add a Checkbox to see if they want to be remembered for a period of time.
       //   localStorage.setItem('CurrentUser', JSON.stringify(data));
       // }
-      this.router.navigate(['main']);
+      this.router.navigate(['inventory']);
     });
   }
 }

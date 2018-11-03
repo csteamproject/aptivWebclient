@@ -23,7 +23,7 @@ export class ItemsService {
   constructor(private http: HttpClient) {}
   getItems(): Observable < Item[] > {
     return Observable.create(observer => {
-      console.log('getItems Called');
+      // console.log('getItems Called');
 
       const httpOptions = {
         headers: new HttpHeaders({
@@ -38,7 +38,7 @@ export class ItemsService {
       // items???
       this.http.get(environment.baseURL + 'items', httpOptions)
         .subscribe((items: Item[]) => {
-          console.log('items: ', items);
+          // console.log('items: ', items);
           observer.next(items);
           observer.complete();
         });

@@ -5,8 +5,8 @@ import {
 } from '@angular/core/testing';
 
 import {
-  MainComponent
-} from './main.component';
+  InventoryComponent
+} from './inventory.component';
 import {
   AptivComponentsModule
 } from '../../components/aptiv-components/aptiv-components.module';
@@ -38,13 +38,13 @@ import {
   APP_BASE_HREF
 } from '@angular/common';
 
-describe('MainComponent', () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture < MainComponent > ;
+describe('InventoryComponent', () => {
+  let component: InventoryComponent;
+  let fixture: ComponentFixture < InventoryComponent > ;
 
   beforeEach(async (() => {
     TestBed.configureTestingModule({
-        declarations: [MainComponent,
+        declarations: [InventoryComponent,
           LoginComponent,
           InventoryTypesComponent,
           AccountComponent,
@@ -66,7 +66,7 @@ describe('MainComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainComponent);
+    fixture = TestBed.createComponent(InventoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

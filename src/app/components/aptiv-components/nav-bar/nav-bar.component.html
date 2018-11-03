@@ -3,7 +3,7 @@
     <!-- Links -->
     <ul class="navbar-nav">
       <li style="margin-left: 50px;" class="nav-item">
-        <a style="color: gray;" class="nav-link" [routerLink]="['/main']">Inventory</a>
+        <a style="color: gray;" class="nav-link" [routerLink]="['/inventory']">Inventory</a>
       </li>
       <li *ngIf="auth.CurrentUser.role !== 'Standard'" style="margin-left: 50px;" class="nav-item">
         <a style="color: gray;" class="nav-link" [routerLink]="['/inventory-types']">Inventory Types</a>

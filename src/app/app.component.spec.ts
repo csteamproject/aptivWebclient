@@ -24,8 +24,8 @@ import {
   TestingComponent
 } from './testing/testing.component';
 import {
-  MainComponent
-} from './pages/main/main.component';
+  InventoryComponent
+} from './pages/inventory/inventory.component';
 import {
   NotFoundComponent
 } from './not-found';
@@ -46,7 +46,7 @@ describe('AppComponent', () => {
         AppComponent,
         LoginComponent,
         NotFoundComponent,
-        MainComponent,
+        InventoryComponent,
         AccountComponent,
         TestingComponent,
         InventoryTypesComponent

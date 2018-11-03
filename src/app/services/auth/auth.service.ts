@@ -49,12 +49,12 @@ export class AuthService {
             .subscribe((user: User) => {
               const currentUser = User.Deseralize(user);
               this.CurrentUser = currentUser;
-              console.log('this.CurrentUser: ', this.CurrentUser);
+              // console.log('this.CurrentUser: ', this.CurrentUser);
               localStorage.setItem('CurrentUser', this.CurrentUser.Serialize());
               observer.next(user); // and then return data
               observer.complete();
             }, error => {
-              console.log('error: ', error);
+              // console.log('error: ', error);
               observer.error(error); // and then return data
               observer.complete();
             });

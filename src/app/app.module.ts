@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found';
 import { LoginComponent } from './pages/login/login.component';
-import { MainComponent } from './pages/main/main.component';
+import { InventoryComponent } from './pages/inventory/inventory.component';
 import { TestingComponent } from './testing/testing.component';
 import { AccountComponent } from './pages/account/account.component';
 
@@ -23,7 +23,7 @@ import { InventoryTypesComponent } from './pages/inventory-types/inventory-types
     AppComponent,
     NotFoundComponent,
     LoginComponent,
-    MainComponent,
+    InventoryComponent,
     TestingComponent,
     AccountComponent,
     InventoryTypesComponent

@@ -5,30 +5,22 @@ import { ItemsService } from '../../services/items/items.service';
 import { Item } from '../../classes/item/item';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  selector: 'app-inventory',
+  templateUrl: './inventory.component.html',
+  styleUrls: ['./inventory.component.css']
 })
-export class MainComponent implements OnInit {
+export class InventoryComponent implements OnInit {
 
   developers: Developer[] = [];
    testData: Object[] = [];
    item: Item[] = [];
 
-  constructor(private itemsService: ItemsService) {
-  //   this.itemsService.getItems()
-  //  .subscribe(data => {
-  //     this.item = data;
-  //     console.log('this.item', this.item);
-  //   });
-  }
-
+  constructor(private itemsService: ItemsService) {}
 
   ngOnInit() {
-    this.itemsService.getItems()
-    .subscribe(data => {
+    this.itemsService.getItems().subscribe(data => {
+      // console.log('this.Item', this.item);
       this.item = data;
-      console.log('this.Item', this.item);
     });
   }
 

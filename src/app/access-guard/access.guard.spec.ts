@@ -14,8 +14,8 @@ import {
   LoginComponent
 } from '../pages/login/login.component';
 import {
-  MainComponent
-} from '../pages/main/main.component';
+  InventoryComponent
+} from '../pages/inventory/inventory.component';
 import {
   TestingComponent
 } from '../testing/testing.component';
@@ -46,7 +46,7 @@ describe('AccessGuard', () => {
     TestBed.configureTestingModule({
       declarations: [
         LoginComponent,
-        MainComponent,
+        InventoryComponent,
         TestingComponent,
         AccountComponent,
         InventoryTypesComponent,
