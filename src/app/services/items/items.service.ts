@@ -14,6 +14,7 @@ import {
 import {
   Observable
 } from 'rxjs';
+import { User } from 'src/app/classes/user/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,22 +24,15 @@ export class ItemsService {
   constructor(private http: HttpClient) {}
   getItems(): Observable < Item[] > {
     return Observable.create(observer => {
-      // console.log('getItems Called');
-
+      const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
       const httpOptions = {
         headers: new HttpHeaders({
-          'jwt-token': 'eyJhbGciOiJIUzI1NiJ9.'
-          + 'eyJ1c2VyX2lkIjo0LCJhdXRoZW50aWNhdGlvb'
-          + 'l9kYXRlIjoiMjAxOC0xMC0zMSAxNDozMzowMSAtMDYwMCJ9.'
-          + 'JjpIh30fI5Q5XcBoeunhBWeFcuP82WpD45tddMvt5Ro'
+          'jwt-token': currentUser.token
         })
       };
 
-      // const items: Item[] = [];
-      // items???
       this.http.get(environment.baseURL + 'items', httpOptions)
         .subscribe((items: Item[]) => {
-          // console.log('items: ', items);
           observer.next(items);
           observer.complete();
         });

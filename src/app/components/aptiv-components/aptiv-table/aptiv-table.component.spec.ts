@@ -1,16 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 
-import { AptivTableComponent } from './aptiv-table.component';
+import {
+  AptivTableComponent
+} from './aptiv-table.component';
+import {
+  FormsModule
+} from '@angular/forms';
 
 describe('AptivTableComponent', () => {
   let component: AptivTableComponent;
-  let fixture: ComponentFixture<AptivTableComponent>;
+  let fixture: ComponentFixture < AptivTableComponent > ;
 
-  beforeEach(async(() => {
+  beforeEach(async (() => {
     TestBed.configureTestingModule({
-      declarations: [ AptivTableComponent ]
-    })
-    .compileComponents();
+        imports: [FormsModule],
+        declarations: [AptivTableComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
