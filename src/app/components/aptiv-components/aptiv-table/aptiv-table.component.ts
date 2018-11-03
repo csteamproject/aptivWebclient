@@ -3,7 +3,9 @@ import {
   OnInit,
   Input
 } from '@angular/core';
-import { PageinationService } from 'src/app/services/pageination/pageination.service';
+import {
+  PageinationService
+} from 'src/app/services/pageination/pageination.service';
 
 export class RowData {
   public DataColumn: any[];
@@ -28,12 +30,16 @@ export class AptivTableComponent implements OnInit {
       console.log('aptiv-table: row -- ', row);
       this.CollectKeysOfObj(row);
     });
+    this.BeforeFilterationData = this.DataValue;
     this.setPage(1);
     // this.DataValueChange.emit(this.DataValue);
   }
 
+  BeforeFilterationData: Object[] = [];
+
   pager: any = {};
   pagedData: Object[] = [];
+  allFilter: string;
   private Keys: string[] = [];
 
   constructor(private pagerService: PageinationService) {}
@@ -55,6 +61,31 @@ export class AptivTableComponent implements OnInit {
         this.CollectKeysOfObj(obj[key]);
       }
     }
+  }
+
+  filter(filter: any) {
+    this.DataValue = this.BeforeFilterationData;
+    this.DataValue = this.DataValue.filter(data => {
+      let checkFlag = false;
+      this.Keys.forEach((key) => {
+        if (data[key].length === undefined) {
+          if (data[key] === filter) {
+            checkFlag = true;
+          }
+        } else if (data[key].indexOf(filter) >= 0) {
+          checkFlag = true;
+        }
+      });
+      return checkFlag;
+    });
+    this.setPage(1);
+  }
+
+  transform(items: any[], field: string, value: string): any[] {
+    if (!items) {
+      return [];
+    }
+    return items.filter(it => it[field] === value);
   }
 
   setPage(page: number) {

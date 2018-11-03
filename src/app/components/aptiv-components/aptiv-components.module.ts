@@ -16,11 +16,13 @@ import {
 import {
   AppRoutingModule
 } from 'src/app/app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   exports: [
     AptivTableComponent,
