@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Developer } from '../../classes/developer';
-import { DevelopersService } from '../../services/developers/developers.service';
 import { ItemsService } from '../../services/items/items.service';
 import { Item } from '../../classes/item/item';
 
@@ -11,16 +9,18 @@ import { Item } from '../../classes/item/item';
 })
 export class InventoryComponent implements OnInit {
 
-  developers: Developer[] = [];
-   testData: Object[] = [];
-   item: Item[] = [];
+  Items: Item[] = [];
 
   constructor(private itemsService: ItemsService) {}
 
   ngOnInit() {
     this.itemsService.getItems().subscribe(data => {
-      // console.log('this.Item', this.item);
-      this.item = data;
+      const items: Item[] = Item.DeseralizeMany(data.map((obj: Item) => ({
+        Name: obj.name,
+        Price: obj.price,
+        Quantity: obj.quantity
+      })));
+      this.Items = items;
     });
   }
 

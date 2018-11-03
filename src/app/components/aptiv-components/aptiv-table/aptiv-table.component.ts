@@ -1,10 +1,8 @@
 import {
   Component,
   OnInit,
-  Output,
   Input
 } from '@angular/core';
-import { EventEmitter } from 'protractor';
 
 export class RowData {
   public DataColumn: any[];
@@ -32,9 +30,9 @@ export class AptivTableComponent implements OnInit {
     // this.DataValueChange.emit(this.DataValue);
   }
 
-  public Keys: string[] = [];
+  private Keys: string[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
     // console.log('aptiv-table: Data -- ', this.Keys, this.Data);
@@ -54,5 +52,4 @@ export class AptivTableComponent implements OnInit {
       }
     }
   }
-
 }

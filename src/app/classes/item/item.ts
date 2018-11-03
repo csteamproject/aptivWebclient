@@ -16,6 +16,16 @@ export class Item implements IItem {
     }
   }
 
+  public static DeseralizeMany(objects: Object[]): Item[] {
+    const items: Item[] = [];
+    objects.forEach(obj => {
+      const item = Object.assign(new Item(), obj);
+      items.push(item);
+    });
+    console.log('Many Items test: ', items);
+    return items;
+  }
+
   public Serialize(): string {
     return JSON.stringify(this);
   }
