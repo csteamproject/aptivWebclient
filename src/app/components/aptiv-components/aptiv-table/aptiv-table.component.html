@@ -46,7 +46,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let Row of Data">
+      <tr *ngFor="let Row of pagedData">
         <td *ngFor="let Key of Keys" class="aptivTblBodyColumns">
           {{Row[Key]}}
         </td>
@@ -56,4 +56,28 @@
       </tr>
     </tbody>
   </table>
+</div>
+<div>
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+      <button type="button" class="btn btn-light" (click)="setPage(1)">First</button>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === 1}">
+      <button type="button" class="btn btn-light" (click)="setPage(pager.currentPage - 1)">Previous</button>
+    </li>
+    <li *ngFor="let page of pager.pages">
+      <span *ngIf="pager.currentPage === page">
+        <button type="button" class="btn btn-light active" (click)="setPage(page)">{{page}}</button>
+      </span>
+      <span *ngIf="pager.currentPage !== page">
+        <button type="button" class="btn btn-light" (click)="setPage(page)">{{page}}</button>
+      </span>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <button type="button" class="btn btn-light" (click)="setPage(pager.currentPage + 1)">Next</button>
+    </li>
+    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <button type="button" class="btn btn-light" (click)="setPage(pager.totalPages)">Last</button>
+    </li>
+  </ul>
 </div>

@@ -3,6 +3,7 @@ import {
   OnInit,
   Input
 } from '@angular/core';
+import { PageinationService } from 'src/app/services/pageination/pageination.service';
 
 export class RowData {
   public DataColumn: any[];
@@ -27,12 +28,15 @@ export class AptivTableComponent implements OnInit {
       console.log('aptiv-table: row -- ', row);
       this.CollectKeysOfObj(row);
     });
+    this.setPage(1);
     // this.DataValueChange.emit(this.DataValue);
   }
 
+  pager: any = {};
+  pagedData: Object[] = [];
   private Keys: string[] = [];
 
-  constructor() {}
+  constructor(private pagerService: PageinationService) {}
 
   ngOnInit() {
     // console.log('aptiv-table: Data -- ', this.Keys, this.Data);
@@ -51,5 +55,10 @@ export class AptivTableComponent implements OnInit {
         this.CollectKeysOfObj(obj[key]);
       }
     }
+  }
+
+  setPage(page: number) {
+    this.pager = this.pagerService.getPager(this.DataValue.length, page);
+    this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 }

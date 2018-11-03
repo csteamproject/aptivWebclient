@@ -8,7 +8,6 @@ import {
 import {
   Item
 } from '../../classes/item/item';
-import { PageinationService } from 'src/app/services/pageination/pageination.service';
 
 @Component({
   selector: 'app-inventory',
@@ -18,9 +17,7 @@ import { PageinationService } from 'src/app/services/pageination/pageination.ser
 export class InventoryComponent implements OnInit {
 
   Items: Item[] = [];
-  pager: any = {};
-  pagedItems: Item[];
-  constructor(private itemsService: ItemsService, private pagerService: PageinationService) {}
+  constructor(private itemsService: ItemsService) {}
 
   ngOnInit() {
     this.itemsService.getItems().subscribe(data => {
@@ -30,12 +27,6 @@ export class InventoryComponent implements OnInit {
         Quantity: obj.quantity
       })));
       this.Items = items;
-      this.setPage(1);
     });
-  }
-
-  setPage(page: number) {
-    this.pager = this.pagerService.getPager(this.Items.length, page);
-    this.pagedItems = this.Items.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
 }
