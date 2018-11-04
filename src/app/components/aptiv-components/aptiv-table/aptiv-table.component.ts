@@ -6,6 +6,7 @@ import {
 import {
   PageinationService
 } from 'src/app/services/pageination/pageination.service';
+import { forEach } from '@angular/router/src/utils/collection';
 
 export class RowData {
   public DataColumn: any[];
@@ -32,6 +33,15 @@ export class AptivTableComponent implements OnInit {
     });
     this.BeforeFilterationData = this.DataValue;
     this.setPage(1);
+    // Setup FormData
+    this.Keys.forEach((key) => {
+      const newKey = {
+        key: key,
+        value: null,
+      };
+      this.FormsData.push(newKey);
+    });
+    console.log('SetupFormData: ', this.FormsData);
     // this.DataValueChange.emit(this.DataValue);
   }
 
@@ -41,6 +51,7 @@ export class AptivTableComponent implements OnInit {
   pagedData: Object[] = [];
   allFilter: string;
   private Keys: string[] = [];
+  FormsData: Object[] = [];
 
   constructor(private pagerService: PageinationService) {}
 

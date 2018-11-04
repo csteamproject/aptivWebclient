@@ -16,23 +16,36 @@ import {
 import {
   AppRoutingModule
 } from 'src/app/app-routing.module';
-import { FormsModule } from '@angular/forms';
+import {
+  FormsModule,
+  ReactiveFormsModule
+} from '@angular/forms';
+import {
+  AddModalComponent
+} from './add-modal/add-modal.component';
+import {
+  NgbModule
+} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule
   ],
   exports: [
     AptivTableComponent,
     HeaderBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    AddModalComponent
   ],
   declarations: [
     AptivTableComponent,
     HeaderBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    AddModalComponent
   ]
 })
 export class AptivComponentsModule {}
