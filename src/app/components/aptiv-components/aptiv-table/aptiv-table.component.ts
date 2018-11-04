@@ -45,7 +45,10 @@ export class AptivTableComponent implements OnInit {
   constructor(private pagerService: PageinationService) {}
 
   ngOnInit() {
-    // console.log('aptiv-table: Data -- ', this.Keys, this.Data);
+  }
+
+  get self() { // Used for getting a unique ngModel
+    return this;
   }
 
   public CollectKeysOfObj(obj) {
@@ -63,7 +66,27 @@ export class AptivTableComponent implements OnInit {
     }
   }
 
-  filter(filter: any) {
+  filterCol(filter: any, key: any) {
+    this.DataValue = this.BeforeFilterationData;
+    this.DataValue = this.DataValue.filter(data => {
+      if (data[key].length === undefined) {
+        if (filter === '') {
+          return true;
+        }
+        const filterNumb: number = Number(filter);
+        if (data[key] === filterNumb) {
+          return true;
+        }
+      } else if (data[key].indexOf(filter) >= 0) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    this.setPage(1);
+  }
+
+  filterAll(filter: any) {
     this.DataValue = this.BeforeFilterationData;
     this.DataValue = this.DataValue.filter(data => {
       let checkFlag = false;
