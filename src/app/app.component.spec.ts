@@ -27,6 +27,9 @@ import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
 import {
+  UsersComponent
+} from './pages/users/users.component';
+import {
   NotFoundComponent
 } from './not-found';
 import {

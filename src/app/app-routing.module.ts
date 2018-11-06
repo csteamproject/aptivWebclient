@@ -21,6 +21,9 @@ import {
   AccountComponent
 } from './pages/account/account.component';
 import {
+  UsersComponent
+} from './pages/users/users.component';
+import {
   InventoryTypesComponent
 } from './pages/inventory-types/inventory-types.component';
 import {
@@ -58,6 +61,13 @@ const routes: Routes = [{
 }, {
   path: 'account',
   component: AccountComponent,
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
+}, {
+  path: 'users',
+  component: UsersComponent,
   data: {
     requiresLogin: true
   },
