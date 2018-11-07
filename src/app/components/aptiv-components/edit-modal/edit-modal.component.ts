@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment.dev';
 import { User } from 'src/app/classes/user/user';
+import { Item } from 'src/app/classes/item/item';
 
 @Component({
   selector: 'app-edit-modal',
@@ -12,7 +13,19 @@ import { User } from 'src/app/classes/user/user';
 })
 export class EditModalComponent {
 
-  KeysValue: Object[] = [];
+  RowDataValue: Item = new Item();
+  @Input()
+  // @Output() DataEvent = new EventEmitter();
+  get RowData(): Item {
+    // console.log('KeyValue: ', this.RowDataValue);
+    return this.RowDataValue;
+  }
+  set RowData(data) {
+    this.RowDataValue = data;
+    // console.log('KeyValue: ', this.RowDataValue);
+  }
+
+  KeysValue: any[] = [];
   @Input()
   // @Output() DataEvent = new EventEmitter();
   get Keys(): any[] {
@@ -23,11 +36,20 @@ export class EditModalComponent {
   }
 
   closeResult: string;
+  EditItemData: Object = {};
 
   constructor(private modalService: NgbModal, private http: HttpClient) {}
 
+  get self() { // Used for getting a unique ngModel
+    return this;
+  }
+
   open(content) {
-    console.log('OPEN: ', this.KeysValue);
+    console.log('OPEN: ', this.RowDataValue, this.KeysValue);
+    this.KeysValue.forEach((Row) => {
+      this.EditItemData[Row.key] = this.RowDataValue[Row.key];
+    });
+    console.log('EditItemData: ', this.EditItemData);
     this.modalService.open(content, {
       ariaLabelledBy: 'modal-basic-title'
     }).result.then((result) => {
@@ -47,8 +69,8 @@ export class EditModalComponent {
     }
   }
 
-  SaveResults(KeysData: any) {
-    console.log('KeysData: ', KeysData);
+  EditKey(EditData: any) {
+    console.log('EditData: ', EditData);
 
     // TODO: Move this to a separate service and have a way to make it dynamic
 
@@ -58,13 +80,13 @@ export class EditModalComponent {
         'jwt-token': currentUser.token
       })
     };
-    const newItem = {
-      name: KeysData[0].value,
-      price: KeysData[1].value,
-      quantity: KeysData[2].value
+    const UpdatedItem = {
+      name: EditData[0].value,
+      price: EditData[1].value,
+      quantity: EditData[2].value
     };
 
-    this.http.post(environment.baseURL + 'items', newItem, httpOptions)
+    this.http.patch(environment.baseURL + 'items', UpdatedItem, httpOptions)
     .subscribe(() => {
       console.log('Success');
     }, error => {

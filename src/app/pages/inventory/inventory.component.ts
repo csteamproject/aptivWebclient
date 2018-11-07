@@ -22,6 +22,7 @@ export class InventoryComponent implements OnInit {
   ngOnInit() {
     this.itemsService.getItems().subscribe(data => {
       const items: Item[] = Item.DeseralizeMany(data.map((obj: Item) => ({
+        ID: obj.id,
         Name: obj.name,
         Price: obj.price,
         Quantity: obj.quantity

@@ -6,17 +6,17 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
-      <div *ngFor="let Key of Keys" class="form-group">
+    <form name="EditItemData" [(ngModel)]="EditItemData">
+      <div *ngFor="let Key of Keys; let i = index" class="form-group">
         <label for="dateOfBirth">{{Key.key}}</label>
         <div class="input-group">
-          <input name="Key.key" [(ngModel)]="Key.value"/>
+          <input name="Key.key" [value]="EditItemData[Key.key]" />
         </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="SaveResults(Keys); modal.close('Save click')">Save</button>
+    <button type="button" class="btn btn-outline-dark" (click)="EditKey(EditItemData); modal.close('Save click')">Save</button>
   </div>
 </ng-template>
 

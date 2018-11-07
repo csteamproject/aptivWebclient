@@ -125,5 +125,6 @@ export class AptivTableComponent implements OnInit {
   setPage(page: number) {
     this.pager = this.pagerService.getPager(this.DataValue.length, page);
     this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
+    console.log('this.pagedData= ', this.pagedData);
   }
 }

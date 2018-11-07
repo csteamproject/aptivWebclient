@@ -49,12 +49,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let Row of pagedData">
+      <tr *ngFor="let Row of pagedData; let i = index">
         <td *ngFor="let Key of Keys" class="aptivTblBodyColumns">
           {{Row[Key]}}
         </td>
         <td class="aptivTblBodyColumns">
-          <p><app-edit-modal></app-edit-modal> | <app-delete-modal></app-delete-modal></p>
+          <p><app-edit-modal [(Keys)]="FormsData" [(RowData)]="pagedData[i]"></app-edit-modal> | <app-delete-modal [(Key)]="Row.ID"></app-delete-modal></p>
         </td>
       </tr>
     </tbody>

@@ -12,14 +12,14 @@ import { User } from 'src/app/classes/user/user';
 })
 export class DeleteModalComponent {
 
-  KeysValue: Object[] = [];
+  KeyValue = 0;
   @Input()
   // @Output() DataEvent = new EventEmitter();
-  get Keys(): any[] {
-    return this.KeysValue;
+  get Key(): any {
+    return this.KeyValue;
   }
-  set Keys(data) {
-    this.KeysValue = data;
+  set Key(data) {
+    this.KeyValue = data;
   }
 
   closeResult: string;
@@ -27,7 +27,7 @@ export class DeleteModalComponent {
   constructor(private modalService: NgbModal, private http: HttpClient) {}
 
   open(content) {
-    console.log('OPEN: ', this.KeysValue);
+    // console.log('OPEN: ', this.KeyValue);
     this.modalService.open(content, {
       ariaLabelledBy: 'modal-basic-title'
     }).result.then((result) => {
@@ -47,8 +47,8 @@ export class DeleteModalComponent {
     }
   }
 
-  SaveResults(KeysData: any) {
-    console.log('KeysData: ', KeysData);
+  Delete(Key: any) {
+    console.log('KeysData: ', Key);
 
     // TODO: Move this to a separate service and have a way to make it dynamic
 
@@ -58,13 +58,8 @@ export class DeleteModalComponent {
         'jwt-token': currentUser.token
       })
     };
-    const newItem = {
-      name: KeysData[0].value,
-      price: KeysData[1].value,
-      quantity: KeysData[2].value
-    };
 
-    this.http.post(environment.baseURL + 'items', newItem, httpOptions)
+    this.http.delete(environment.baseURL + 'items/' + Key, httpOptions)
     .subscribe(() => {
       console.log('Success');
     }, error => {
