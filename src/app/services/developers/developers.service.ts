@@ -10,7 +10,6 @@ import {
 import {
   Observable
 } from 'rxjs';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,20 +18,19 @@ export class DevelopersService {
 
   constructor(private http: HttpClient) {}
 
-  // 'http://0.0.0.0:3000/developers'
   getDevelopers() {
     return Observable.create(observer => {
-      this.http.get(environment.baseURL + 'developers')
+      this.http.get('http://0.0.0.0:3000/developers')
         .subscribe((res: Developer[]) => {
-          // console.log('InventoryComponent --', res);
+          console.log('MainComponent --', res);
           // let Result: Data[] = temp;
           const Developers: Developer[] = res;
-          // console.log('data: ', Developers);
+          console.log('data: ', Developers);
 
           observer.next(Developers);
           observer.complete();
         }, (error) => {
-          // console.log('There was an error', error);
+          console.log('There was an error', error);
           const Developer1: Developer = ({
             id: 1,
             name: 'Jonathan Steele',

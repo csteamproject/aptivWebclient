@@ -5,21 +5,21 @@ import {
 } from '@angular/core/testing';
 
 import {
-  AddModalComponent
-} from './add-modal.component';
+  EditModalComponent
+} from './edit-modal.component';
 import {
-  FormsModule
-} from '@angular/forms';
+  HttpClientModule
+} from '@angular/common/http';
 import {
   RouterTestingModule
 } from '@angular/router/testing';
 import {
-  HttpClientModule
-} from '@angular/common/http';
+  FormsModule
+} from '@angular/forms';
 
-describe('AddModalComponent', () => {
-  let component: AddModalComponent;
-  let fixture: ComponentFixture < AddModalComponent > ;
+describe('EditModalComponent', () => {
+  let component: EditModalComponent;
+  let fixture: ComponentFixture < EditModalComponent > ;
 
   beforeEach(async (() => {
     TestBed.configureTestingModule({
@@ -27,13 +27,13 @@ describe('AddModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [AddModalComponent]
+        declarations: [EditModalComponent]
       })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddModalComponent);
+    fixture = TestBed.createComponent(EditModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

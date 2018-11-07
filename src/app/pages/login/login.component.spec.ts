@@ -37,6 +37,7 @@ import {
 import {
   InventoryTypesComponent
 } from '../inventory-types/inventory-types.component';
+import { UsersComponent } from '../users/users.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -50,6 +51,7 @@ describe('LoginComponent', () => {
           TestingComponent,
           AccountComponent,
           InventoryTypesComponent,
+          UsersComponent,
           NotFoundComponent
         ],
         imports: [

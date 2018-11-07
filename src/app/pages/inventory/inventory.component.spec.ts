@@ -37,6 +37,7 @@ import {
 import {
   APP_BASE_HREF
 } from '@angular/common';
+import { UsersComponent } from '../users/users.component';
 
 describe('InventoryComponent', () => {
   let component: InventoryComponent;
@@ -49,6 +50,7 @@ describe('InventoryComponent', () => {
           InventoryTypesComponent,
           AccountComponent,
           TestingComponent,
+          UsersComponent,
           NotFoundComponent
         ],
         imports: [

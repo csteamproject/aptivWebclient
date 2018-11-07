@@ -10,6 +10,21 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
+import {
+  HttpClientModule
+} from '@angular/common/http';
+import {
+  AddModalComponent
+} from '../add-modal/add-modal.component';
+import {
+  DeleteModalComponent
+} from '../delete-modal/delete-modal.component';
+import {
+  EditModalComponent
+} from '../edit-modal/edit-modal.component';
 
 describe('AptivTableComponent', () => {
   let component: AptivTableComponent;
@@ -17,8 +32,16 @@ describe('AptivTableComponent', () => {
 
   beforeEach(async (() => {
     TestBed.configureTestingModule({
-        imports: [FormsModule],
-        declarations: [AptivTableComponent]
+        imports: [
+          FormsModule,
+          RouterTestingModule,
+          HttpClientModule
+        ],
+        declarations: [AptivTableComponent,
+          AddModalComponent,
+          DeleteModalComponent,
+          EditModalComponent
+        ]
       })
       .compileComponents();
   }));
@@ -34,5 +57,4 @@ describe('AptivTableComponent', () => {
   });
 
   // TODO: Write a testcase to check and make sure all data is being passed in properly to the aptiv-table component
-
 });

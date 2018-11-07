@@ -40,6 +40,7 @@ import {
 import {
   InventoryTypesComponent
 } from '../pages/inventory-types/inventory-types.component';
+import { UsersComponent } from '../pages/users/users.component';
 
 describe('AccessGuard', () => {
   beforeEach(() => {
@@ -50,6 +51,7 @@ describe('AccessGuard', () => {
         TestingComponent,
         AccountComponent,
         InventoryTypesComponent,
+        UsersComponent,
         NotFoundComponent
       ],
       imports: [

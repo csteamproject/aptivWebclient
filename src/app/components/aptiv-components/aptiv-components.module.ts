@@ -26,6 +26,12 @@ import {
 import {
   NgbModule
 } from '@ng-bootstrap/ng-bootstrap';
+import {
+  EditModalComponent
+} from './edit-modal/edit-modal.component';
+import {
+  DeleteModalComponent
+} from './delete-modal/delete-modal.component';
 
 @NgModule({
   imports: [
@@ -39,13 +45,17 @@ import {
     AptivTableComponent,
     HeaderBarComponent,
     NavBarComponent,
-    AddModalComponent
+    AddModalComponent,
+    EditModalComponent,
+    DeleteModalComponent
   ],
   declarations: [
     AptivTableComponent,
     HeaderBarComponent,
     NavBarComponent,
-    AddModalComponent
+    AddModalComponent,
+    EditModalComponent,
+    DeleteModalComponent
   ]
 })
 export class AptivComponentsModule {}

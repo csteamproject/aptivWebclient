@@ -52,6 +52,7 @@ describe('AppComponent', () => {
         InventoryComponent,
         AccountComponent,
         TestingComponent,
+        UsersComponent,
         InventoryTypesComponent
       ],
       imports: [
