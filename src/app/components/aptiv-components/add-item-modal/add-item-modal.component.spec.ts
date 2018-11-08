@@ -5,8 +5,8 @@ import {
 } from '@angular/core/testing';
 
 import {
-  AddModalComponent
-} from './add-modal.component';
+  AddItemModalComponent
+} from './add-item-modal.component';
 import {
   FormsModule
 } from '@angular/forms';
@@ -17,9 +17,9 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 
-describe('AddModalComponent', () => {
-  let component: AddModalComponent;
-  let fixture: ComponentFixture < AddModalComponent > ;
+describe('AddItemModalComponent', () => {
+  let component: AddItemModalComponent;
+  let fixture: ComponentFixture < AddItemModalComponent > ;
 
   beforeEach(async (() => {
     TestBed.configureTestingModule({
@@ -27,13 +27,13 @@ describe('AddModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [AddModalComponent]
+        declarations: [AddItemModalComponent]
       })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddModalComponent);
+    fixture = TestBed.createComponent(AddItemModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -17,8 +17,8 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 import {
-  AddModalComponent
-} from '../add-modal/add-modal.component';
+  AddItemModalComponent
+} from '../add-item-modal/add-item-modal.component';
 import {
   DeleteModalComponent
 } from '../delete-modal/delete-modal.component';
@@ -38,7 +38,7 @@ describe('AptivTableComponent', () => {
           HttpClientModule
         ],
         declarations: [AptivInventoryTableComponent,
-          AddModalComponent,
+          AddItemModalComponent,
           DeleteModalComponent,
           EditItemModalComponent
         ]

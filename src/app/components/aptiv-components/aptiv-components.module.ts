@@ -21,16 +21,20 @@ import {
   ReactiveFormsModule
 } from '@angular/forms';
 import {
-  AddModalComponent
-} from './add-modal/add-modal.component';
+  AddItemModalComponent
+} from './add-item-modal/add-item-modal.component';
 import {
   NgbModule
 } from '@ng-bootstrap/ng-bootstrap';
 import {
   DeleteModalComponent
 } from './delete-modal/delete-modal.component';
-import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.component';
-import { AptivInventoryTableComponent } from './aptiv-inventory-table/aptiv-inventory-table.component';
+import {
+  EditItemModalComponent
+} from './edit-item-modal/edit-item-modal.component';
+import {
+  AptivInventoryTableComponent
+} from './aptiv-inventory-table/aptiv-inventory-table.component';
 
 @NgModule({
   imports: [
@@ -45,7 +49,7 @@ import { AptivInventoryTableComponent } from './aptiv-inventory-table/aptiv-inve
     AptivInventoryTableComponent,
     HeaderBarComponent,
     NavBarComponent,
-    AddModalComponent,
+    AddItemModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ],
@@ -54,7 +58,7 @@ import { AptivInventoryTableComponent } from './aptiv-inventory-table/aptiv-inve
     AptivInventoryTableComponent,
     HeaderBarComponent,
     NavBarComponent,
-    AddModalComponent,
+    AddItemModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ]

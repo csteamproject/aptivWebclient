@@ -44,7 +44,8 @@ export class ItemsService {
   }
 
   // This Service Function adds a new Item to the API
-  addItem(item: Item) {
+  addItem(item: any) {
+    console.log('item: ', item);
     return Observable.create(observer => {
       const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
       const httpOptions = {
@@ -53,14 +54,14 @@ export class ItemsService {
         })
       };
       const newItem = {
-        name: item.name,
-        price: item.price,
-        quantity: item.quantity
+        name: item.Name,
+        price: item.Price,
+        quantity: item.Quantity
       };
-
+      console.log('newItem: ', newItem);
       this.http.post(environment.baseURL + 'items', newItem, httpOptions)
         .subscribe((addedItem) => {
-          console.log('Success');
+          console.log('Success: ', addedItem);
           observer.next(addedItem);
           observer.complete();
         }, error => {
