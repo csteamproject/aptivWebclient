@@ -12,11 +12,11 @@ export class RowData {
 }
 
 @Component({
-  selector: 'app-aptiv-table',
-  templateUrl: './aptiv-table.component.html',
-  styleUrls: ['./aptiv-table.component.css']
+  selector: 'app-aptiv-inventory-table',
+  templateUrl: './aptiv-inventory-table.component.html',
+  styleUrls: ['./aptiv-inventory-table.component.css']
 })
-export class AptivTableComponent implements OnInit {
+export class AptivInventoryTableComponent implements OnInit {
 
   DataValue: Object[] = [];
   @Input()

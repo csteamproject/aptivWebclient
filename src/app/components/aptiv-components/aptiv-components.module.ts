@@ -30,6 +30,7 @@ import {
   DeleteModalComponent
 } from './delete-modal/delete-modal.component';
 import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.component';
+import { AptivInventoryTableComponent } from './aptiv-inventory-table/aptiv-inventory-table.component';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.compon
   ],
   exports: [
     AptivTableComponent,
+    AptivInventoryTableComponent,
     HeaderBarComponent,
     NavBarComponent,
     AddModalComponent,
@@ -49,6 +51,7 @@ import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.compon
   ],
   declarations: [
     AptivTableComponent,
+    AptivInventoryTableComponent,
     HeaderBarComponent,
     NavBarComponent,
     AddModalComponent,
