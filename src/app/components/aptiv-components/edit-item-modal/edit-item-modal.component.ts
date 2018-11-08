@@ -1,27 +1,26 @@
 import {Component, Input} from '@angular/core';
 
 import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment.dev';
-import { User } from 'src/app/classes/user/user';
+import { HttpClient} from '@angular/common/http';
 import { Item } from 'src/app/classes/item/item';
+import { ItemsService } from 'src/app/services/items/items.service';
 
 @Component({
-  selector: 'app-edit-modal',
-  templateUrl: './edit-modal.component.html',
-  styleUrls: ['./edit-modal.component.css']
+  selector: 'app-edit-item-modal',
+  templateUrl: './edit-item-modal.component.html',
+  styleUrls: ['./edit-item-modal.component.css']
 })
-export class EditModalComponent {
+export class EditItemModalComponent {
 
-  RowDataValue: Item = new Item();
+  EditDataValue: Item = new Item();
   @Input()
   // @Output() DataEvent = new EventEmitter();
-  get RowData(): Item {
+  get EditData(): Item {
     // console.log('KeyValue: ', this.RowDataValue);
-    return this.RowDataValue;
+    return this.EditDataValue;
   }
-  set RowData(data) {
-    this.RowDataValue = data;
+  set EditData(data) {
+    this.EditDataValue = data;
     // console.log('KeyValue: ', this.RowDataValue);
   }
 
@@ -38,16 +37,16 @@ export class EditModalComponent {
   closeResult: string;
   EditItemData: Object = {};
 
-  constructor(private modalService: NgbModal, private http: HttpClient) {}
+  constructor(private modalService: NgbModal, private http: HttpClient, private itemService: ItemsService) {}
 
   get self() { // Used for getting a unique ngModel
     return this;
   }
 
   open(content) {
-    console.log('OPEN: ', this.RowDataValue, this.KeysValue);
+    console.log('OPEN: ', this.EditDataValue, this.KeysValue);
     this.KeysValue.forEach((Row) => {
-      this.EditItemData[Row.key] = this.RowDataValue[Row.key];
+      this.EditItemData[Row.key] = this.EditDataValue[Row.key];
     });
     console.log('EditItemData: ', this.EditItemData);
     this.modalService.open(content, {
@@ -69,30 +68,9 @@ export class EditModalComponent {
     }
   }
 
-  EditKey(EditData: any) {
+  EditItem(EditData: Item) {
     console.log('EditData: ', EditData);
 
-    // TODO: Move this to a separate service and have a way to make it dynamic
-
-    const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'jwt-token': currentUser.token
-      })
-    };
-    const UpdatedItem = {
-      name: EditData[0].value,
-      price: EditData[1].value,
-      quantity: EditData[2].value
-    };
-
-    this.http.patch(environment.baseURL + 'items', UpdatedItem, httpOptions)
-    .subscribe(() => {
-      console.log('Success');
-    }, error => {
-      console.log('Error');
-    });
-
+    this.itemService.editItem(EditData);
   }
 }

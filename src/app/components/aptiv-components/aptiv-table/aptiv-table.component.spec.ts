@@ -23,8 +23,8 @@ import {
   DeleteModalComponent
 } from '../delete-modal/delete-modal.component';
 import {
-  EditModalComponent
-} from '../edit-modal/edit-modal.component';
+  EditItemModalComponent
+} from '../edit-item-modal/edit-item-modal.component';
 
 describe('AptivTableComponent', () => {
   let component: AptivTableComponent;
@@ -40,7 +40,7 @@ describe('AptivTableComponent', () => {
         declarations: [AptivTableComponent,
           AddModalComponent,
           DeleteModalComponent,
-          EditModalComponent
+          EditItemModalComponent
         ]
       })
       .compileComponents();

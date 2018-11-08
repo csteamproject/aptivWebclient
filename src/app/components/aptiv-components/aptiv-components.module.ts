@@ -32,6 +32,7 @@ import {
 import {
   DeleteModalComponent
 } from './delete-modal/delete-modal.component';
+import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import {
     NavBarComponent,
     AddModalComponent,
     EditModalComponent,
+    EditItemModalComponent,
     DeleteModalComponent
   ],
   declarations: [
@@ -55,6 +57,7 @@ import {
     NavBarComponent,
     AddModalComponent,
     EditModalComponent,
+    EditItemModalComponent,
     DeleteModalComponent
   ]
 })

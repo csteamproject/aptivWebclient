@@ -1,0 +1,41 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>ID</label>
+        <div class="input-group">
+          <input name="id" [(ngModel)]="EditData.ID"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Name</label>
+        <div class="input-group">
+          <input name="name" [(ngModel)]="EditData.Name"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <div class="input-group">
+          <input name="price" [(ngModel)]="EditData.Price"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <div class="input-group">
+          <input name="quantity" [(ngModel)]="EditData.Quantity"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="EditItem(EditData); modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<a (click)="open(content)" style="cursor: pointer">Edit</a>

@@ -54,7 +54,7 @@
           {{Row[Key]}}
         </td>
         <td class="aptivTblBodyColumns">
-          <span><app-edit-modal [(Keys)]="FormsData" [(RowData)]="pagedData[i]"></app-edit-modal> | <app-delete-modal [(Key)]="Row.ID"></app-delete-modal></span>
+          <span><app-edit-item-modal [(Keys)]="FormsData" [(EditData)]="pagedData[i]"></app-edit-item-modal> | <app-delete-modal [(Key)]="Row.ID"></app-delete-modal></span>
         </td>
       </tr>
     </tbody>
