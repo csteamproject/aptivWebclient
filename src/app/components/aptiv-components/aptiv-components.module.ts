@@ -27,9 +27,6 @@ import {
   NgbModule
 } from '@ng-bootstrap/ng-bootstrap';
 import {
-  EditModalComponent
-} from './edit-modal/edit-modal.component';
-import {
   DeleteModalComponent
 } from './delete-modal/delete-modal.component';
 import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.component';
@@ -47,7 +44,6 @@ import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.compon
     HeaderBarComponent,
     NavBarComponent,
     AddModalComponent,
-    EditModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ],
@@ -56,7 +52,6 @@ import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.compon
     HeaderBarComponent,
     NavBarComponent,
     AddModalComponent,
-    EditModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ]

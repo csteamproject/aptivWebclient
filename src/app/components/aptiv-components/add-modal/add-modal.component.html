@@ -10,7 +10,7 @@
       <div *ngFor="let Key of Keys" class="form-group">
         <label for="dateOfBirth">{{Key.key}}</label>
         <div class="input-group">
-          <input name="Key.key" [(ngModel)]="Key.value"/>
+          <input class="form-control" name="Key.key" [(ngModel)]="Key.value"/>
         </div>
       </div>
     </form>

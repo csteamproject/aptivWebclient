@@ -17,7 +17,7 @@ import {
   FormsModule
 } from '@angular/forms';
 
-describe('EditModalComponent', () => {
+describe('EditItemModalComponent', () => {
   let component: EditItemModalComponent;
   let fixture: ComponentFixture < EditItemModalComponent > ;
 
