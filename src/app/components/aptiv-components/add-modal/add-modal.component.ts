@@ -59,9 +59,9 @@ export class AddModalComponent {
       })
     };
     const newItem = {
-      name: KeysData[0].value,
-      price: KeysData[1].value,
-      quantity: KeysData[2].value
+      name: KeysData[1].value,
+      price: KeysData[2].value,
+      quantity: KeysData[3].value
     };
 
     this.http.post(environment.baseURL + 'items', newItem, httpOptions)
