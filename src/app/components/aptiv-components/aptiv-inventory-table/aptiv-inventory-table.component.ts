@@ -17,7 +17,7 @@ export class RowData {
   styleUrls: ['./aptiv-inventory-table.component.css']
 })
 export class AptivInventoryTableComponent implements OnInit {
-
+  itemsPerPage: number;
   DataValue: Object[] = [];
   @Input()
   // @Output() DataEvent = new EventEmitter();
@@ -52,7 +52,9 @@ export class AptivInventoryTableComponent implements OnInit {
   private Keys: string[] = [];
   FormsData: Object[] = [];
 
-  constructor(private pagerService: PageinationService) {}
+  constructor(private pagerService: PageinationService) {
+    this.itemsPerPage = pagerService.itemsPerPage;
+  }
 
   ngOnInit() {
   }
@@ -125,5 +127,8 @@ export class AptivInventoryTableComponent implements OnInit {
     this.pager = this.pagerService.getPager(this.DataValue.length, page);
     this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
     console.log('this.pagedData= ', this.pagedData);
+  }
+  changeItemsPerPage() {
+    this.pagerService.itemsPerPage = this.itemsPerPage;
   }
 }
