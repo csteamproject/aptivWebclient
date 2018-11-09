@@ -6,10 +6,10 @@ import {
   providedIn: 'root'
 })
 export class PageinationService {
-
+  itemsPerPage = 10;
   constructor() {}
 
-  getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) {
+  getPager(totalItems: number, currentPage: number = 1, pageSize = this.itemsPerPage) {
     // calculate total pages
     const totalPages = Math.ceil(totalItems / pageSize);
 
