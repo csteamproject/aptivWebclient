@@ -24,6 +24,9 @@ import {
   UsersComponent
 } from './pages/users/users.component';
 import {
+  LocationsComponent
+} from './pages/locations/locations.component';
+import {
   InventoryTypesComponent
 } from './pages/inventory-types/inventory-types.component';
 import {
@@ -38,6 +41,13 @@ const routes: Routes = [{
 }, {
   path: 'inventory',
   component: InventoryComponent,
+  data: {
+    requiresLogin: true
+  },
+  canActivate: [AccessGuard]
+}, {
+  path: 'locations',
+  component: LocationsComponent,
   data: {
     requiresLogin: true
   },

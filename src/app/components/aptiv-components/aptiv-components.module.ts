@@ -35,6 +35,7 @@ import {
 import {
   AptivInventoryTableComponent
 } from './aptiv-inventory-table/aptiv-inventory-table.component';
+import { LocationsTableComponent } from './locations-table/locations-table.component';
 
 @NgModule({
   imports: [
@@ -60,7 +61,8 @@ import {
     NavBarComponent,
     AddItemModalComponent,
     EditItemModalComponent,
-    DeleteModalComponent
+    DeleteModalComponent,
+    LocationsTableComponent
   ]
 })
 export class AptivComponentsModule {}

@@ -6,7 +6,7 @@
         <a style="color: gray;" class="nav-link" [routerLink]="['/inventory']">Inventory</a>
       </li>
       <li *ngIf="auth.CurrentUser.role !== 'Standard'" style="margin-left: 50px;" class="nav-item">
-        <a style="color: gray;" class="nav-link" [routerLink]="['/inventory-types']">Locations</a>
+        <a style="color: gray;" class="nav-link" [routerLink]="['/locations']">Locations</a>
       </li>
 
       <li *ngIf="auth.CurrentUser.role !== 'InventoryManager' || auth.CurrentUser.role !== 'Standard'" class="nav-item"

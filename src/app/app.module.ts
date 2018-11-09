@@ -47,6 +47,7 @@ import {
 import {
   InventoryTypesComponent
 } from './pages/inventory-types/inventory-types.component';
+import { LocationsComponent } from './pages/locations/locations.component';
 
 // Providers
 
@@ -59,7 +60,8 @@ import {
     TestingComponent,
     AccountComponent,
     InventoryTypesComponent,
-    UsersComponent
+    UsersComponent,
+    LocationsComponent
   ],
   imports: [
     BrowserModule,
