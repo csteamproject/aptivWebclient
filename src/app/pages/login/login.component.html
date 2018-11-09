@@ -6,7 +6,6 @@
     <input name="password" type="password" [(ngModel)]="auth.credentials.password" class="form-control mb-1" placeholder="Password" required autocomplete="off" />
     <div class="mt-2">
       <button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block" (click)="TryToLogin(auth.credentials)" type="submit">Login</button>
-      <div *ngIf="TryToLogin(auth.credentials)==false">
    </div>
   </form>
 </div>
