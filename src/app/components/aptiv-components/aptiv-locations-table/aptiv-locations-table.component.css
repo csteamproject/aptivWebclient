@@ -1,0 +1,68 @@
+#frontpage-container{
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+}
+
+#frontpage-container .content{
+    margin: 0 auto;
+    width: 90%;
+    padding: 0px;
+    height: auto;
+}
+
+.aptivTable {
+    border: 1px solid lightgray;
+}
+
+.aptivTblHeaderColumns {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 0px;
+}
+
+.aptivTblFilterSectionTop {
+    border-bottom: 1px solid lightgray;
+    padding: 5px 0px 5px 0px;
+    margin: 0px;
+    color: darkgray;
+    font-weight: normal;
+}
+
+.searchAllRow {
+    padding-bottom: 10px;
+}
+
+.aptivTblFilterSectionBottomRow {
+    padding: none;
+    margin: none;
+}
+
+.aptivTblFilterSectionBottomCol {
+    padding: none;
+    margin: none;
+}
+
+.aptivTblFilterInput {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.input-group-text {
+    background: none;
+    border: none;
+    border-radius: none;
+    color: darkgray;
+    font-weight: normal;
+}
+
+.aptivTblBodyColumns {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.CornerInput {
+    background: none;
+}

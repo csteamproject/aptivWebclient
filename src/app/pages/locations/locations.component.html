@@ -1,24 +1,6 @@
-<table id="myTable" class="table table-striped table-light">
-  <thead>
-    <tr>
-      <th style="background: gray" *ngFor="let Key of Keys">{{Key}}</th>
-      <th style="background: gray">Unit</th>
-      <th style="background: gray">Building</th>
-    </tr>
-   </thead>
-  <tbody>
-    <tr *ngFor="let Row of Data">
-      <td *ngFor="let Key of Keys">
-        {{Row[Key]}}
-      <td >
-        {{Row.unit}}
-      </td>
-      <td >
-        {{Row.building}}
-      </td>
-      <td >
-        <button>View</button>  <button style="margin-left: 10px;">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-  </table>
+<div class="container">
+    <h1 style="margin-top: 10px;">Locations</h1><br>
+    <div>
+      <app-aptiv-locations-table [(Data)]="Locations"></app-aptiv-locations-table>
+    </div>
+  </div>
