@@ -1,12 +1,14 @@
 import {
   IItem
 } from '../../interfaces/iitem';
+import { Computer } from '../computer/computer';
 
 export class Item implements IItem {
-  public id: number;
-  public name: string;
-  public price: number;
-  public quantity: number;
+  public ID: number;
+  public Name: string;
+  public Price: number;
+  public Quantity: number;
+  public Computer: Computer;
 
   public static Deseralize(obj: Object | string): Item {
     const u = new Item();

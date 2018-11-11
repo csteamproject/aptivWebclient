@@ -17,9 +17,6 @@ import {
   InventoryComponent
 } from '../pages/inventory/inventory.component';
 import {
-  TestingComponent
-} from '../testing/testing.component';
-import {
   AccountComponent
 } from '../pages/account/account.component';
 import {
@@ -38,9 +35,11 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 import {
-  InventoryTypesComponent
-} from '../pages/inventory-types/inventory-types.component';
-import { UsersComponent } from '../pages/users/users.component';
+  UsersComponent
+} from '../pages/users/users.component';
+import {
+  LocationsComponent
+} from '../pages/locations/locations.component';
 
 describe('AccessGuard', () => {
   beforeEach(() => {
@@ -48,10 +47,9 @@ describe('AccessGuard', () => {
       declarations: [
         LoginComponent,
         InventoryComponent,
-        TestingComponent,
         AccountComponent,
-        InventoryTypesComponent,
         UsersComponent,
+        LocationsComponent,
         NotFoundComponent
       ],
       imports: [

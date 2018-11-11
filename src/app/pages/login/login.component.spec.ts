@@ -17,9 +17,6 @@ import {
   InventoryComponent
 } from '../inventory/inventory.component';
 import {
-  TestingComponent
-} from '../../testing/testing.component';
-import {
   NotFoundComponent
 } from '../../not-found';
 import {
@@ -35,9 +32,11 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 import {
-  InventoryTypesComponent
-} from '../inventory-types/inventory-types.component';
-import { UsersComponent } from '../users/users.component';
+  UsersComponent
+} from '../users/users.component';
+import {
+  LocationsComponent
+} from '../locations/locations.component';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -48,10 +47,9 @@ describe('LoginComponent', () => {
         declarations: [
           LoginComponent,
           InventoryComponent,
-          TestingComponent,
           AccountComponent,
-          InventoryTypesComponent,
           UsersComponent,
+          LocationsComponent,
           NotFoundComponent
         ],
         imports: [

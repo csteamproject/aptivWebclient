@@ -26,7 +26,7 @@ import {
   EditItemModalComponent
 } from '../edit-item-modal/edit-item-modal.component';
 
-describe('AptivTableComponent', () => {
+describe('AptivLocationsTableComponent', () => {
   let component: AptivLocationsTableComponent;
   let fixture: ComponentFixture < AptivLocationsTableComponent > ;
 

@@ -20,12 +20,21 @@ export class AddItemModalComponent {
   set Data(data) {
     this.DataValue = data;
   }
-
+  ComputerTF = false;
   AddData: Item = new Item();
 
   closeResult: string;
 
   constructor(private modalService: NgbModal, private itemService: ItemsService) {}
+
+  ComputerTFChanged() {
+    console.log('this.ComputerTF ', this.ComputerTF);
+    if (this.ComputerTF) {
+      this.ComputerTF = false;
+    } else {
+      this.ComputerTF = true;
+    }
+  }
 
   open(content) {
     console.log('OPEN: ', this.DataValue);

@@ -1,6 +1,8 @@
-export interface IItem {
-    name: string;
-    price: number;
-    quantity: number;
+import { Computer } from '../classes/computer/computer';
 
+export interface IItem {
+    Name: string;
+    Price: number;
+    Quantity: number;
+    Computer: Computer;
 }

@@ -56,7 +56,8 @@ export class ItemsService {
       const newItem = {
         name: item.Name,
         price: item.Price,
-        quantity: item.Quantity
+        quantity: item.Quantity,
+        computer: item.Computer
       };
       console.log('newItem: ', newItem);
       this.http.post(environment.baseURL + 'items', newItem, httpOptions)

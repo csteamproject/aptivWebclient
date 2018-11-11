@@ -56,8 +56,7 @@ export class AptivInventoryTableComponent implements OnInit {
     this.itemsPerPage = pagerService.itemsPerPage;
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get self() { // Used for getting a unique ngModel
     return this;

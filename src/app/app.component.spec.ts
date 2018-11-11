@@ -21,9 +21,6 @@ import {
   AccountComponent
 } from './pages/account/account.component';
 import {
-  TestingComponent
-} from './testing/testing.component';
-import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
 import {
@@ -36,11 +33,11 @@ import {
   APP_BASE_HREF
 } from '@angular/common';
 import {
-  InventoryTypesComponent
-} from './pages/inventory-types/inventory-types.component';
-import {
   HttpClientModule
 } from '@angular/common/http';
+import {
+  LocationsComponent
+} from './pages/locations/locations.component';
 
 describe('AppComponent', () => {
   beforeEach(async (() => {
@@ -51,9 +48,8 @@ describe('AppComponent', () => {
         NotFoundComponent,
         InventoryComponent,
         AccountComponent,
-        TestingComponent,
         UsersComponent,
-        InventoryTypesComponent
+        LocationsComponent
       ],
       imports: [
         AptivComponentsModule,

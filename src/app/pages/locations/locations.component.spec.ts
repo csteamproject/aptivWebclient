@@ -3,7 +3,6 @@ import {
   ComponentFixture,
   TestBed
 } from '@angular/core/testing';
-
 import {
   LocationsComponent
 } from './locations.component';
@@ -16,12 +15,6 @@ import {
 import {
   LoginComponent
 } from '../login/login.component';
-import {
-  InventoryTypesComponent
-} from '../inventory-types/inventory-types.component';
-import {
-  TestingComponent
-} from 'src/app/testing/testing.component';
 import {
   AccountComponent
 } from '../account/account.component';
@@ -37,7 +30,12 @@ import {
 import {
   APP_BASE_HREF
 } from '@angular/common';
-import { UsersComponent } from '../users/users.component';
+import {
+  UsersComponent
+} from '../users/users.component';
+import {
+  InventoryComponent
+} from '../inventory/inventory.component';
 
 describe('LocationsComponent', () => {
   let component: LocationsComponent;
@@ -47,9 +45,8 @@ describe('LocationsComponent', () => {
     TestBed.configureTestingModule({
         declarations: [LocationsComponent,
           LoginComponent,
-          InventoryTypesComponent,
+          InventoryComponent,
           AccountComponent,
-          TestingComponent,
           UsersComponent,
           NotFoundComponent
         ],

@@ -5,7 +5,7 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" style="margin: 10px;">
     <form>
       <div class="form-group">
         <label>ID</label>
@@ -32,6 +32,33 @@
           <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="AddData.Quantity" />
         </div>
       </div>
+      <input type="checkbox" class="form-check-input" id="ComputerTF" name="ComputerTF" [(ngModel)]="ComputerTF" /><label class="form-check-label" for="ComputerTF"><b>Computer?</b></label>
+      <span *ngIf="ComputerTF">
+        <div class="form-group">
+          <label>UTag</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="utag" name="utag" [(ngModel)]="AddData.UTag" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>CPU</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="cpu" name="cpu" [(ngModel)]="AddData.CPU" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>RAM</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="ram" name="ram" [(ngModel)]="AddData.RAM" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>HDD</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="hdd" name="hdd" [(ngModel)]="AddData.HDD" />
+          </div>
+        </div>
+      </span>
     </form>
   </div>
   <div class="modal-footer">

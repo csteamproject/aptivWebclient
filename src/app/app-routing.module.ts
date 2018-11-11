@@ -15,9 +15,6 @@ import {
   NotFoundComponent
 } from './not-found';
 import {
-  TestingComponent
-} from './testing/testing.component';
-import {
   AccountComponent
 } from './pages/account/account.component';
 import {
@@ -26,9 +23,6 @@ import {
 import {
   LocationsComponent
 } from './pages/locations/locations.component';
-import {
-  InventoryTypesComponent
-} from './pages/inventory-types/inventory-types.component';
 import {
   AccessGuard
 } from './access-guard/access.guard';
@@ -50,22 +44,6 @@ const routes: Routes = [{
   component: LocationsComponent,
   data: {
     requiresLogin: true
-  },
-  canActivate: [AccessGuard]
-}, {
-  path: 'inventory-types',
-  component: InventoryTypesComponent,
-  data: {
-    requiresLogin: true,
-    requiresInventoryManagerRoleTF: true
-  },
-  canActivate: [AccessGuard]
-}, {
-  path: 'testing',
-  component: TestingComponent,
-  data: {
-    requiresLogin: true,
-    requiresSuperAdminRoleTF: true
   },
   canActivate: [AccessGuard]
 }, {

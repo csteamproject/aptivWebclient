@@ -22,9 +22,6 @@ import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
 import {
-  TestingComponent
-} from './testing/testing.component';
-import {
   AccountComponent
 } from './pages/account/account.component';
 
@@ -44,10 +41,6 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
-import {
-  InventoryTypesComponent
-} from './pages/inventory-types/inventory-types.component';
-import { LocationsComponent } from './pages/locations/locations.component';
 
 // Providers
 
@@ -57,11 +50,8 @@ import { LocationsComponent } from './pages/locations/locations.component';
     NotFoundComponent,
     LoginComponent,
     InventoryComponent,
-    TestingComponent,
     AccountComponent,
-    InventoryTypesComponent,
-    UsersComponent,
-    LocationsComponent
+    UsersComponent
   ],
   imports: [
     BrowserModule,

@@ -40,18 +40,18 @@ describe('ItemsService', () => {
         service.getItems().subscribe((items: Item[]) => {
           // Assert - Check the result
           expect(items.length).toBeGreaterThanOrEqual(1);
-          expect(items[0].name).not.toEqual(undefined);
-          expect(items[0].price).not.toEqual(undefined);
-          expect(items[0].quantity).not.toEqual(undefined);
+          expect(items[0].Name).not.toEqual(undefined);
+          expect(items[0].Price).not.toEqual(undefined);
+          expect(items[0].Quantity).not.toEqual(undefined);
         });
       });
     })));
 
   it('AddItem() should add a new item if token is valid', async (inject([ItemsService], (service: ItemsService) => {
     const newItem = new Item();
-    newItem.name = 'Cool Item';
-    newItem.price = 3.99;
-    newItem.quantity = 4;
+    newItem.Name = 'Cool Item';
+    newItem.Price = 3.99;
+    newItem.Quantity = 4;
     // service.addItem(newItem);
 
 

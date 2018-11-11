@@ -17,12 +17,6 @@ import {
   LoginComponent
 } from '../login/login.component';
 import {
-  InventoryTypesComponent
-} from '../inventory-types/inventory-types.component';
-import {
-  TestingComponent
-} from 'src/app/testing/testing.component';
-import {
   AccountComponent
 } from '../account/account.component';
 import {
@@ -37,7 +31,12 @@ import {
 import {
   APP_BASE_HREF
 } from '@angular/common';
-import { UsersComponent } from '../users/users.component';
+import {
+  UsersComponent
+} from '../users/users.component';
+import {
+  LocationsComponent
+} from '../locations/locations.component';
 
 describe('InventoryComponent', () => {
   let component: InventoryComponent;
@@ -47,10 +46,9 @@ describe('InventoryComponent', () => {
     TestBed.configureTestingModule({
         declarations: [InventoryComponent,
           LoginComponent,
-          InventoryTypesComponent,
           AccountComponent,
-          TestingComponent,
           UsersComponent,
+          LocationsComponent,
           NotFoundComponent
         ],
         imports: [

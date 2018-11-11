@@ -4,8 +4,8 @@ import {
     TestBed
   } from '@angular/core/testing';
   import {
-    UsersTableComponent
-  } from './users-table.component';
+    AptivUsersTableComponent
+  } from './aptiv-users-table.component';
   import {
     FormsModule
   } from '@angular/forms';
@@ -24,11 +24,11 @@ import {
   import {
     EditItemModalComponent
   } from '../edit-item-modal/edit-item-modal.component';
-  
-  describe('AptivTableComponent', () => {
-    let component: UsersTableComponent;
-    let fixture: ComponentFixture < UsersTableComponent > ;
-  
+
+  describe('AptivUsersTableComponent', () => {
+    let component: AptivUsersTableComponent;
+    let fixture: ComponentFixture < AptivUsersTableComponent > ;
+
     beforeEach(async (() => {
       TestBed.configureTestingModule({
           imports: [
@@ -36,7 +36,7 @@ import {
             RouterTestingModule,
             HttpClientModule
           ],
-          declarations: [UsersTableComponent,
+          declarations: [AptivUsersTableComponent,
             AddItemModalComponent,
             DeleteModalComponent,
             EditItemModalComponent
@@ -44,17 +44,16 @@ import {
         })
         .compileComponents();
     }));
-  
+
     beforeEach(() => {
-      fixture = TestBed.createComponent(UsersTableComponent);
+      fixture = TestBed.createComponent(AptivUsersTableComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     });
-  
+
     it('should create', () => {
       expect(component).toBeTruthy();
     });
-  
+
     // TODO: Write a testcase to check and make sure all data is being passed in properly to the aptiv-table component
   });
-  
