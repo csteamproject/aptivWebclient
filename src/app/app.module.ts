@@ -41,6 +41,9 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
+import {
+  LocationsComponent
+} from './pages/locations/locations.component';
 
 // Providers
 
@@ -50,6 +53,7 @@ import {
     NotFoundComponent,
     LoginComponent,
     InventoryComponent,
+    LocationsComponent,
     AccountComponent,
     UsersComponent
   ],
