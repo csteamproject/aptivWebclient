@@ -20,16 +20,9 @@ export class InventoryComponent implements OnInit {
   constructor(private itemsService: ItemsService) {}
 
   ngOnInit() {
-    this.itemsService.getItems().subscribe(data => {
+    this.itemsService.getItems().subscribe((data: Item[]) => {
       console.log('data: ', data);
-      const items: Item[] = Item.DeseralizeMany(data.map((obj: any) => ({
-        ID: obj.id,
-        Name: obj.name,
-        Price: obj.price,
-        Quantity: obj.quantity,
-        // Computer: obj.Computer
-      })));
-      this.Items = items;
+      this.Items = data;
     });
   }
 }
