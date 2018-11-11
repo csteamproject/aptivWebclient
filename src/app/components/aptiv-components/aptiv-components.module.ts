@@ -38,6 +38,9 @@ import {
 import {
   AptivLocationsTableComponent
 } from './aptiv-locations-table/aptiv-locations-table.component';
+import {
+  AptivUsersTableComponent
+} from './aptiv-users-table/aptiv-users-table.component';
 
 @NgModule({
   imports: [
@@ -51,6 +54,7 @@ import {
     AptivTableComponent,
     AptivInventoryTableComponent,
     AptivLocationsTableComponent,
+    AptivUsersTableComponent,
     HeaderBarComponent,
     NavBarComponent,
     AddItemModalComponent,
@@ -60,6 +64,7 @@ import {
   declarations: [
     AptivTableComponent,
     AptivInventoryTableComponent,
+    AptivUsersTableComponent,
     HeaderBarComponent,
     NavBarComponent,
     AddItemModalComponent,

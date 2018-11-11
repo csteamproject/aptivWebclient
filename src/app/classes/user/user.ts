@@ -16,6 +16,16 @@ export class User implements IUser {
         }
     }
 
+    public static DeseralizeMany(objects: Object[]): User[] {
+        const users: User[] = [];
+        objects.forEach(obj => {
+          const user = Object.assign(new User(), obj);
+          users.push(user);
+        });
+        console.log('Many user test: ', users);
+        return users;
+    }
+
     public Serialize(): string {
         return JSON.stringify(this);
     }
