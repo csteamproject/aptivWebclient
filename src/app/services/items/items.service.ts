@@ -53,40 +53,33 @@ export class ItemsService {
           'jwt-token': currentUser.token
         })
       };
-      const newItem = {
-        name: item.Name,
-        price: item.Price,
-        quantity: item.Quantity,
-        computer_attributes: {
-          utag: item.Computer.UTag,
-          cpu: item.Computer.CPU,
-          ram: item.Computer.RAM,
-          hdd: item.Computer.HDD
-        }
-      };
+      let newItem = {};
+      if (item.Computer === null || item.Computer === undefined) {
+        newItem = {
+          name: item.Name,
+          price: item.Price,
+          quantity: item.Quantity,
+        };
+      } else {
+        newItem = {
+          name: item.Name,
+          price: item.Price,
+          quantity: item.Quantity,
+          computer_attributes: {
+            utag: item.Computer.UTag,
+            cpu: item.Computer.CPU,
+            ram: item.Computer.RAM,
+            hdd: item.Computer.HDD
+          }
+        };
+      }
+
       console.log('newItem: ', newItem);
       this.http.post(environment.baseURL + 'items', newItem, httpOptions)
         .subscribe((addedItem: any) => {
-          // if (newItem.computer) {
-          //   console.log('addedItem: ', addedItem);
-          //   const newComputer = {
-          //     utag: item.Computer.UTag,
-          //     cpu: item.Computer.CPU,
-          //     ram: item.Computer.RAM,
-          //     hdd: item.Computer.HDD
-          //   };
-          //   console.log('NewComputer: ', newComputer);
-          //   this.http.post(environment.baseURL + 'computers', newComputer, httpOptions)
-          //   .subscribe(() => {
-          //     console.log('Success-With Computer: ', addedItem);
-          //     observer.next(addedItem);
-          //     observer.complete();
-          //   });
-          // } else {
             console.log('Success-Without Computer: ', addedItem);
             observer.next(addedItem);
             observer.complete();
-          // }
         }, error => {
           console.log('Error');
           observer.next(error);
