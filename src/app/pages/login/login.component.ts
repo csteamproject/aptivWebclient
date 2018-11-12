@@ -28,7 +28,7 @@ import { ReturnStatement } from '@angular/compiler';
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
-  LoginError: Number= 1;  
+  LoginError: Number = 1;
   constructor(private router: Router,
     public auth: AuthService) {}
 
@@ -41,6 +41,6 @@ export class LoginComponent implements OnInit {
       // }
         this.router.navigate(['inventory']);
     });
-    this.LoginError=0;
+    this.LoginError = 0;
   }
 }

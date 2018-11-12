@@ -10,6 +10,7 @@
               Incorrect password/username.
             </div>
           </div>
+          <p [routerLink]="['/forgot-password']" style="float: right; color: #3333ff; font-size: 12px;">Forgot Password?</p>
       <button style="margin-top: 20px;" class="btn btn-lg btn-primary btn-block" (click)="TryToLogin(auth.credentials)" type="submit">Login</button>
    </div>
   </form>

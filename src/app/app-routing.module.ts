@@ -21,11 +21,15 @@ import {
   UsersComponent
 } from './pages/users/users.component';
 import {
+  ForgotPasswordComponent
+} from './pages/forgot-password/forgot-password/forgot-password.component';
+import {
   LocationsComponent
 } from './pages/locations/locations.component';
 import {
   AccessGuard
 } from './access-guard/access.guard';
+
 
 
 const routes: Routes = [{
@@ -37,6 +41,13 @@ const routes: Routes = [{
   component: InventoryComponent,
   data: {
     requiresLogin: true
+  },
+  canActivate: [AccessGuard]
+}, {
+  path: 'forgot-password',
+  component: ForgotPasswordComponent,
+  data: {
+    requiresLogin: false
   },
   canActivate: [AccessGuard]
 }, {

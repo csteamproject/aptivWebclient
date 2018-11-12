@@ -44,6 +44,7 @@ import {
 import {
   LocationsComponent
 } from './pages/locations/locations.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password/forgot-password.component';
 
 // Providers
 
@@ -55,7 +56,8 @@ import {
     InventoryComponent,
     LocationsComponent,
     AccountComponent,
-    UsersComponent
+    UsersComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
