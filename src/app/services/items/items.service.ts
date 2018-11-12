@@ -57,7 +57,12 @@ export class ItemsService {
         name: item.Name,
         price: item.Price,
         quantity: item.Quantity,
-        computer: item.Computer
+        computer_attributes: {
+          utag: item.Computer.UTag,
+          cpu: item.Computer.CPU,
+          ram: item.Computer.RAM,
+          hdd: item.Computer.HDD
+        }
       };
       console.log('newItem: ', newItem);
       this.http.post(environment.baseURL + 'items', newItem, httpOptions)
