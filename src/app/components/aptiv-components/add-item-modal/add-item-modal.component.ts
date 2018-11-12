@@ -3,6 +3,8 @@ import {Component, Input} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { ItemsService } from 'src/app/services/items/items.service';
 import { Item } from 'src/app/classes/item/item';
+import { Computer } from 'src/app/classes/computer/computer';
+import { AptivInventoryTableComponent } from '../aptiv-inventory-table/aptiv-inventory-table.component';
 
 @Component({
   selector: 'app-add-item-modal',
@@ -22,13 +24,15 @@ export class AddItemModalComponent {
   }
   ComputerTF = false;
   AddData: Item = new Item();
+  Computer: Computer = new Computer();
 
   closeResult: string;
 
-  constructor(private modalService: NgbModal, private itemService: ItemsService) {}
+  constructor(private modalService: NgbModal,
+     private itemService: ItemsService,
+     private AptivInventoryTblComp: AptivInventoryTableComponent) {}
 
   ComputerTFChanged() {
-    console.log('this.ComputerTF ', this.ComputerTF);
     if (this.ComputerTF) {
       this.ComputerTF = false;
     } else {
@@ -37,7 +41,6 @@ export class AddItemModalComponent {
   }
 
   open(content) {
-    console.log('OPEN: ', this.DataValue);
     this.modalService.open(content, {
       ariaLabelledBy: 'modal-basic-title'
     }).result.then((result) => {
@@ -57,21 +60,14 @@ export class AddItemModalComponent {
     }
   }
 
-  SaveResults(AddData: any) {
-    console.log('KeysData: ', AddData);
+  SaveResults() {
+    if (this.ComputerTF) {
+      this.AddData.Computer = this.Computer;
+    }
 
-    this.itemService.addItem(AddData).subscribe((newItem: Item) => {
-      console.log('addItem service AddedData: ', newItem);
-      // const refreshedItems = this.Data;
-      // refreshedItems.push(newItem);
-      // const items: Item[] = Item.DeseralizeMany(refreshedItems.map((obj: Item) => ({
-      //   ID: obj.id,
-      //   Name: obj.name,
-      //   Price: obj.price,
-      //   Quantity: obj.quantity
-      // })));
-      // this.Data = items;
-      // console.log('Data: ', this.Data);
+    this.itemService.addItem(this.AddData).subscribe((newItem: Item) => {
+      this.DataValue.push(newItem);
+      this.AptivInventoryTblComp.refreshPage();
     });
   }
 }

@@ -22,7 +22,6 @@ export class DevelopersService {
     return Observable.create(observer => {
       this.http.get('http://0.0.0.0:3000/developers')
         .subscribe((res: Developer[]) => {
-          console.log('MainComponent --', res);
           // let Result: Data[] = temp;
           const Developers: Developer[] = res;
           console.log('data: ', Developers);
@@ -30,7 +29,6 @@ export class DevelopersService {
           observer.next(Developers);
           observer.complete();
         }, (error) => {
-          console.log('There was an error', error);
           const Developer1: Developer = ({
             id: 1,
             name: 'Jonathan Steele',

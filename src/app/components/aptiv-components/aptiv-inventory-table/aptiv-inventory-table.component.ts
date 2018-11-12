@@ -42,10 +42,10 @@ export class AptivInventoryTableComponent implements OnInit {
   set Data(data) {
     this.DataValue = data;
     // this.Data.forEach((row: Object) => {
-    //   console.log('aptiv-table: row -- ', row);
     //   this.CollectKeysOfObj(row);
     // });
     this.BeforeFilterationData = this.DataValue;
+    this.UntouchedData = this.DataValue;
     this.setPage(1);
     // Setup FormData
     // this.Keys.forEach((key) => {
@@ -55,11 +55,11 @@ export class AptivInventoryTableComponent implements OnInit {
     //   };
     //   this.FormsData.push(newKey);
     // });
-    console.log('SetupFormData: ', this.FormsData);
     // this.DataValueChange.emit(this.DataValue);
   }
 
   BeforeFilterationData: Object[] = [];
+  UntouchedData: Object[] = [];
 
   pager: any = {};
   pagedData: Object[] = [];
@@ -92,10 +92,8 @@ export class AptivInventoryTableComponent implements OnInit {
   //   }
   // }
 
-  filter(filter: string | null) {
-    console.log('filterCol: ', this.filters);
+  filter() {
     this.DataValue = this.BeforeFilterationData;
-    console.log('DataValue: ', this.DataValue);
     this.DataValue = this.DataValue.filter(data => {
       let FlagTF = false;
       if ((this.filters.all === null || this.filters.all === '') &&
@@ -103,72 +101,57 @@ export class AptivInventoryTableComponent implements OnInit {
       (this.filters.name === null || this.filters.name === '') &&
       (this.filters.price === null || this.filters.price === '') &&
       (this.filters.quantity === null || this.filters.quantity === '')) {
-        console.log('Everything is NULL');
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {
           // if (data['id'] === Number(this.filters.all)) {
           if (data['id'].toString().indexOf(this.filters.all) >= 0) {
-            console.log('Found an ID');
             FlagTF = true;
           }
           if (data['name'].indexOf(this.filters.all) >= 0) {
-            console.log('Found a name');
             FlagTF = true;
           }
           if (data['price'].indexOf(this.filters.all) >= 0) {
-            console.log('Found a price');
             FlagTF = true;
           }
           if (data['quantity'] === Number(this.filters.all)) {
-            console.log('Found a quantity');
             FlagTF = true;
           }
           if (!FlagTF) {
-            console.log('Id Does not Match');
             return false;
           }
         }
         if (this.filters.id !== null && this.filters.id !== '') {
           // if (data['id'] === Number(this.filters.id)) {
           if (data['id'].toString().indexOf(this.filters.id) >= 0) {
-            console.log('Found an ID');
             FlagTF = true;
           } else {
-            console.log('Id Does not Match');
             return false;
           }
         }
         if (this.filters.name !== null && this.filters.name !== '') {
           if (data['name'].indexOf(this.filters.name) >= 0) {
-            console.log('Found a name');
             FlagTF = true;
           } else {
-            console.log('Name Does not Match');
             return false;
           }
         }
         if (this.filters.price !== null && this.filters.price !== '') {
           if (data['price'].indexOf(this.filters.price) >= 0) {
-            console.log('Found a price');
             FlagTF = true;
           } else {
-            console.log('Price Does not Match');
             return false;
           }
         }
         if (this.filters.quantity !== null && this.filters.quantity !== '') {
           // if (data['quantity'] === Number(this.filters.quantity)) {
           if (data['quantity'].toString().indexOf(this.filters.quantity) >= 0) {
-            console.log('Found a quantity');
             FlagTF = true;
           } else {
-            console.log('Quantity Does not Match');
             return false;
           }
         }
       }
-      console.log('FlagTF: ', FlagTF);
       return FlagTF;
     });
     this.setPage(1);
@@ -184,8 +167,13 @@ export class AptivInventoryTableComponent implements OnInit {
   setPage(page: number) {
     this.pager = this.pagerService.getPager(this.DataValue.length, page);
     this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
-    console.log('this.pagedData= ', this.pagedData);
   }
+
+  refreshPage() {
+    this.pager = this.pagerService.getPager(this.DataValue.length, this.pager.currentPage);
+    this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
   changeItemsPerPage() {
     this.pagerService.itemsPerPage = this.itemsPerPage;
   }

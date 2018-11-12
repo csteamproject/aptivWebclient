@@ -25,7 +25,6 @@ export class Item implements IItem {
       const item = Object.assign(new Item(), obj);
       items.push(item);
     });
-    console.log('Many Items test: ', items);
     return items;
   }
 

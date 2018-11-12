@@ -1,9 +1,25 @@
-import {Component, Input} from '@angular/core';
+import {
+  Component,
+  Input
+} from '@angular/core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment.dev';
-import { User } from 'src/app/classes/user/user';
+import {
+  NgbModal,
+  ModalDismissReasons
+} from '@ng-bootstrap/ng-bootstrap';
+import {
+  HttpClient,
+  HttpHeaders
+} from '@angular/common/http';
+import {
+  environment
+} from 'src/environments/environment.dev';
+import {
+  User
+} from 'src/app/classes/user/user';
+import {
+  AptivInventoryTableComponent
+} from '../aptiv-inventory-table/aptiv-inventory-table.component';
 
 @Component({
   selector: 'app-delete-modal',
@@ -24,7 +40,7 @@ export class DeleteModalComponent {
 
   closeResult: string;
 
-  constructor(private modalService: NgbModal, private http: HttpClient) {}
+  constructor(private modalService: NgbModal, private http: HttpClient, private AptivInventoryTblComp: AptivInventoryTableComponent) {}
 
   open(content) {
     // console.log('OPEN: ', this.KeyValue);
@@ -60,11 +76,20 @@ export class DeleteModalComponent {
     };
 
     this.http.delete(environment.baseURL + 'items/' + Key, httpOptions)
-    .subscribe(() => {
-      console.log('Success');
-    }, error => {
-      console.log('Error');
-    });
+      .subscribe(() => {
+        console.log('Success ', this.AptivInventoryTblComp.DataValue);
+        this.AptivInventoryTblComp.UntouchedData = this.AptivInventoryTblComp.UntouchedData.filter(function (obj: any) {
+          return obj.id !== Key;
+        });
+        this.AptivInventoryTblComp.BeforeFilterationData = this.AptivInventoryTblComp.UntouchedData;
+        this.AptivInventoryTblComp.DataValue = this.AptivInventoryTblComp.UntouchedData;
+        this.AptivInventoryTblComp.filter();
+        console.log('Removed Item: ', this.AptivInventoryTblComp.DataValue,
+         this.AptivInventoryTblComp.BeforeFilterationData, this.AptivInventoryTblComp.UntouchedData);
+        this.AptivInventoryTblComp.refreshPage();
+      }, error => {
+        console.log('Error');
+      });
 
   }
 }

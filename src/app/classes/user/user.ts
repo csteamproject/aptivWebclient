@@ -22,7 +22,6 @@ export class User implements IUser {
           const user = Object.assign(new User(), obj);
           users.push(user);
         });
-        console.log('Many user test: ', users);
         return users;
     }
 

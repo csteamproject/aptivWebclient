@@ -27,7 +27,6 @@ export class AptivLocationsTableComponent implements OnInit {
   set Data(data) {
     this.DataValue = data;
     this.Data.forEach((row: Object) => {
-      console.log('aptiv-table: row -- ', row);
       this.CollectKeysOfObj(row);
     });
     this.BeforeFilterationData = this.DataValue;
@@ -40,7 +39,6 @@ export class AptivLocationsTableComponent implements OnInit {
       };
       this.FormsData.push(newKey);
     });
-    console.log('SetupFormData: ', this.FormsData);
     // this.DataValueChange.emit(this.DataValue);
   }
 

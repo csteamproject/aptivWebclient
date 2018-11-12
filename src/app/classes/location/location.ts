@@ -27,7 +27,6 @@ import {
         const location = Object.assign(new Location(), obj);
         locations.push(location);
       });
-      console.log('Many locations test: ', locations);
       return locations;
     }
     public Serialize(): string {
