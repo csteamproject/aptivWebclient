@@ -49,7 +49,7 @@ export class AptivUsersTableComponent implements OnInit {
   pager: any = {};
   pagedData: Object[] = [];
   allFilter: string;
-  private Keys: string[] = [];
+  Keys: string[] = [];
   FormsData: Object[] = [];
 
   constructor(private pagerService: PageinationService) {
