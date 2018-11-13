@@ -5,9 +5,6 @@ import {
   Location
 } from '../../classes/location/location';
 import {
-  Item
-} from '../../classes/item/item';
-import {
   HttpClient,
   HttpHeaders
 } from '@angular/common/http';
@@ -43,6 +40,41 @@ export class LocationsService {
         .subscribe((locations: Location[]) => {
           console.log(locations);
           observer.next(locations);
+          observer.complete();
+        });
+    });
+  }
+
+
+  // This Service Function adds a new Item to the API
+  addLocation(location: any) {
+    console.log('location: ', location);
+    return Observable.create(observer => {
+      const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'jwt-token': currentUser.token
+        })
+      };
+      let newLocation = {};
+        newLocation = {
+          unit: location.Unit,
+          building: location.Building,
+          street: location.Street,
+          city: location.City,
+          region: location.Region,
+         country: location.Country,
+          address_code: location.Address_code
+           };
+      console.log('newLocation: ', newLocation);
+      this.http.post(environment.baseURL + 'locations', newLocation, httpOptions)
+        .subscribe((addedLocation: any) => {
+            console.log('Success: ', addedLocation);
+            observer.next(addedLocation);
+            observer.complete();
+        }, error => {
+          console.log('Error');
+          observer.next(error);
           observer.complete();
         });
     });

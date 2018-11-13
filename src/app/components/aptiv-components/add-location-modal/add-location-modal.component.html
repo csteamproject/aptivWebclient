@@ -1,3 +1,65 @@
-<p>
-  add-location-modal works!
-</p>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="margin: 10px;">
+      <form>
+        <div class="form-group">
+          <label>ID</label>
+          <div class="input-group">
+            <input type="number" class="form-control" id="id" name="id" [(ngModel)]="AddData.ID" disabled />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Unit</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="unit" name="unit" [(ngModel)]="AddData.Unit" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Building</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="building" name="building" [(ngModel)]="AddData.Building" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Street</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="street" name="street" [(ngModel)]="AddData.Street" />
+          </div>
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="city" name="city" [(ngModel)]="AddData.City" />
+            </div>
+          </div>
+          <div class="form-group">
+              <label>Region</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="region" name="region" [(ngModel)]="AddData.Region" />
+              </div>
+            </div>
+            <div class="form-group">
+                <label>Country</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="country" name="country" [(ngModel)]="AddData.Country" />
+                </div>
+              </div>
+              <div class="form-group">
+                  <label>Address Code</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="address_code" name="address_code" [(ngModel)]="AddData.Address_code" />
+                  </div>
+                </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="SaveResults(AddData); modal.close('Save click')">Save</button>
+    </div>
+  </ng-template>
+  
+  <button type="button" class="btn btn-success" (click)="open(content)"><i class="fas fa-plus"></i></button>

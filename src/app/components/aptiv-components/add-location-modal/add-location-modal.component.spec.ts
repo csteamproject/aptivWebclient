@@ -1,16 +1,35 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed
+} from '@angular/core/testing';
 
-import { AddLocationModalComponent } from './add-location-modal.component';
+import {
+  AddLocationModalComponent
+} from './add-location-modal.component';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  RouterTestingModule
+} from '@angular/router/testing';
+import {
+  HttpClientModule
+} from '@angular/common/http';
 
 describe('AddLocationModalComponent', () => {
   let component: AddLocationModalComponent;
-  let fixture: ComponentFixture<AddLocationModalComponent>;
+  let fixture: ComponentFixture < AddLocationModalComponent > ;
 
-  beforeEach(async(() => {
+  beforeEach(async (() => {
     TestBed.configureTestingModule({
-      declarations: [ AddLocationModalComponent ]
-    })
-    .compileComponents();
+        imports: [FormsModule,
+          RouterTestingModule,
+          HttpClientModule
+        ],
+        declarations: [AddLocationModalComponent]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

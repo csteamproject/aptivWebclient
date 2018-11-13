@@ -24,6 +24,9 @@ import {
   AddItemModalComponent
 } from './add-item-modal/add-item-modal.component';
 import {
+  AddLocationModalComponent
+} from './add-location-modal/add-location-modal.component';
+import {
   NgbModule
 } from '@ng-bootstrap/ng-bootstrap';
 import {
@@ -41,8 +44,6 @@ import {
 import {
   AptivUsersTableComponent
 } from './aptiv-users-table/aptiv-users-table.component';
-import { AddLocationModalComponent } from './add-location-modal/add-location-modal.component';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -59,6 +60,7 @@ import { AddLocationModalComponent } from './add-location-modal/add-location-mod
     HeaderBarComponent,
     NavBarComponent,
     AddItemModalComponent,
+    AddLocationModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ],
@@ -72,7 +74,7 @@ import { AddLocationModalComponent } from './add-location-modal/add-location-mod
     EditItemModalComponent,
     DeleteModalComponent,
     AptivLocationsTableComponent,
-    AddLocationModalComponent,
+    AddLocationModalComponent
   ]
 })
 export class AptivComponentsModule {}

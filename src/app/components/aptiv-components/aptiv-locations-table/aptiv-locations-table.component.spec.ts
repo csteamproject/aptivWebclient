@@ -16,9 +16,9 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
-// import {
-//   AddItemModalComponent
-// } from '../add-item-modal/add-item-modal.component';
+import {
+  AddLocationModalComponent
+} from '../add-location-modal/add-location-modal.component';
 // import {
 //   DeleteModalComponent
 // } from '../delete-modal/delete-modal.component';
@@ -38,7 +38,7 @@ describe('AptivTableComponent', () => {
           HttpClientModule
         ],
         declarations: [AptivLocationsTableComponent,
-          // AddItemModalComponent,
+          AddLocationModalComponent
           // DeleteModalComponent,
           // EditItemModalComponent
         ]
