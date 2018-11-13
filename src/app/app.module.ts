@@ -44,8 +44,6 @@ import {
 import {
   LocationsComponent
 } from './pages/locations/locations.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password/forgot-password.component';
-
 // Providers
 
 @NgModule({
@@ -56,8 +54,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     InventoryComponent,
     LocationsComponent,
     AccountComponent,
-    UsersComponent,
-    ForgotPasswordComponent
+    UsersComponent
   ],
   imports: [
     BrowserModule,
