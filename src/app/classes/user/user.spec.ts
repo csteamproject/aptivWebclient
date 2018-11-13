@@ -24,6 +24,6 @@ describe('AptivTableComponent', () => {
     expect(u.first).toEqual('Jonathan');
   }));
 
-  // TODO: Write a testcase to check and make sure all data is being passed in properly to the aptiv-table component
+  // TODO: Write a testcase to check and make sure all data is being passed in properly to the users component
 
 });

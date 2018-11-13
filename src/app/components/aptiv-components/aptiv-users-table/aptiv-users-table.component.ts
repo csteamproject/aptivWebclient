@@ -11,6 +11,13 @@ export class RowData {
   public DataColumn: any[];
 }
 
+export class FilterObj {
+  first: string;
+  last: string;
+  username: string;
+  all: string;
+}
+
 @Component({
   selector: 'app-aptiv-users-table',
   templateUrl: './aptiv-users-table.component.html',
@@ -18,6 +25,12 @@ export class RowData {
 })
 export class AptivUsersTableComponent implements OnInit {
   itemsPerPage: number;
+  filters: FilterObj = {
+    all: null,
+    first: null,
+    last: null,
+    username: null
+  };
   DataValue: Object[] = [];
   @Input()
   // @Output() DataEvent = new EventEmitter();
@@ -26,25 +39,25 @@ export class AptivUsersTableComponent implements OnInit {
   }
   set Data(data) {
     this.DataValue = data;
-    this.Data.forEach((row: Object) => {
-      console.log('aptiv-table: row -- ', row);
-      this.CollectKeysOfObj(row);
-    });
+    // this.Data.forEach((row: Object) => {
+    //   this.CollectKeysOfObj(row);
+    // });
     this.BeforeFilterationData = this.DataValue;
+    this.UntouchedData = this.DataValue;
     this.setPage(1);
     // Setup FormData
-    this.Keys.forEach((key) => {
-      const newKey = {
-        key: key,
-        value: null,
-      };
-      this.FormsData.push(newKey);
-    });
-    console.log('SetupFormData: ', this.FormsData);
+    // this.Keys.forEach((key) => {
+    //   const newKey = {
+    //     key: key,
+    //     value: null,
+    //   };
+    //   this.FormsData.push(newKey);
+    // });
     // this.DataValueChange.emit(this.DataValue);
   }
 
   BeforeFilterationData: Object[] = [];
+  UntouchedData: Object[] = [];
 
   pager: any = {};
   pagedData: Object[] = [];
@@ -58,59 +71,73 @@ export class AptivUsersTableComponent implements OnInit {
 
   ngOnInit() {}
 
-  get self() { // Used for getting a unique ngModel
-    return this;
-  }
+  // get self() { // Used for getting a unique ngModel
+  //   return this;
+  // }
 
-  public CollectKeysOfObj(obj) {
-    for (const key of Object.keys(obj)) {
+  // public CollectKeysOfObj(obj) {
+  //   for (const key of Object.keys(obj)) {
 
-      // Grab Key Name and store it into the Keys Array.
-      if (!this.Keys.includes(key)) {
-        this.Keys.push(key);
-      }
+  //     // Grab Key Name and store it into the Keys Array.
+  //     if (!this.Keys.includes(key)) {
+  //       this.Keys.push(key);
+  //     }
 
-      // Call Function again if there are other Keys within an inner array of a data row.
-      if (obj[key] instanceof Object) {
-        this.CollectKeysOfObj(obj[key]);
-      }
-    }
-  }
+  //     // Call Function again if there are other Keys within an inner array of a data row.
+  //     if (obj[key] instanceof Object) {
+  //       this.CollectKeysOfObj(obj[key]);
+  //     }
+  //   }
+  // }
 
-  filterCol(filter: any, key: any) {
+  filter() {
     this.DataValue = this.BeforeFilterationData;
     this.DataValue = this.DataValue.filter(data => {
-      if (data[key].length === undefined) {
-        if (filter === '') {
-          return true;
-        }
-        const filterNumb: number = Number(filter);
-        if (data[key] === filterNumb) {
-          return true;
-        }
-      } else if (data[key].indexOf(filter) >= 0) {
-        return true;
+      let FlagTF = false;
+      if ((this.filters.all === null || this.filters.all === '') &&
+      (this.filters.first === null || this.filters.first=== '') &&
+      (this.filters.last === null || this.filters.last === '') &&
+      (this.filters.username === null || this.filters.username === '')){
+        FlagTF = true;
       } else {
-        return false;
-      }
-    });
-    this.setPage(1);
-  }
-
-  filterAll(filter: any) {
-    this.DataValue = this.BeforeFilterationData;
-    this.DataValue = this.DataValue.filter(data => {
-      let checkFlag = false;
-      this.Keys.forEach((key) => {
-        if (data[key].length === undefined) {
-          if (data[key] === filter) {
-            checkFlag = true;
+        if (this.filters.all !== null && this.filters.all !== '') {
+          if (data['first'].toString().indexOf(this.filters.all) >= 0) {
+            FlagTF = true;
           }
-        } else if (data[key].indexOf(filter) >= 0) {
-          checkFlag = true;
+          if (data['last'].indexOf(this.filters.all) >= 0) {
+            FlagTF = true;
+          }
+          if (data['username'].indexOf(this.filters.all) >= 0) {
+            FlagTF = true;
+          }
+          if (!FlagTF) {
+            return false;
+          }
         }
-      });
-      return checkFlag;
+        if (this.filters.first !== null && this.filters.first !== '') {
+          // if (data['id'] === Number(this.filters.id)) {
+          if (data['first'].toString().indexOf(this.filters.first) >= 0) {
+            FlagTF = true;
+          } else {
+            return false;
+          }
+        }
+        if (this.filters.last !== null && this.filters.last !== '') {
+          if (data['last'].indexOf(this.filters.last) >= 0) {
+            FlagTF = true;
+          } else {
+            return false;
+          }
+        }
+        if (this.filters.username !== null && this.filters.username !== '') {
+          if (data['username'].indexOf(this.filters.username) >= 0) {
+            FlagTF = true;
+          } else {
+            return false;
+          }
+        }
+      }
+      return FlagTF;
     });
     this.setPage(1);
   }
@@ -125,8 +152,13 @@ export class AptivUsersTableComponent implements OnInit {
   setPage(page: number) {
     this.pager = this.pagerService.getPager(this.DataValue.length, page);
     this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
-    console.log('this.pagedData= ', this.pagedData);
   }
+
+  refreshPage() {
+    this.pager = this.pagerService.getPager(this.DataValue.length, this.pager.currentPage);
+    this.pagedData = this.DataValue.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+
   changeItemsPerPage() {
     this.pagerService.itemsPerPage = this.itemsPerPage;
   }

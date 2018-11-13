@@ -16,9 +16,6 @@ import {
   LoginComponent
 } from './pages/login/login.component';
 import {
-  UsersComponent
-} from './pages/users/users.component';
-import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
 import {
@@ -44,6 +41,9 @@ import {
 import {
   LocationsComponent
 } from './pages/locations/locations.component';
+import {
+  UsersComponent
+} from './pages/users/users.component';
 // Providers
 
 @NgModule({
