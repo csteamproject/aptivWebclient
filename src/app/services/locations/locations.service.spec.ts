@@ -58,6 +58,7 @@ describe('LocationsService', () => {
     newLocation.unit = '3';
     newLocation.building = '4';
     newLocation.city = 'test city';
+    newLocation.street = 'test sreet';
     newLocation.region = 'region 34';
     newLocation.country = '8';
     newLocation.address_code = '3';

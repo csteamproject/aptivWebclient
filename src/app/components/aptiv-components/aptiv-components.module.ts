@@ -41,6 +41,7 @@ import {
 import {
   AptivUsersTableComponent
 } from './aptiv-users-table/aptiv-users-table.component';
+import { AddLocationModalComponent } from './add-location-modal/add-location-modal.component';
 
 @NgModule({
   imports: [
@@ -71,6 +72,7 @@ import {
     EditItemModalComponent,
     DeleteModalComponent,
     AptivLocationsTableComponent,
+    AddLocationModalComponent,
   ]
 })
 export class AptivComponentsModule {}

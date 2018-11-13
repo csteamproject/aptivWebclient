@@ -36,6 +36,132 @@
             </div>
           </th>
           <th class="aptivTblHeaderColumns">
+              <div class="row aptivTblFilterSectionTop">
+                <div class="col-sm">
+                  Unit
+                </div>
+              </div>
+              <div class="row aptivTblFilterSectionBottomRow">
+                <div class="col-sm aptivTblFilterSectionBottomCol">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control aptivTblFilterInput" name="filters.unit" (keyup)="filter()"
+                      [(ngModel)]="filters.unit" />
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th class="aptivTblHeaderColumns">
+                <div class="row aptivTblFilterSectionTop">
+                  <div class="col-sm">
+                    Building
+                  </div>
+                </div>
+                <div class="row aptivTblFilterSectionBottomRow">
+                  <div class="col-sm aptivTblFilterSectionBottomCol">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                      </div>
+                      <input type="text" class="form-control aptivTblFilterInput" name="filters.building" (keyup)="filter()"
+                        [(ngModel)]="filters.building" />
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th class="aptivTblHeaderColumns">
+                  <div class="row aptivTblFilterSectionTop">
+                    <div class="col-sm">
+                      Street
+                    </div>
+                  </div>
+                  <div class="row aptivTblFilterSectionBottomRow">
+                    <div class="col-sm aptivTblFilterSectionBottomCol">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input type="text" class="form-control aptivTblFilterInput" name="filters.street" (keyup)="filter()"
+                          [(ngModel)]="filters.street" />
+                      </div>
+                    </div>
+                  </div>
+                </th>
+                <th class="aptivTblHeaderColumns">
+                    <div class="row aptivTblFilterSectionTop">
+                      <div class="col-sm">
+                        City
+                      </div>
+                    </div>
+                    <div class="row aptivTblFilterSectionBottomRow">
+                      <div class="col-sm aptivTblFilterSectionBottomCol">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                          </div>
+                          <input type="text" class="form-control aptivTblFilterInput" name="filters.city" (keyup)="filter()"
+                            [(ngModel)]="filters.city" />
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                  <th class="aptivTblHeaderColumns">
+                      <div class="row aptivTblFilterSectionTop">
+                        <div class="col-sm">
+                          Region
+                        </div>
+                      </div>
+                      <div class="row aptivTblFilterSectionBottomRow">
+                        <div class="col-sm aptivTblFilterSectionBottomCol">
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                            </div>
+                            <input type="text" class="form-control aptivTblFilterInput" name="filters.region" (keyup)="filter()"
+                              [(ngModel)]="filters.region" />
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <th class="aptivTblHeaderColumns">
+                        <div class="row aptivTblFilterSectionTop">
+                          <div class="col-sm">
+                            Country
+                          </div>
+                        </div>
+                        <div class="row aptivTblFilterSectionBottomRow">
+                          <div class="col-sm aptivTblFilterSectionBottomCol">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                              </div>
+                              <input type="text" class="form-control aptivTblFilterInput" name="filters.country" (keyup)="filter()"
+                                [(ngModel)]="filters.country" />
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th class="aptivTblHeaderColumns">
+                          <div class="row aptivTblFilterSectionTop">
+                            <div class="col-sm">
+                              Address Code
+                            </div>
+                          </div>
+                          <div class="row aptivTblFilterSectionBottomRow">
+                            <div class="col-sm aptivTblFilterSectionBottomCol">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="text" class="form-control aptivTblFilterInput" name="filters.address_code" (keyup)="filter()"
+                                  [(ngModel)]="filters.address_code" />
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+          <th class="aptivTblHeaderColumns">
             <div class="row aptivTblFilterSectionTop">
               <div class="col-sm">
               </div>
@@ -51,22 +177,37 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let Row of pagedData; let i = index">
+            <tr *ngFor="let Row of pagedData; let i = index"> 
           <td class="aptivTblBodyColumns">
             {{Row.id}}
           </td>
-       
-            <span>
-              <!-- <app-edit-item-modal [(Keys)]="FormsData" [(EditData)]="pagedData[i]"></app-edit-item-modal> |
-              <app-delete-modal [(Key)]="Row.id"></app-delete-modal> -->
-              <!-- <span *ngIf="Row.computer"> | View</span> -->
-            </span>
-        
+          <td class="aptivTblBodyColumns">
+              {{Row.unit}}
+            </td>
+            <td class="aptivTblBodyColumns">
+                {{Row.building}}
+              </td>
+            <td class="aptivTblBodyColumns">
+                {{Row.street}}
+              </td>
+              <td class="aptivTblBodyColumns">
+                  {{Row.city}}
+                </td>
+                <td class="aptivTblBodyColumns">
+                    {{Row.region}}
+                  </td>
+                  <td class="aptivTblBodyColumns">
+                      {{Row.country}}
+                    </td>
+                    <td class="aptivTblBodyColumns">
+                        {{Row.address_code}}
+                      </td>    
         </tr>
+
       </tbody>
     </table>
   </div>
-  <!-- <div style="margin-top: 15px;">
+  <div style="margin-top: 15px;">
     <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{disabled:pager.currentPage === 1}">
         <button type="button" class="btn btn-light" (click)="setPage(1)">First</button>
@@ -89,4 +230,4 @@
         <button type="button" class="btn btn-light" (click)="setPage(pager.totalPages)">Last</button>
       </li>
     </ul>
-  </div> -->
+  </div>

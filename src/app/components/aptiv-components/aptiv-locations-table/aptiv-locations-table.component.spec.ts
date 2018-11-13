@@ -16,15 +16,15 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
-import {
-  AddItemModalComponent
-} from '../add-item-modal/add-item-modal.component';
-import {
-  DeleteModalComponent
-} from '../delete-modal/delete-modal.component';
-import {
-  EditItemModalComponent
-} from '../edit-item-modal/edit-item-modal.component';
+// import {
+//   AddItemModalComponent
+// } from '../add-item-modal/add-item-modal.component';
+// import {
+//   DeleteModalComponent
+// } from '../delete-modal/delete-modal.component';
+// import {
+//   EditItemModalComponent
+// } from '../edit-item-modal/edit-item-modal.component';
 
 describe('AptivTableComponent', () => {
   let component: AptivLocationsTableComponent;
@@ -38,9 +38,9 @@ describe('AptivTableComponent', () => {
           HttpClientModule
         ],
         declarations: [AptivLocationsTableComponent,
-          AddItemModalComponent,
-          DeleteModalComponent,
-          EditItemModalComponent
+          // AddItemModalComponent,
+          // DeleteModalComponent,
+          // EditItemModalComponent
         ]
       })
       .compileComponents();
