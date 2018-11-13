@@ -41,6 +41,7 @@ export class LocationsService {
 
       this.http.get(environment.baseURL + 'locations', httpOptions)
         .subscribe((locations: Location[]) => {
+          console.log(locations);
           observer.next(locations);
           observer.complete();
         });

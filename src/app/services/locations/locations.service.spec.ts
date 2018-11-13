@@ -55,14 +55,12 @@ describe('LocationsService', () => {
   it('AddLocation() should add a new item if token is valid', async (inject([LocationsService], (service: LocationsService) => {
     const newLocation = new Location();
    // newLocation. = 'Cool Item';
-    newLocation.unit = 3;
-    newLocation.building = 4;
-    newLocation.unit = null;
-    newLocation.building = null;
+    newLocation.unit = '3';
+    newLocation.building = '4';
     newLocation.city = 'test city';
     newLocation.region = 'region 34';
-    newLocation.country = 8;
-    newLocation.address_code = 3;
+    newLocation.country = '8';
+    newLocation.address_code = '3';
     // service.addItem(newItem);
 
 
