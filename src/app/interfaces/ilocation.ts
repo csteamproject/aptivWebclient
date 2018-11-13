@@ -1,9 +1,9 @@
 export interface Ilocation {
-    unit: number;
-    building: number;
+    unit: string;
+    building: string;
     street: string;
     city: string;
     region: string;
-    country: number;
-    address_code: number;
+    country: string;
+    address_code: string;
 }

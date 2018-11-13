@@ -3,14 +3,14 @@ import {
   } from '../../interfaces/ilocation';
 
   export class Location implements Ilocation {
-    public id: number;
-    public unit: number;
-    public building: number;
+    public id: string;
+    public unit: string;
+    public building: string;
     public city: string;
     public street: string;
     public region: string;
-    public address_code: number;
-    public country: number;
+    public address_code: string;
+    public country: string;
 
     public static Deseralize(obj: Object | string): Location {
       const u = new Location();
