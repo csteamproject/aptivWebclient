@@ -109,28 +109,32 @@ export class LocationsService {
   //   });
   // }
 
-  // This Service Function edits an existing Item from an API
-  // editItem(item: any) {
-  //   console.log('ItemService editItem item: ', item);
-  //   const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'jwt-token': currentUser.token
-  //     })
-  //   };
-  //   const UpdatedItem = {
-  //     name: item.Name,
-  //     price: item.Price,
-  //     quantity: item.Quantity
-  //   };
+  // This Service Function edits an existing Location from an API
+  editLocation(location: any) {
+    console.log('LocationService editLocation location: ', location);
+    const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'jwt-token': currentUser.token
+      })
+    };
+    const UpdatedLocation = {
+      unit: location.Unit,
+      building: location.Building,
+      street: location.Street,
+      city: location.City,
+      region: location.Region,
+      country: location.Country,
+      address_code: location.Address_code
+    };
 
-  //   this.http.patch(environment.baseURL + 'items/' + item.ID, UpdatedItem, httpOptions)
-  //     .subscribe(() => {
-  //       console.log('Success');
-  //     }, error => {
-  //       console.log('Error');
-  //     });
-  // }
+    this.http.patch(environment.baseURL + 'locations/' + location.id, UpdatedLocation, httpOptions)
+      .subscribe(() => {
+        console.log('Success');
+      }, error => {
+        console.log('Error');
+      });
+  }
 
   // This Service Hard Deletes an existing Item from an API
   // deleteItem(id: number) {
