@@ -30,6 +30,7 @@ export class AddLocationModalComponent {
      private AptivLocationTblComp: AptivLocationsTableComponent) {}
 
   open(content) {
+    this.AddData = new Location();
     this.modalService.open(content, {
       ariaLabelledBy: 'modal-basic-title'
     }).result.then((result) => {

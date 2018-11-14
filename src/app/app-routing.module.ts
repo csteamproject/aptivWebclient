@@ -15,9 +15,6 @@ import {
   NotFoundComponent
 } from './not-found';
 import {
-  AccountComponent
-} from './pages/account/account.component';
-import {
   UsersComponent
 } from './pages/users/users.component';
 import {
@@ -43,13 +40,6 @@ const routes: Routes = [{
 }, {
   path: 'locations',
   component: LocationsComponent,
-  data: {
-    requiresLogin: true
-  },
-  canActivate: [AccessGuard]
-}, {
-  path: 'account',
-  component: AccountComponent,
   data: {
     requiresLogin: true
   },
