@@ -14,6 +14,9 @@ import {
   HttpClientModule
 } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AptivLocationsTableComponent } from '../aptiv-locations-table/aptiv-locations-table.component';
+import { AddLocationModalComponent } from '../add-location-modal/add-location-modal.component';
+import { EditLocationModalComponent } from '../edit-location-modal/edit-location-modal.component';
 
 describe('DeleteLocationModalComponent', () => {
   let component: DeleteLocationModalComponent;
@@ -25,7 +28,8 @@ describe('DeleteLocationModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [DeleteLocationModalComponent]
+        declarations: [DeleteLocationModalComponent, AddLocationModalComponent, EditLocationModalComponent],
+        providers: [AptivLocationsTableComponent]
       })
       .compileComponents();
   }));

@@ -16,6 +16,9 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
+import { AptivInventoryTableComponent } from '../aptiv-inventory-table/aptiv-inventory-table.component';
+import { AddItemModalComponent } from '../add-item-modal/add-item-modal.component';
+import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
 
 describe('EditItemModalComponent', () => {
   let component: EditItemModalComponent;
@@ -27,7 +30,8 @@ describe('EditItemModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [EditItemModalComponent]
+        declarations: [EditItemModalComponent, AddItemModalComponent, DeleteModalComponent],
+        providers: [AptivInventoryTableComponent]
       })
       .compileComponents();
   }));

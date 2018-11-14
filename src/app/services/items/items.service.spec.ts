@@ -37,12 +37,13 @@ describe('ItemsService', () => {
       // Arrange - Define the class
       auth.login({username: 'jsteele', password: 'abc444abc444'}).subscribe((user: IUser) => {
         // Act - Call the method
-        service.getItems().subscribe((items: Item[]) => {
+        service.getItems().subscribe((items: any[]) => {
           // Assert - Check the result
+          console.log('items: ', items);
           expect(items.length).toBeGreaterThanOrEqual(1);
-          expect(items[0].Name).not.toEqual(undefined);
-          expect(items[0].Price).not.toEqual(undefined);
-          expect(items[0].Quantity).not.toEqual(undefined);
+          expect(items[0].name).not.toEqual(undefined);
+          expect(items[0].price).not.toEqual(undefined);
+          expect(items[0].quantity).not.toEqual(undefined);
         });
       });
     })));

@@ -34,6 +34,9 @@ import {
 import {
   InventoryComponent
 } from '../inventory/inventory.component';
+import {
+  LocationsComponent
+} from '../locations/locations.component';
 
 describe('UsersComponent', () => {
   let component: UsersComponent;
@@ -46,6 +49,7 @@ describe('UsersComponent', () => {
           InventoryComponent,
           AccountComponent,
           UsersComponent,
+          LocationsComponent,
           NotFoundComponent
         ],
         imports: [

@@ -16,6 +16,15 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
+import {
+  AptivInventoryTableComponent
+} from '../aptiv-inventory-table/aptiv-inventory-table.component';
+import {
+  EditItemModalComponent
+} from '../edit-item-modal/edit-item-modal.component';
+import {
+  DeleteModalComponent
+} from '../delete-modal/delete-modal.component';
 
 describe('AddItemModalComponent', () => {
   let component: AddItemModalComponent;
@@ -27,7 +36,11 @@ describe('AddItemModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [AddItemModalComponent]
+        declarations: [AddItemModalComponent,
+          AptivInventoryTableComponent,
+          EditItemModalComponent,
+          DeleteModalComponent
+        ], providers: [AptivInventoryTableComponent]
       })
       .compileComponents();
   }));

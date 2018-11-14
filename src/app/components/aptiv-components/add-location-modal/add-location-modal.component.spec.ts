@@ -16,6 +16,15 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
+import {
+  AptivLocationsTableComponent
+} from '../aptiv-locations-table/aptiv-locations-table.component';
+import {
+  EditLocationModalComponent
+} from '../edit-location-modal/edit-location-modal.component';
+import {
+  DeleteLocationModalComponent
+} from '../delete-location-modal/delete-location-modal.component';
 
 describe('AddLocationModalComponent', () => {
   let component: AddLocationModalComponent;
@@ -27,7 +36,12 @@ describe('AddLocationModalComponent', () => {
           RouterTestingModule,
           HttpClientModule
         ],
-        declarations: [AddLocationModalComponent]
+        declarations: [AddLocationModalComponent,
+          AptivLocationsTableComponent,
+          EditLocationModalComponent,
+          DeleteLocationModalComponent
+        ],
+        providers: [AptivLocationsTableComponent]
       })
       .compileComponents();
   }));
