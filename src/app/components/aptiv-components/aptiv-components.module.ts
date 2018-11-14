@@ -39,6 +39,9 @@ import {
   EditLocationModalComponent
 } from './edit-location-modal/edit-location-modal.component';
 import {
+  DeleteLocationModalComponent
+} from './delete-location-modal/delete-location-modal.component';
+import {
   AptivInventoryTableComponent
 } from './aptiv-inventory-table/aptiv-inventory-table.component';
 import {
@@ -65,6 +68,7 @@ import {
     AddItemModalComponent,
     AddLocationModalComponent,
     EditLocationModalComponent,
+    DeleteLocationModalComponent,
     EditItemModalComponent,
     DeleteModalComponent
   ],
@@ -77,6 +81,7 @@ import {
     AddItemModalComponent,
     EditItemModalComponent,
     DeleteModalComponent,
+    DeleteLocationModalComponent,
     AptivLocationsTableComponent,
     AddLocationModalComponent,
     EditLocationModalComponent

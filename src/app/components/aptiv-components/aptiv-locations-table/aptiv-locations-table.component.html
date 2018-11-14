@@ -203,8 +203,9 @@
                         {{Row.address_code}}
                       </td>   
                       <td class="aptivTblBodyColumns">
-                            <app-edit-location-modal [(Keys)]="FormsData" [(EditData)]="pagedData[i]"></app-edit-location-modal>
-                        </td> 
+                            <app-edit-location-modal [(Keys)]="FormsData" [(EditData)]="pagedData[i]"></app-edit-location-modal> |
+                            <app-delete-location-modal [(Key)]="Row.id"></app-delete-location-modal>
+                          </td> 
         </tr>
 
       </tbody>
