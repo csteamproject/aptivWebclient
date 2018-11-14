@@ -95,9 +95,9 @@ export class AptivUsersTableComponent implements OnInit {
     this.DataValue = this.DataValue.filter(data => {
       let FlagTF = false;
       if ((this.filters.all === null || this.filters.all === '') &&
-      (this.filters.first === null || this.filters.first=== '') &&
+      (this.filters.first === null || this.filters.first === '') &&
       (this.filters.last === null || this.filters.last === '') &&
-      (this.filters.username === null || this.filters.username === '')){
+      (this.filters.username === null || this.filters.username === '')) {
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {

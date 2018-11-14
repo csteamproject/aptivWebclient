@@ -4,6 +4,7 @@ import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient} from '@angular/common/http';
 import { Item } from 'src/app/classes/item/item';
 import { ItemsService } from 'src/app/services/items/items.service';
+import { AptivInventoryTableComponent } from '../aptiv-inventory-table/aptiv-inventory-table.component';
 
 @Component({
   selector: 'app-edit-item-modal',
@@ -37,7 +38,9 @@ export class EditItemModalComponent {
   closeResult: string;
   EditItemData: Object = {};
 
-  constructor(private modalService: NgbModal, private http: HttpClient, private itemService: ItemsService) {}
+  constructor(private modalService: NgbModal,
+     private itemService: ItemsService,
+     private AptivInventoryTblComp: AptivInventoryTableComponent) {}
 
   get self() { // Used for getting a unique ngModel
     return this;
@@ -71,6 +74,10 @@ export class EditItemModalComponent {
   EditItem(EditData: Item) {
     console.log('EditData: ', EditData);
 
-    this.itemService.editItem(EditData);
+    this.itemService.editItem(EditData).subscribe(() => {
+      console.log('Refresh Page');
+      this.AptivInventoryTblComp.filter();
+      this.AptivInventoryTblComp.refreshPage();
+    });
   }
 }

@@ -91,6 +91,7 @@ export class ItemsService {
   // This Service Function edits an existing Item from an API
   editItem(item: any) {
     console.log('ItemService editItem item: ', item);
+    return Observable.create(observer => {
     const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
     const httpOptions = {
       headers: new HttpHeaders({
@@ -98,17 +99,21 @@ export class ItemsService {
       })
     };
     const UpdatedItem = {
-      name: item.Name,
-      price: item.Price,
-      quantity: item.Quantity
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity
     };
-
-    this.http.patch(environment.baseURL + 'items/' + item.ID, UpdatedItem, httpOptions)
+    this.http.patch(environment.baseURL + 'items/' + item.id, UpdatedItem, httpOptions)
       .subscribe(() => {
         console.log('Success');
+        observer.next();
+        observer.complete();
       }, error => {
         console.log('Error');
+        observer.next();
+        observer.complete();
       });
+    });
   }
 
   // This Service Hard Deletes an existing Item from an API

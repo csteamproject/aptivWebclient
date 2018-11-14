@@ -41,6 +41,7 @@ export class AddItemModalComponent {
   }
 
   open(content) {
+    this.AddData = new Item();
     this.modalService.open(content, {
       ariaLabelledBy: 'modal-basic-title'
     }).result.then((result) => {
@@ -61,6 +62,7 @@ export class AddItemModalComponent {
   }
 
   SaveResults() {
+    console.log('SaveResults-AddData: ', this.AddData);
     if (this.ComputerTF) {
       this.AddData.Computer = this.Computer;
     }
