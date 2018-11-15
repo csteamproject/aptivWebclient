@@ -137,7 +137,7 @@ export class AptivInventoryTableComponent implements OnInit {
           }
         }
         if (this.filters.price !== null && this.filters.price !== '') {
-          if (data['price'].indexOf(this.filters.price) >= 0) {
+          if (data['price'].toString().indexOf(this.filters.price) >= 0) {
             FlagTF = true;
           } else {
             return false;

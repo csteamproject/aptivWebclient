@@ -58,13 +58,13 @@ export class LocationsService {
       };
       let newLocation = {};
         newLocation = {
-          unit: location.unit,
-          building: location.building,
-          street: location.street,
-          city: location.city,
-          region: location.region,
-         country: location.country,
-          address_code: location.address_code
+          unit: location.Unit,
+          building: location.Building,
+          street: location.Street,
+          city: location.City,
+          region: location.Region,
+         country: location.Country,
+          address_code: location.Address_code
            };
       console.log('newLocation: ', newLocation);
       this.http.post(environment.baseURL + 'locations', newLocation, httpOptions)
