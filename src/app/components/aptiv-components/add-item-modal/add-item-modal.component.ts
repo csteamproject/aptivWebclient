@@ -69,6 +69,7 @@ export class AddItemModalComponent {
 
     this.itemService.addItem(this.AddData).subscribe((newItem: Item) => {
       this.DataValue.push(newItem);
+      this.AptivInventoryTblComp.filter();
       this.AptivInventoryTblComp.refreshPage();
     });
   }

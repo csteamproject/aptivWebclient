@@ -53,6 +53,7 @@ export class AddLocationModalComponent {
   SaveResults() {
     this.locationService.addLocation(this.AddData).subscribe((newLocation: Location) => {
       this.DataValue.push(newLocation);
+      this.AptivLocationTblComp.filter();
       this.AptivLocationTblComp.refreshPage();
     });
   }
