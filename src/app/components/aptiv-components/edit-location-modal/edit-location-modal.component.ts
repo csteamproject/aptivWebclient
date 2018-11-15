@@ -75,6 +75,7 @@ export class EditLocationModalComponent {
   EditLocation(EditData: Location) {
     console.log('EditData: ', EditData);
     this.locationService.editLocation(EditData);
+    this.AptivLocationTblComp.filter();
     this.AptivLocationTblComp.refreshPage();
   }
 }
