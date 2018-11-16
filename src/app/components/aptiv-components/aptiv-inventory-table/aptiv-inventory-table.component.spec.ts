@@ -25,6 +25,7 @@ import {
 import {
   EditItemModalComponent
 } from '../edit-item-modal/edit-item-modal.component';
+import { ExcelService } from '../../../services/excel.service';
 
 describe('AptivTableComponent', () => {
   let component: AptivInventoryTableComponent;
@@ -40,6 +41,7 @@ describe('AptivTableComponent', () => {
         declarations: [AptivInventoryTableComponent,
           AddItemModalComponent,
           DeleteModalComponent,
+          ExcelService,
           EditItemModalComponent
         ]
       })

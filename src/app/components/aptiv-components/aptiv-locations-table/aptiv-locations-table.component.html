@@ -12,6 +12,7 @@
     <div class="col-sm-1">
       <app-add-location-modal [(Data)]="Data"></app-add-location-modal>
     </div>
+    
   </div>
   <div class="row">
     <table class="table table-borderless aptivTable">
@@ -211,6 +212,7 @@
       </tbody>
     </table>
   </div>
+  <button style="float: right;" (click)="exportAsXLSX()"><img style="width: 40px; height: 40px;" src='../../../../assets/Images/excel.png'></button>
   <div style="margin-top: 15px;">
     <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{disabled:pager.currentPage === 1}">

@@ -44,6 +44,7 @@ import {
 import {
   UsersComponent
 } from './pages/users/users.component';
+import { ExcelService } from './services/excel.service';
 // Providers
 
 @NgModule({
@@ -64,7 +65,7 @@ import {
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

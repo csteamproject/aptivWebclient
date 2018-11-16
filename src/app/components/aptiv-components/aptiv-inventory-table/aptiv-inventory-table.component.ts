@@ -6,6 +6,7 @@ import {
 import {
   PageinationService
 } from 'src/app/services/pageination/pageination.service';
+import { ExcelService } from '../../../services/excel.service';
 
 export class RowData {
   public DataColumn: any[];
@@ -67,7 +68,7 @@ export class AptivInventoryTableComponent implements OnInit {
   // private Keys: string[] = [];
   FormsData: Object[] = [];
 
-  constructor(private pagerService: PageinationService) {
+  constructor(private pagerService: PageinationService, private excelService: ExcelService) {
     this.itemsPerPage = pagerService.itemsPerPage;
   }
 
@@ -91,7 +92,9 @@ export class AptivInventoryTableComponent implements OnInit {
   //     }
   //   }
   // }
-
+  exportAsXLSX(): void {
+    this.excelService.exportAsExcelFile(this.Data, 'inventory');
+  }
   filter() {
     this.DataValue = this.BeforeFilterationData;
     this.DataValue = this.DataValue.filter(data => {
