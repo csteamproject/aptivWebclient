@@ -20,25 +20,7 @@
         <th class="aptivTblHeaderColumns">
           <div class="row aptivTblFilterSectionTop">
             <div class="col-sm">
-              ID
-            </div>
-          </div>
-          <div class="row aptivTblFilterSectionBottomRow">
-            <div class="col-sm aptivTblFilterSectionBottomCol">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-                </div>
-                <input type="text" class="form-control aptivTblFilterInput" name="filters.id" (keyup)="filter()"
-                  [(ngModel)]="filters.id" />
-              </div>
-            </div>
-          </div>
-        </th>
-        <th class="aptivTblHeaderColumns">
-          <div class="row aptivTblFilterSectionTop">
-            <div class="col-sm">
-              Name
+              Item
             </div>
           </div>
           <div class="row aptivTblFilterSectionBottomRow">
@@ -56,7 +38,7 @@
         <th class="aptivTblHeaderColumns">
           <div class="row aptivTblFilterSectionTop">
             <div class="col-sm">
-              Price
+                Serial Number
             </div>
           </div>
           <div class="row aptivTblFilterSectionBottomRow">
@@ -65,8 +47,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                 </div>
-                <input type="text" class="form-control aptivTblFilterInput" name="filters.price" (keyup)="filter()"
-                  [(ngModel)]="filters.price" />
+                <input type="text" class="form-control aptivTblFilterInput" name="filters.serial_number" (keyup)="filter()"
+                  [(ngModel)]="filters.serial_number" />
               </div>
             </div>
           </div>
@@ -74,7 +56,7 @@
         <th class="aptivTblHeaderColumns">
           <div class="row aptivTblFilterSectionTop">
             <div class="col-sm">
-              Quantity
+              Checked out?
             </div>
           </div>
           <div class="row aptivTblFilterSectionBottomRow">
@@ -83,8 +65,26 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
                 </div>
-                <input type="text" class="form-control aptivTblFilterInput" name="filters.quantity" (keyup)="filter()"
-                  [(ngModel)]="filters.quantity" />
+                <input type="text" class="form-control aptivTblFilterInput" name="filters.checked_out" (keyup)="filter()"
+                  [(ngModel)]="filters.checked_out" />
+              </div>
+            </div>
+          </div>
+        </th>
+        <th class="aptivTblHeaderColumns">
+          <div class="row aptivTblFilterSectionTop">
+            <div class="col-sm">
+              Owner ID
+            </div>
+          </div>
+          <div class="row aptivTblFilterSectionBottomRow">
+            <div class="col-sm aptivTblFilterSectionBottomCol">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                </div>
+                <input type="text" class="form-control aptivTblFilterInput" name="filters.user_id" (keyup)="filter()"
+                  [(ngModel)]="filters.user_id" />
               </div>
             </div>
           </div>
@@ -107,16 +107,16 @@
     <tbody>
       <tr *ngFor="let Row of pagedData; let i = index">
         <td class="aptivTblBodyColumns">
-          {{Row.id}}
-        </td>
-        <td class="aptivTblBodyColumns">
           {{Row.name}}
         </td>
         <td class="aptivTblBodyColumns">
-          {{Row.price}}
+          {{Row.serial_number}}
         </td>
         <td class="aptivTblBodyColumns">
-          {{Row.quantity}}
+          {{Row.checked_out}}
+        </td>
+        <td class="aptivTblBodyColumns">
+          {{Row.user_id}}
         </td>
         <td class="aptivTblBodyColumns">
           <span>

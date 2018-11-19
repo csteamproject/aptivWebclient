@@ -14,10 +14,10 @@ export class RowData {
 
 export class FilterObj {
   all: string;
-  id: string;
   name: string;
-  price: string;
-  quantity: string;
+  serial_number: string;
+  checked_out: string;
+  user_id: string;
 }
 
 @Component({
@@ -29,10 +29,10 @@ export class AptivInventoryTableComponent implements OnInit {
   itemsPerPage: number;
   filters: FilterObj = {
     all: null,
-    id: null,
     name: null,
-    price: null,
-    quantity: null
+    serial_number: null,
+    checked_out: null,
+    user_id: null
   };
   DataValue: Object[] = [];
   @Input()
@@ -100,55 +100,55 @@ export class AptivInventoryTableComponent implements OnInit {
     this.DataValue = this.DataValue.filter(data => {
       let FlagTF = false;
       if ((this.filters.all === null || this.filters.all === '') &&
-      (this.filters.id === null || this.filters.id === '') &&
       (this.filters.name === null || this.filters.name === '') &&
-      (this.filters.price === null || this.filters.price === '') &&
-      (this.filters.quantity === null || this.filters.quantity === '')) {
+      (this.filters.serial_number === null || this.filters.serial_number === '') &&
+      (this.filters.checked_out === null || this.filters.checked_out === '') &&
+      (this.filters.user_id === null || this.filters.user_id === '')) {
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {
           // if (data['id'] === Number(this.filters.all)) {
-          if (data['id'].toString().indexOf(this.filters.all) >= 0) {
+          if (data['name'].toString().indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['name'].indexOf(this.filters.all) >= 0) {
+          if (data['serial_number'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['price'].indexOf(this.filters.all) >= 0) {
+          if (data['checked_out'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['quantity'] === Number(this.filters.all)) {
+          if (data['user_id'] === Number(this.filters.all)) {
             FlagTF = true;
           }
           if (!FlagTF) {
             return false;
           }
         }
-        if (this.filters.id !== null && this.filters.id !== '') {
-          // if (data['id'] === Number(this.filters.id)) {
-          if (data['id'].toString().indexOf(this.filters.id) >= 0) {
-            FlagTF = true;
-          } else {
-            return false;
-          }
-        }
         if (this.filters.name !== null && this.filters.name !== '') {
-          if (data['name'].indexOf(this.filters.name) >= 0) {
+          // if (data['id'] === Number(this.filters.id)) {
+          if (data['name'].toString().indexOf(this.filters.name) >= 0) {
             FlagTF = true;
           } else {
             return false;
           }
         }
-        if (this.filters.price !== null && this.filters.price !== '') {
-          if (data['price'].toString().indexOf(this.filters.price) >= 0) {
+        if (this.filters.serial_number !== null && this.filters.serial_number !== '') {
+          if (data['serial_number'].indexOf(this.filters.serial_number) >= 0) {
             FlagTF = true;
           } else {
             return false;
           }
         }
-        if (this.filters.quantity !== null && this.filters.quantity !== '') {
-          // if (data['quantity'] === Number(this.filters.quantity)) {
-          if (data['quantity'].toString().indexOf(this.filters.quantity) >= 0) {
+        if (this.filters.checked_out !== null && this.filters.checked_out !== '') {
+          if (data['checked_out'].toString().indexOf(this.filters.checked_out) >= 0) {
+            FlagTF = true;
+          } else {
+            return false;
+          }
+        }
+        if (this.filters.user_id !== null && this.filters.user_id !== '') {
+          // if (data['user_id'] === Number(this.filters.user_id)) {
+          if (data['user_id'].toString().indexOf(this.filters.user_id) >= 0) {
             FlagTF = true;
           } else {
             return false;
