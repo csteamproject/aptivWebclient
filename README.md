@@ -119,6 +119,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+To build it for our project on the nmsu systems you have to attach a base-href to the production build shown below is an example:
+
+```
+ng build --prod --base-href /~jsteele/InventoryProject/aptivWebclient/
+```
+
+So wherever you run the server you need the url of where the aptivWebclient is.
+
 ### SourceTree
 You can follow the above rules of the git scaffolding visually through sourcetree.
 
