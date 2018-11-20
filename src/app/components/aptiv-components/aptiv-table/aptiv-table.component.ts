@@ -6,9 +6,6 @@ import {
 import {
   PageinationService
 } from 'src/app/services/pageination/pageination.service';
-import {
-  ExcelService
-} from 'src/app/services/excel.service';
 
 export class RowData {
   public DataColumn: any[];
@@ -55,7 +52,7 @@ export class AptivTableComponent implements OnInit {
   Keys: string[] = [];
   FormsData: Object[] = [];
 
-  constructor(private pagerService: PageinationService, private excelService: ExcelService) {}
+  constructor(private pagerService: PageinationService) {}
 
   ngOnInit() {
   }

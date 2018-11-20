@@ -44,7 +44,7 @@ import {
 import {
   UsersComponent
 } from './pages/users/users.component';
-import { ExcelService } from './services/excel.service';
+import { ExcelService } from './services/excel/excel.service';
 // Providers
 
 @NgModule({

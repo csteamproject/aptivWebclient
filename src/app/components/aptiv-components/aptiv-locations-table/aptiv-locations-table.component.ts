@@ -8,7 +8,7 @@ import {
 } from 'src/app/services/pageination/pageination.service';
 import {
   ExcelService
-} from '../../../services/excel.service';
+} from '../../../services/excel/excel.service';
 export class RowData {
   public DataColumn: any[];
 }

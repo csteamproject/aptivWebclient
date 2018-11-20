@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { User } from './user';
 
-describe('AptivTableComponent', () => {
+describe('AptivUser', () => {
 
   it('should deserialize with static method', async(() => {
     const u = User.Deseralize({'first': 'Jonathan', 'last': 'Steele', 'role': '4', 'success': true, 'token': 'token1234'});

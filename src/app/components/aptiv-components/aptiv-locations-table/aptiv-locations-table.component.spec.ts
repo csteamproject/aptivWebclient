@@ -25,15 +25,11 @@ import {
 import {
   DeleteLocationModalComponent
 } from '../delete-location-modal/delete-location-modal.component';
-import { ExcelService } from '../../../services/excel.service';
-// import {
-//   DeleteModalComponent
-// } from '../delete-modal/delete-modal.component';
-// import {
-//   EditItemModalComponent
-// } from '../edit-item-modal/edit-item-modal.component';
+import {
+  ExcelService
+} from '../../../services/excel/excel.service';
 
-describe('AptivTableComponent', () => {
+describe('AptivLocationsTableComponent', () => {
   let component: AptivLocationsTableComponent;
   let fixture: ComponentFixture < AptivLocationsTableComponent > ;
 
@@ -47,10 +43,10 @@ describe('AptivTableComponent', () => {
         declarations: [AptivLocationsTableComponent,
           AddLocationModalComponent,
           EditLocationModalComponent,
-          ExcelService,
           DeleteLocationModalComponent
-          // DeleteModalComponent,
-          // EditItemModalComponent
+        ],
+        providers: [
+          ExcelService
         ]
       })
       .compileComponents();

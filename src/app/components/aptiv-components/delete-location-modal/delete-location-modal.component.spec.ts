@@ -13,10 +13,21 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AptivLocationsTableComponent } from '../aptiv-locations-table/aptiv-locations-table.component';
-import { AddLocationModalComponent } from '../add-location-modal/add-location-modal.component';
-import { EditLocationModalComponent } from '../edit-location-modal/edit-location-modal.component';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  AptivLocationsTableComponent
+} from '../aptiv-locations-table/aptiv-locations-table.component';
+import {
+  AddLocationModalComponent
+} from '../add-location-modal/add-location-modal.component';
+import {
+  EditLocationModalComponent
+} from '../edit-location-modal/edit-location-modal.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('DeleteLocationModalComponent', () => {
   let component: DeleteLocationModalComponent;
@@ -29,7 +40,7 @@ describe('DeleteLocationModalComponent', () => {
           HttpClientModule
         ],
         declarations: [DeleteLocationModalComponent, AddLocationModalComponent, EditLocationModalComponent],
-        providers: [AptivLocationsTableComponent]
+        providers: [AptivLocationsTableComponent, ExcelService]
       })
       .compileComponents();
   }));

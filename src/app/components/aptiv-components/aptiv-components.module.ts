@@ -50,9 +50,6 @@ import {
 import {
   AptivUsersTableComponent
 } from './aptiv-users-table/aptiv-users-table.component';
-import {
-  ExcelService
-} from '../../services/excel.service';
 @NgModule({
   imports: [
     CommonModule,

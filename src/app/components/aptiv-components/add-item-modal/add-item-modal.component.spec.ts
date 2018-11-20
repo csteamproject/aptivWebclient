@@ -25,6 +25,9 @@ import {
 import {
   DeleteModalComponent
 } from '../delete-modal/delete-modal.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('AddItemModalComponent', () => {
   let component: AddItemModalComponent;
@@ -40,7 +43,8 @@ describe('AddItemModalComponent', () => {
           AptivInventoryTableComponent,
           EditItemModalComponent,
           DeleteModalComponent
-        ], providers: [AptivInventoryTableComponent]
+        ],
+        providers: [AptivInventoryTableComponent, ExcelService]
       })
       .compileComponents();
   }));

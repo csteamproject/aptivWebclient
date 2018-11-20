@@ -25,6 +25,9 @@ import {
 import {
   DeleteLocationModalComponent
 } from '../delete-location-modal/delete-location-modal.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('AddLocationModalComponent', () => {
   let component: AddLocationModalComponent;
@@ -41,7 +44,7 @@ describe('AddLocationModalComponent', () => {
           EditLocationModalComponent,
           DeleteLocationModalComponent
         ],
-        providers: [AptivLocationsTableComponent]
+        providers: [AptivLocationsTableComponent, ExcelService]
       })
       .compileComponents();
   }));

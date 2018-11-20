@@ -13,10 +13,21 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { AptivInventoryTableComponent } from '../aptiv-inventory-table/aptiv-inventory-table.component';
-import { AddItemModalComponent } from '../add-item-modal/add-item-modal.component';
-import { EditItemModalComponent } from '../edit-item-modal/edit-item-modal.component';
+import {
+  FormsModule
+} from '@angular/forms';
+import {
+  AptivInventoryTableComponent
+} from '../aptiv-inventory-table/aptiv-inventory-table.component';
+import {
+  AddItemModalComponent
+} from '../add-item-modal/add-item-modal.component';
+import {
+  EditItemModalComponent
+} from '../edit-item-modal/edit-item-modal.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('DeleteModalComponent', () => {
   let component: DeleteModalComponent;
@@ -29,7 +40,7 @@ describe('DeleteModalComponent', () => {
           HttpClientModule
         ],
         declarations: [DeleteModalComponent, AddItemModalComponent, EditItemModalComponent],
-        providers: [AptivInventoryTableComponent]
+        providers: [AptivInventoryTableComponent, ExcelService]
       })
       .compileComponents();
   }));

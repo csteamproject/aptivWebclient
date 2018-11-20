@@ -16,9 +16,18 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
-import { AptivInventoryTableComponent } from '../aptiv-inventory-table/aptiv-inventory-table.component';
-import { AddItemModalComponent } from '../add-item-modal/add-item-modal.component';
-import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
+import {
+  AptivInventoryTableComponent
+} from '../aptiv-inventory-table/aptiv-inventory-table.component';
+import {
+  AddItemModalComponent
+} from '../add-item-modal/add-item-modal.component';
+import {
+  DeleteModalComponent
+} from '../delete-modal/delete-modal.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('EditItemModalComponent', () => {
   let component: EditItemModalComponent;
@@ -31,7 +40,7 @@ describe('EditItemModalComponent', () => {
           HttpClientModule
         ],
         declarations: [EditItemModalComponent, AddItemModalComponent, DeleteModalComponent],
-        providers: [AptivInventoryTableComponent]
+        providers: [AptivInventoryTableComponent, ExcelService]
       })
       .compileComponents();
   }));

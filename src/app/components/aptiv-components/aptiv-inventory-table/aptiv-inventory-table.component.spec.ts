@@ -25,9 +25,11 @@ import {
 import {
   EditItemModalComponent
 } from '../edit-item-modal/edit-item-modal.component';
-import { ExcelService } from '../../../services/excel.service';
+import {
+  ExcelService
+} from '../../../services/excel/excel.service';
 
-describe('AptivTableComponent', () => {
+describe('AptivInventoryTableComponent', () => {
   let component: AptivInventoryTableComponent;
   let fixture: ComponentFixture < AptivInventoryTableComponent > ;
 
@@ -41,8 +43,10 @@ describe('AptivTableComponent', () => {
         declarations: [AptivInventoryTableComponent,
           AddItemModalComponent,
           DeleteModalComponent,
-          ExcelService,
           EditItemModalComponent
+        ],
+        providers: [
+          ExcelService
         ]
       })
       .compileComponents();

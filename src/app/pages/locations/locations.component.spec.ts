@@ -36,6 +36,9 @@ import {
 import {
   InventoryComponent
 } from '../inventory/inventory.component';
+import {
+  ExcelService
+} from 'src/app/services/excel/excel.service';
 
 describe('LocationsComponent', () => {
   let component: LocationsComponent;
@@ -59,7 +62,7 @@ describe('LocationsComponent', () => {
         providers: [{
           provide: APP_BASE_HREF,
           useValue: '/'
-        }],
+        }, ExcelService],
       })
       .compileComponents();
   }));
