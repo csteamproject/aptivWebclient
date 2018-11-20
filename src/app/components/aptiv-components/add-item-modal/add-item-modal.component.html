@@ -7,19 +7,49 @@
   </div>
   <div class="modal-body" style="margin: 10px;">
     <form>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label>ID</label>
         <div class="input-group">
           <input type="number" class="form-control" id="id" name="id" [(ngModel)]="AddData.ID" disabled />
         </div>
-      </div>
+      </div> -->
       <div class="form-group">
         <label>Name</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="AddData.Name" />
+          <select type="text" class="form-control" id="name" name="name" [(ngModel)]="AddData.Name"> 
+            <option value="Computer-Tower"> Computer-Tower </option>
+            <option value="Computer-Laptop"> Computer-Laptop </option>
+            <option value="Computer-Accessory"> Computer-Accessory </option>
+            <option value="Equipment"> Equipment </option>
+            <option value="Disc"> Disc </option>
+          </select>
         </div>
       </div>
       <div class="form-group">
+        <label>Brand/Vendor</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="brand" name="brand" [(ngModel)]="AddData.Brand"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Model/Version</label>
+        <div class="input-group">
+            <input type="text" class="form-control" id="model" name="model" [(ngModel)]="AddData.Model"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Serial Number</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="serial_number" name="serial_number" [(ngModel)]="AddData.Serial_number"/>
+        </div>
+      </div>
+      <div class="form-group">
+          <label>Location ID</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="location_id" name="location_id" [(ngModel)]="AddData.Location_id"/>
+          </div>
+        </div>
+      <!-- <div class="form-group">
         <label>Price</label>
         <div class="input-group">
           <input type="number" min="0.00" max="10000.00" step="0.01" class="form-control" id="price" name="price"
@@ -31,8 +61,8 @@
         <div class="input-group">
           <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="AddData.Quantity" />
         </div>
-      </div>
-      <input type="checkbox" class="form-check-input" id="ComputerTF" name="ComputerTF" [(ngModel)]="ComputerTF" /><label class="form-check-label" for="ComputerTF"><b>Computer?</b></label>
+      </div> -->
+      <!-- <input type="checkbox" class="form-check-input" id="ComputerTF" name="ComputerTF" [(ngModel)]="ComputerTF" /><label class="form-check-label" for="ComputerTF"><b>Computer?</b></label>
       <span *ngIf="ComputerTF">
         <div class="form-group">
           <label>UTag</label>
@@ -58,7 +88,7 @@
             <input type="number" class="form-control" id="hdd" name="hdd" [(ngModel)]="Computer.HDD" />
           </div>
         </div>
-      </span>
+      </span> -->
     </form>
   </div>
   <div class="modal-footer">

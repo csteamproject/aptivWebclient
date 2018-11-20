@@ -5,4 +5,13 @@ export interface IItem {
     Price: number;
     Quantity: number;
     Computer: Computer;
+    User_id: number;
+    Location_id: number;
+    Serial_number: string;
+    Brand: string;
+    Model: string;
+    Checked_out: boolean;
+    Created_at: Date;
+    Updated_at: Date;
+    Item_delete_date: Date;
 }

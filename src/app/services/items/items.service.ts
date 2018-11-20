@@ -57,8 +57,13 @@ export class ItemsService {
       if (item.Computer === null || item.Computer === undefined) {
         newItem = {
           name: item.Name,
-          price: item.Price,
-          quantity: item.Quantity,
+          brand: item.Brand,
+          model: item.Model,
+          serial_number: item.Serial_number,
+          location_id: item.Location_id,
+          checked_out: item.Checked_out,
+          //price: item.Price,
+          //quantity: item.Quantity,
         };
       } else {
         newItem = {
@@ -99,9 +104,11 @@ export class ItemsService {
       })
     };
     const UpdatedItem = {
-      name: item.name,
-      price: item.price,
-      quantity: item.quantity
+      name: item.Name,
+      brand: item.Brand,
+      model: item.Model,
+      serial_number: item.Serial_number,
+      location_id: item.Location_id,
     };
     this.http.patch(environment.baseURL + 'items/' + item.id, UpdatedItem, httpOptions)
       .subscribe(() => {

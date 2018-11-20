@@ -7,19 +7,43 @@
   </div>
   <div class="modal-body">
     <form>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label>ID</label>
         <div class="input-group">
           <input type="number" class="form-control" id="id" name="id" [(ngModel)]="EditData.id" disabled/>
         </div>
-      </div>
+      </div> -->
       <div class="form-group">
-        <label>Name</label>
-        <div class="input-group">
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="EditData.name"/>
+          <label>Name</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="EditData.Name" disabled/>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
+        <div class="form-group">
+          <label>Brand/Vendor</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="brand" name="brand" [(ngModel)]="EditData.Brand"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Model/Version</label>
+          <div class="input-group">
+              <input type="text" class="form-control" id="model" name="model" [(ngModel)]="EditData.Model"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Serial Number</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="serial_number" name="serial_number" [(ngModel)]="EditData.Serial_number"/>
+          </div>
+        </div>
+        <div class="form-group">
+            <label>Location ID</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="location_id" name="location_id" [(ngModel)]="EditData.Location_id"/>
+            </div>
+          </div>
+      <!-- <div class="form-group">
         <label>Price</label>
         <div class="input-group">
           <input type="number" min="0.00" max="10000.00" step="0.01" class="form-control" id="price" name="price" [(ngModel)]="EditData.price"/>
@@ -30,7 +54,7 @@
         <div class="input-group">
           <input type="number" class="form-control" id="quantity" name="quantity" [(ngModel)]="EditData.quantity"/>
         </div>
-      </div>
+      </div> -->
     </form>
   </div>
   <div class="modal-footer">

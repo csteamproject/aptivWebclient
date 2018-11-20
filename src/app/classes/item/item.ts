@@ -6,6 +6,16 @@ import { Computer } from '../computer/computer';
 export class Item implements IItem {
   public ID: number;
   public Name: string;
+  public User_id: number;
+  public Location_id: number;
+  public Serial_number: string;
+  public Brand: string;
+  public Model: string;
+  public Checked_out: boolean;
+  public Created_at: Date;
+  public Updated_at: Date;
+  public Item_delete_date: Date;
+  // old variables, likely not going to be used but kept for compatibility
   public Price: number;
   public Quantity: number;
   public Computer: Computer;
