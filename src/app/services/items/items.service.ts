@@ -61,9 +61,9 @@ export class ItemsService {
           model: item.Model,
           serial_number: item.Serial_number,
           location_id: item.Location_id,
-          checked_out: item.Checked_out,
-          //price: item.Price,
-          //quantity: item.Quantity,
+          checked_out_id: item.Checked_out_id,
+          price: item.Price,
+          quantity: item.Quantity,
         };
       } else {
         newItem = {
@@ -109,6 +109,8 @@ export class ItemsService {
       model: item.Model,
       serial_number: item.Serial_number,
       location_id: item.Location_id,
+      price: item.Price,
+      quantity: item.Quantity,
     };
     this.http.patch(environment.baseURL + 'items/' + item.id, UpdatedItem, httpOptions)
       .subscribe(() => {

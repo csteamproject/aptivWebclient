@@ -66,7 +66,6 @@ export class AddItemModalComponent {
     if (this.ComputerTF) {
       this.AddData.Computer = this.Computer;
     }
-    this.AddData.Checked_out = false;
 
     this.itemService.addItem(this.AddData).subscribe((newItem: Item) => {
       this.DataValue.push(newItem);
