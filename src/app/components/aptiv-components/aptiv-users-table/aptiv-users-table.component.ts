@@ -14,7 +14,7 @@ export class RowData {
 export class FilterObj {
   first: string;
   last: string;
-  username: string;
+  username:string;
   all: string;
 }
 
@@ -29,31 +29,21 @@ export class AptivUsersTableComponent implements OnInit {
     all: null,
     first: null,
     last: null,
-    username: null
+    username: null,
   };
   DataValue: Object[] = [];
   @Input()
   // @Output() DataEvent = new EventEmitter();
   get Data(): any[] {
+    console.log('getting user data: ', this.DataValue);
     return this.DataValue;
   }
   set Data(data) {
     this.DataValue = data;
-    // this.Data.forEach((row: Object) => {
-    //   this.CollectKeysOfObj(row);
-    // });
+    console.log('setting user data: ', this.DataValue);
     this.BeforeFilterationData = this.DataValue;
     this.UntouchedData = this.DataValue;
     this.setPage(1);
-    // Setup FormData
-    // this.Keys.forEach((key) => {
-    //   const newKey = {
-    //     key: key,
-    //     value: null,
-    //   };
-    //   this.FormsData.push(newKey);
-    // });
-    // this.DataValueChange.emit(this.DataValue);
   }
 
   BeforeFilterationData: Object[] = [];
@@ -96,8 +86,8 @@ export class AptivUsersTableComponent implements OnInit {
       let FlagTF = false;
       if ((this.filters.all === null || this.filters.all === '') &&
       (this.filters.first === null || this.filters.first === '') &&
-      (this.filters.last === null || this.filters.last === '') &&
-      (this.filters.username === null || this.filters.username === '')) {
+      (this.filters.last === null || this.filters.last === '')  &&
+      (this.filters.username === null || this.filters.username === '')){
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {
@@ -105,9 +95,6 @@ export class AptivUsersTableComponent implements OnInit {
             FlagTF = true;
           }
           if (data['last'].indexOf(this.filters.all) >= 0) {
-            FlagTF = true;
-          }
-          if (data['username'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
           if (!FlagTF) {

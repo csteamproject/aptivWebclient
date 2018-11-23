@@ -6,8 +6,8 @@ import {
   UsersService
 } from '../../services/users/users.service';
 import {
-  Webuser
-} from '../../classes/web-user/web-user';
+  User
+} from '../../classes/user/user';
 
 @Component({
   selector: 'app-users',
@@ -16,12 +16,13 @@ import {
 })
 export class UsersComponent implements OnInit {
 
-  Webusers: Webuser[] = [];
+  Users: User[] = [];
   constructor(private usersService: UsersService) {}
 
   ngOnInit() {
-    this.usersService.getWebuser().subscribe((data: Webuser[]) => {
-      this.Webusers = data;
+    this.usersService.getUser().subscribe((data: User[]) => {
+      console.log('users.getUsers: ', data);
+      this.Users = data;
     });
   }
 }

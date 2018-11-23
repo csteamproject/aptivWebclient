@@ -3,7 +3,6 @@
   export class Webuser {
     public First: string;
     public Last: string;
-    public Username: string;
 
     public static Deseralize(obj: Object | string): Webuser {
       const u = new Webuser();

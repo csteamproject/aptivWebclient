@@ -2,9 +2,6 @@ import {
     Injectable
   } from '@angular/core';
   import {
-    Webuser
-  } from '../../classes/web-user/web-user';
-  import {
     HttpClient,
     HttpHeaders
   } from '@angular/common/http';
@@ -26,7 +23,7 @@ import {
     constructor(private http: HttpClient) {}
 
     // This Service Function gets all the Users from the API
-    getWebuser(): Observable < Webuser[] > {
+    getUser(): Observable < User[] > {
       return Observable.create(observer => {
         const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
         const httpOptions = {
@@ -36,16 +33,16 @@ import {
         };
 
         this.http.get(environment.baseURL + 'users', httpOptions)
-          .subscribe((webusers: Webuser[]) => {
-            observer.next(webusers);
+          .subscribe((users: User[]) => {
+            observer.next(users);
             observer.complete();
           });
       });
     }
 
     // This Service Function adds a new User to the API
-    addWebuser(webuser: any) {
-      console.log('user: ', webuser);
+    addUser(user: any) {
+      console.log('user: ', user);
       return Observable.create(observer => {
         const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
         const httpOptions = {
@@ -53,20 +50,19 @@ import {
             'jwt-token': currentUser.token
           })
         };
-        let newWebuser = {};
+        let newUser = {};
 
-          newWebuser = {
-            first: webuser.First,
-            last: webuser.Last,
-            username: webuser.Username,
+          newUser = {
+            first: user.First,
+            last: user.Last,
           };
 
 
-        console.log('newUser: ', newWebuser);
-        this.http.post(environment.baseURL + 'users', newWebuser, httpOptions)
-          .subscribe((addedWebuser: any) => {
-              console.log('Success: ', addedWebuser);
-              observer.next(addedWebuser);
+        console.log('newUser: ', newUser);
+        this.http.post(environment.baseURL + 'users', newUser, httpOptions)
+          .subscribe((addedUser: any) => {
+              console.log('Success: ', addedUser);
+              observer.next(addedUser);
               observer.complete();
           }, error => {
             console.log('Error');
@@ -77,21 +73,20 @@ import {
     }
 
     // This Service Function edits an existing User from an API
-    editWebuser(webuser: any) {
-      console.log('UserService editUser user: ', webuser);
+    editUser(user: any) {
+      console.log('UserService editUser user: ', User);
       const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
       const httpOptions = {
         headers: new HttpHeaders({
           'jwt-token': currentUser.token
         })
       };
-      const UpdatedWebuser = {
-        first: webuser.First,
-        last: webuser.Last,
-        username: webuser.Username
+      const UpdatedUser = {
+        first: user.First,
+        last: user.Last,
       };
 
-      this.http.patch(environment.baseURL + 'users/' + webuser.First, UpdatedWebuser, httpOptions)
+      this.http.patch(environment.baseURL + 'users/' + user.First, UpdatedUser, httpOptions)
         .subscribe(() => {
           console.log('Success');
         }, error => {
@@ -100,7 +95,7 @@ import {
     }
 
     // This Service Hard Deletes an existing User from an API
-    deleteWebuser(first: string) {
+    deleteUser(first: string) {
       const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
       const httpOptions = {
         headers: new HttpHeaders({
