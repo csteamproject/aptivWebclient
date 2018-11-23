@@ -10,7 +10,7 @@ export interface IItem {
     Serial_number: string;
     Brand: string;
     Model: string;
-    Checked_out: boolean;
+    Checked_out_id: number;
     Created_at: Date;
     Updated_at: Date;
     Item_delete_date: Date;

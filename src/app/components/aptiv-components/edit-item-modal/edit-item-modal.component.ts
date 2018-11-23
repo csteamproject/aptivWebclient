@@ -17,7 +17,7 @@ export class EditItemModalComponent {
   @Input()
   // @Output() DataEvent = new EventEmitter();
   get EditData(): Item {
-    // console.log('KeyValue: ', this.RowDataValue);
+     console.log('Edit Data Get: ', this.EditDataValue);
     return this.EditDataValue;
   }
   set EditData(data) {

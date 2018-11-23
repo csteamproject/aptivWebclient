@@ -16,7 +16,7 @@ export class FilterObj {
   all: string;
   name: string;
   serial_number: string;
-  checked_out: string;
+  checked_out_id: string;
   user_id: string;
 }
 
@@ -31,7 +31,7 @@ export class AptivInventoryTableComponent implements OnInit {
     all: null,
     name: null,
     serial_number: null,
-    checked_out: null,
+    checked_out_id: null,
     user_id: null
   };
   DataValue: Object[] = [];
@@ -102,7 +102,7 @@ export class AptivInventoryTableComponent implements OnInit {
       if ((this.filters.all === null || this.filters.all === '') &&
       (this.filters.name === null || this.filters.name === '') &&
       (this.filters.serial_number === null || this.filters.serial_number === '') &&
-      (this.filters.checked_out === null || this.filters.checked_out === '') &&
+      (this.filters.checked_out_id === null || this.filters.checked_out_id === '') &&
       (this.filters.user_id === null || this.filters.user_id === '')) {
         FlagTF = true;
       } else {
@@ -114,7 +114,7 @@ export class AptivInventoryTableComponent implements OnInit {
           if (data['serial_number'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['checked_out'].indexOf(this.filters.all) >= 0) {
+          if (data['checked_out_id'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
           if (data['user_id'] === Number(this.filters.all)) {
@@ -139,8 +139,8 @@ export class AptivInventoryTableComponent implements OnInit {
             return false;
           }
         }
-        if (this.filters.checked_out !== null && this.filters.checked_out !== '') {
-          if (data['checked_out'].toString().indexOf(this.filters.checked_out) >= 0) {
+        if (this.filters.checked_out_id !== null && this.filters.checked_out_id !== '') {
+          if (data['checked_out_id'].toString().indexOf(this.filters.checked_out_id) >= 0) {
             FlagTF = true;
           } else {
             return false;

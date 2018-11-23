@@ -113,7 +113,8 @@
           {{Row.serial_number}}
         </td>
         <td class="aptivTblBodyColumns">
-          {{Row.checked_out}}
+           <div *ngIf="Row.checked_out_id != null"> YES </div>
+           <div *ngIf="Row.checked_out_id == null"> NO </div>
         </td>
         <td class="aptivTblBodyColumns">
           {{Row.user_id}}
