@@ -19,7 +19,6 @@ import {
 export class RowData {
   public DataColumn: any[];
 }
-const URL = '0.0.0.0:3000/csvuploads';
 export class FilterObj {
   all: string;
   name: string;
@@ -67,8 +66,6 @@ export class AptivInventoryTableComponent implements OnInit {
     // });
     // this.DataValueChange.emit(this.DataValue);
   }
-  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
-
   BeforeFilterationData: Object[] = [];
   UntouchedData: Object[] = [];
 
