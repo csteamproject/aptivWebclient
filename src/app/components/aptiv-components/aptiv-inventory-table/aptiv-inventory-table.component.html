@@ -130,8 +130,18 @@
     </tbody>
   </table>
   </div>
+  <p> Upload CSV File</p>
+  <input type="file" (change)="onFileSelected($event)">
+  <button style = "margin-left: -100px;" type = "button" (click)="onUpload()">Upload</button>
+  <!-- <input type="file" ng2FileSelect [uploader]="uploader" >  -->
   <button style="float: right;" (click)="exportAsXLSX()"><img style="width: 40px; height: 40px;" src='../../../../assets/Images/excel.png'></button>
 
+<!-- 
+  <button type="button" class="btn btn-success btn-s" 
+    (click)="uploader.uploadAll()" 
+    [disabled]="!uploader.getNotUploadedItems().length" >
+        Upload an Image
+  </button> -->
 <div style="margin-top: 15px;">
   <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
     <li [ngClass]="{disabled:pager.currentPage === 1}">

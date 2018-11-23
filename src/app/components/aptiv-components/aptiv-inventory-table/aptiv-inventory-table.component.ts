@@ -4,14 +4,22 @@ import {
   Input
 } from '@angular/core';
 import {
+  User
+} from 'src/app/classes/user/user';
+
+import {
   PageinationService
 } from 'src/app/services/pageination/pageination.service';
 import { ExcelService } from '../../../services/excel/excel.service';
-
+import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {
+  environment
+} from '../../../../environments/environment';
 export class RowData {
   public DataColumn: any[];
 }
-
+const URL = '0.0.0.0:3000/csvuploads';
 export class FilterObj {
   all: string;
   name: string;
@@ -27,6 +35,7 @@ export class FilterObj {
 })
 export class AptivInventoryTableComponent implements OnInit {
   itemsPerPage: number;
+  selectedFile: File = null;
   filters: FilterObj = {
     all: null,
     name: null,
@@ -58,6 +67,7 @@ export class AptivInventoryTableComponent implements OnInit {
     // });
     // this.DataValueChange.emit(this.DataValue);
   }
+  public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
 
   BeforeFilterationData: Object[] = [];
   UntouchedData: Object[] = [];
@@ -68,11 +78,15 @@ export class AptivInventoryTableComponent implements OnInit {
   // private Keys: string[] = [];
   FormsData: Object[] = [];
 
-  constructor(private pagerService: PageinationService, private excelService: ExcelService) {
+  constructor(private pagerService: PageinationService,
+    private http: HttpClient,
+    private excelService: ExcelService) {
     this.itemsPerPage = pagerService.itemsPerPage;
   }
 
   ngOnInit() {}
+
+
 
   // get self() { // Used for getting a unique ngModel
   //   return this;
@@ -94,6 +108,25 @@ export class AptivInventoryTableComponent implements OnInit {
   // }
   exportAsXLSX(): void {
     this.excelService.exportAsExcelFile(this.Data, 'inventory');
+  }
+  onFileSelected(event) {
+    console.log(event);
+    this.selectedFile = <File>event.target.files[0];
+  }
+  onUpload() {
+    const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'jwt-token': currentUser.token
+      })
+    };
+    console.log('here');
+    const fd = new FormData();
+    fd.append('csv', this.selectedFile, this.selectedFile.name);
+    this.http.post(environment.baseURL + 'csvuploads', this.selectedFile, httpOptions)
+    .subscribe(res => {
+      console.log(res);
+    });
   }
   filter() {
     this.DataValue = this.BeforeFilterationData;

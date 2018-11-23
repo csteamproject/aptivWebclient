@@ -9,6 +9,10 @@ import {
 import {
   ExcelService
 } from '../../../services/excel/excel.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FileSelectDirective } from 'ng2-file-upload';
+import { FormsModule } from '@angular/forms';
 export class RowData {
   public DataColumn: any[];
 }
