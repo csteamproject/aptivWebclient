@@ -91,10 +91,13 @@ export class AptivUsersTableComponent implements OnInit {
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {
-          if (data['first'].toString().indexOf(this.filters.all) >= 0) {
+          if (data['first_name'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['last'].indexOf(this.filters.all) >= 0) {
+          if (data['last_name'].indexOf(this.filters.all) >= 0) {
+            FlagTF = true;
+          }
+          if (data['username'].indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
           if (!FlagTF) {
@@ -103,14 +106,14 @@ export class AptivUsersTableComponent implements OnInit {
         }
         if (this.filters.first !== null && this.filters.first !== '') {
           // if (data['id'] === Number(this.filters.id)) {
-          if (data['first'].toString().indexOf(this.filters.first) >= 0) {
+          if (data['first_name'].toString().indexOf(this.filters.first) >= 0) {
             FlagTF = true;
           } else {
             return false;
           }
         }
         if (this.filters.last !== null && this.filters.last !== '') {
-          if (data['last'].indexOf(this.filters.last) >= 0) {
+          if (data['last_name'].indexOf(this.filters.last) >= 0) {
             FlagTF = true;
           } else {
             return false;

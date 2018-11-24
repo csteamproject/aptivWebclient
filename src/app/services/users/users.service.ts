@@ -53,8 +53,10 @@ import {
         let newUser = {};
 
           newUser = {
-            first: user.First,
-            last: user.Last,
+            first_name: user.First_name,
+            last_name: user.Last_name,
+            username: user.Username,
+            password: user.Password,
           };
 
 
