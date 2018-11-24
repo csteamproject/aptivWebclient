@@ -16,12 +16,12 @@ import {
 import {
   HttpClientModule
 } from '@angular/common/http';
-//import {
-//  AddItemModalComponent
-//} from '../add-item-modal/add-item-modal.component';
-//import {
-//  DeleteModalComponent
-//} from '../delete-modal/delete-modal.component';
+import {
+  AddUserModalComponent
+} from '../add-user-modal/add-user-modal.component';
+import {
+  DeleteUserModalComponent
+} from '../delete-user-modal/delete-user-modal.component';
 //import {
 //  EditItemModalComponent
 //} from '../edit-item-modal/edit-item-modal.component';
@@ -38,8 +38,8 @@ describe('AptivUsersTableComponent', () => {
           HttpClientModule
         ],
         declarations: [AptivUsersTableComponent,
-          //AddItemModalComponent,
-          //DeleteModalComponent,
+          AddUserModalComponent,
+          DeleteUserModalComponent,
           //EditItemModalComponent
         ]
       })

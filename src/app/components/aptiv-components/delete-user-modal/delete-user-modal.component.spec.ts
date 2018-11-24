@@ -5,11 +5,8 @@ import {
   } from '@angular/core/testing';
   
   import {
-    AddUserModalComponent
-  } from './add-user-modal.component';
-  import {
-    FormsModule
-  } from '@angular/forms';
+    DeleteUserModalComponent
+  } from './delete-user-modal.component';
   import {
     RouterTestingModule
   } from '@angular/router/testing';
@@ -17,21 +14,24 @@ import {
     HttpClientModule
   } from '@angular/common/http';
   import {
+    FormsModule
+  } from '@angular/forms';
+  import {
     AptivUsersTableComponent
   } from '../aptiv-users-table/aptiv-users-table.component';
-/*   import {
-    ResetPasswordModalComponent
-  } from '../edit-user-modal/edit-user-modal.component';*/
   import {
-    DeleteUserModalComponent
-  } from '../delete-user-modal/delete-user-modal.component'; 
+    AddUserModalComponent
+  } from '../add-user-modal/add-user-modal.component';
+  /*import {
+    ResetPasswordModalComponent
+  } from '../reset-password-modal/reset-password-modal.component';*/
   import {
     ExcelService
   } from 'src/app/services/excel/excel.service';
   
-  describe('AddUserModalComponent', () => {
-    let component: AddUserModalComponent;
-    let fixture: ComponentFixture < AddUserModalComponent > ;
+  describe('DeleteUserModalComponent', () => {
+    let component: DeleteUserModalComponent;
+    let fixture: ComponentFixture < DeleteUserModalComponent > ;
   
     beforeEach(async (() => {
       TestBed.configureTestingModule({
@@ -39,18 +39,17 @@ import {
             RouterTestingModule,
             HttpClientModule
           ],
-          declarations: [AddUserModalComponent,
-            AptivUsersTableComponent,
-            //ResetPasswordModalComponent,
-            DeleteUserModalComponent
-          ],
+          declarations: [DeleteUserModalComponent,
+             AddUserModalComponent,
+             //ResetPasswordModalComponent
+            ],
           providers: [AptivUsersTableComponent, ExcelService]
         })
         .compileComponents();
     }));
   
     beforeEach(() => {
-      fixture = TestBed.createComponent(AddUserModalComponent);
+      fixture = TestBed.createComponent(DeleteUserModalComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     });
