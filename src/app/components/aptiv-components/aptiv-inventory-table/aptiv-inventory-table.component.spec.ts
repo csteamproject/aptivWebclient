@@ -28,7 +28,8 @@ import {
 import {
   ExcelService
 } from '../../../services/excel/excel.service';
-
+import { FileSelectDirective } from 'ng2-file-upload';
+import { BrowserModule } from '@angular/platform-browser';
 describe('AptivInventoryTableComponent', () => {
   let component: AptivInventoryTableComponent;
   let fixture: ComponentFixture < AptivInventoryTableComponent > ;
@@ -38,10 +39,13 @@ describe('AptivInventoryTableComponent', () => {
         imports: [
           FormsModule,
           RouterTestingModule,
+          FormsModule,
+          BrowserModule,
           HttpClientModule
         ],
         declarations: [AptivInventoryTableComponent,
           AddItemModalComponent,
+          FileSelectDirective,
           DeleteModalComponent,
           EditItemModalComponent
         ],
