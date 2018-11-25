@@ -18,9 +18,6 @@ import {
 import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
-import {
-  AccountComponent
-} from './pages/account/account.component';
 
 // Imports
 import {
@@ -54,7 +51,6 @@ import { ExcelService } from './services/excel/excel.service';
     LoginComponent,
     InventoryComponent,
     LocationsComponent,
-    AccountComponent,
     UsersComponent
   ],
   imports: [
