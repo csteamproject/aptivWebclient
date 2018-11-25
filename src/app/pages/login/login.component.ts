@@ -9,17 +9,6 @@ import {
 import {
   AuthService
 } from '../../services/auth/auth.service';
-import {
-  HttpClient
-} from '@angular/common/http';
-import {
-  ItemsService
-} from '../../services/items/items.service';
-import {
-  Item
-} from '../../classes/item/item';
-import { ReturnStatement } from '@angular/compiler';
-
 
 @Component({
   selector: 'app-login',
@@ -27,25 +16,23 @@ import { ReturnStatement } from '@angular/compiler';
   styleUrls: ['./login.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   LoginError: Number = -1;
   constructor(private router: Router,
     public auth: AuthService) {}
 
-  ngOnInit() {}
+  /**
+   * This method will call the login service method which will request a login token
+   *  with the passed credentials from the sessions controller on the API
+   * @param credentials will be the passed username and password object from the login page.
+   */
   TryToLogin(credentials) {
     this.auth.login(credentials).subscribe(data => {
-      // console.log('LoginComponent: ', data);
-      // if (true) { // TODO: Add a Checkbox to see if they want to be remembered for a period of time.
-      //   localStorage.setItem('CurrentUser', JSON.stringify(data));
-      // }
         this.router.navigate(['inventory']);
         this.LoginError = 0;
       if (this.LoginError !== 1) {
           this.LoginError = 0;
         }
     });
-  //  console.log(this.LoginError);
-   // this.LoginError = 0;
   }
 }
