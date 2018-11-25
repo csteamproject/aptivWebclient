@@ -55,7 +55,7 @@ export class AccessGuard implements CanActivate {
               return false;
             }
           } else if (requiresInventoryManagerRoleTF) {
-            if (currentUser.role === 'Manager' || currentUser.role === 'SuperAdmin' || currentUser.role === 'InventoryManager') {
+            if (currentUser.role === 'Manager' || currentUser.role === 'SuperAdmin' || currentUser.role === 'Inventory Manager') {
               return true;
             } else {
               localStorage.clear();

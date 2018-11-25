@@ -125,6 +125,8 @@ To build it for our project on the nmsu systems you have to attach a base-href t
 ng build --prod --base-href /~jsteele/InventoryProject/aptivWebclient/
 ```
 
+go to this url to learn more about how to add this site to a production server: https://angular.io/guide/deployment
+
 So wherever you run the server you need the url of where the aptivWebclient is.
 
 ### SourceTree
@@ -138,7 +140,6 @@ So following the scaffolding rules we can use the following commands:
 ```
  ^ ~ 
 ```
-
 
 #### To Create a new Branch
 

@@ -9,7 +9,7 @@
         <a style="color: gray;" class="nav-link" [routerLink]="['/locations']">Locations</a>
       </li>
 
-      <li *ngIf="auth.CurrentUser.role !== 'InventoryManager' || auth.CurrentUser.role !== 'Standard'" class="nav-item"
+      <li *ngIf="auth.CurrentUser.role !== 'Inventory Manager' && auth.CurrentUser.role !== 'Standard'" class="nav-item"
         style="float: right; right: 0; position: absolute; margin-right: 50px; ">
         <div class="dropdown">
           <a class="nav-link dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"

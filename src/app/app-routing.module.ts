@@ -41,14 +41,16 @@ const routes: Routes = [{
   path: 'locations',
   component: LocationsComponent,
   data: {
-    requiresLogin: true
+    requiresLogin: true,
+    requiresInventoryManagerRoleTF: true
   },
   canActivate: [AccessGuard]
 }, {
   path: 'users',
   component: UsersComponent,
   data: {
-    requiresLogin: true
+    requiresLogin: true,
+    requiresManagerRoleTF: true
   },
   canActivate: [AccessGuard]
 }, {
