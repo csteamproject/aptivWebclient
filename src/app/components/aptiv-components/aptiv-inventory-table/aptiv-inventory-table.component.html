@@ -1,6 +1,14 @@
 <div class="row searchAllRow">
-  <div class="col-sm-7"></div>
-  <div class="col-sm-4">
+  <div class="col-sm-7">
+    <div style="float: left">
+        <p> Upload CSV File</p>
+        <input  type="file"  (change)="onFileSelected($event)">
+        <button class="btn btn-success" style = "margin-left: -100px;" type = "button" (click)="onUpload()">Upload</button>
+    </div>
+    <div style="float: left;"><button class="btn btn-light" style="float: right; margin: 0px 0px 40px 100px; height: 60px;" (click)="exportAsXLSX()"><img style="width: 30px; height: 30px;" src='assets/Images/excel.png'><p>Export</p></button>
+  </div>
+</div>
+<div class="col-sm-4">
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
@@ -130,11 +138,6 @@
     </tbody>
   </table>
   </div>
-  <p> Upload CSV File</p>
-  <input type="file" (change)="onFileSelected($event)">
-  <button style = "margin-left: -100px;" type = "button" (click)="onUpload()">Upload</button>
-  <!-- <input type="file" ng2FileSelect [uploader]="uploader" >  -->
-  <button style="float: right;" (click)="exportAsXLSX()"><img style="width: 40px; height: 40px;" src='assets/Images/excel.png'></button>
 
 <!-- 
   <button type="button" class="btn btn-success btn-s" 
