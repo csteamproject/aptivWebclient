@@ -17,9 +17,6 @@ import {
   InventoryComponent
 } from '../pages/inventory/inventory.component';
 import {
-  AccountComponent
-} from '../pages/account/account.component';
-import {
   NotFoundComponent
 } from '../not-found';
 import {
@@ -47,7 +44,6 @@ describe('AccessGuard', () => {
       declarations: [
         LoginComponent,
         InventoryComponent,
-        AccountComponent,
         UsersComponent,
         LocationsComponent,
         NotFoundComponent

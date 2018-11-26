@@ -17,9 +17,6 @@ import {
   LoginComponent
 } from '../login/login.component';
 import {
-  AccountComponent
-} from '../account/account.component';
-import {
   NotFoundComponent
 } from 'src/app/not-found';
 import {
@@ -49,7 +46,6 @@ describe('InventoryComponent', () => {
     TestBed.configureTestingModule({
         declarations: [InventoryComponent,
           LoginComponent,
-          AccountComponent,
           UsersComponent,
           LocationsComponent,
           NotFoundComponent

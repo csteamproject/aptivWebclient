@@ -18,9 +18,6 @@ import {
   LoginComponent
 } from './pages/login/login.component';
 import {
-  AccountComponent
-} from './pages/account/account.component';
-import {
   InventoryComponent
 } from './pages/inventory/inventory.component';
 import {
@@ -47,7 +44,6 @@ describe('AppComponent', () => {
         LoginComponent,
         NotFoundComponent,
         InventoryComponent,
-        AccountComponent,
         UsersComponent,
         LocationsComponent
       ],

@@ -20,9 +20,6 @@ import {
   NotFoundComponent
 } from '../../not-found';
 import {
-  AccountComponent
-} from '../account/account.component';
-import {
   AptivComponentsModule
 } from '../../components/aptiv-components/aptiv-components.module';
 import {
@@ -47,7 +44,6 @@ describe('LoginComponent', () => {
         declarations: [
           LoginComponent,
           InventoryComponent,
-          AccountComponent,
           UsersComponent,
           LocationsComponent,
           NotFoundComponent

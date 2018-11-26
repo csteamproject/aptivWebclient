@@ -1,20 +1,28 @@
-<div class="row searchAllRow">
+<div class="row">
   <div class="col-sm-7">
     <div style="float: left">
-        <p> Upload CSV File</p>
-        <input  type="file"  (change)="onFileSelected($event)">
-        <button class="btn btn-success" style = "margin-left: -100px;" type = "button" (click)="onUpload()">Upload</button>
+      <p> Upload CSV File</p>
+      <input type="file" (change)="onFileSelected($event)">
+      <button class="btn btn-success" style="margin-left: -100px;" type="button" (click)="onUpload()">Upload</button>
     </div>
-    <div style="float: left;"><button class="btn btn-light" style="float: right; margin: 0px 0px 40px 100px; height: 60px;" (click)="exportAsXLSX()"><img style="width: 30px; height: 30px;" src='assets/Images/excel.png'><p>Export</p></button>
   </div>
 </div>
-<div class="col-sm-4">
+<div class="row searchAllRow">
+  <div class="col-sm-6"></div>
+  <div class="col-sm-4">
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
       </div>
-      <input type="text" (keyup)="filter()" name="filters.all" [(ngModel)]="filters.all" class="form-control" placeholder="Search..."
-        aria-label="Username" aria-describedby="basic-addon1" />
+      <input type="text" (keyup)="filter()" name="filters.all" [(ngModel)]="filters.all" class="form-control"
+        placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1" />
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <div>
+      <button class="btn btn-light" title="Export" style="padding: 0px;" (click)="exportAsXLSX()">
+        <img  style="width: 55%;" src='assets/Images/excel.png'>
+      </button>
     </div>
   </div>
   <div class="col-sm-1">
@@ -46,7 +54,7 @@
         <th class="aptivTblHeaderColumns">
           <div class="row aptivTblFilterSectionTop">
             <div class="col-sm">
-                Serial Number
+              Serial Number
             </div>
           </div>
           <div class="row aptivTblFilterSectionBottomRow">
@@ -121,8 +129,8 @@
           {{Row.serial_number}}
         </td>
         <td class="aptivTblBodyColumns">
-           <div *ngIf="Row.checked_out_id != null"> YES </div>
-           <div *ngIf="Row.checked_out_id == null"> NO </div>
+          <div *ngIf="Row.checked_out_id != null"> YES </div>
+          <div *ngIf="Row.checked_out_id == null"> NO </div>
         </td>
         <td class="aptivTblBodyColumns">
           {{Row.user_id}}
@@ -137,7 +145,7 @@
       </tr>
     </tbody>
   </table>
-  </div>
+</div>
 
 <!-- 
   <button type="button" class="btn btn-success btn-s" 

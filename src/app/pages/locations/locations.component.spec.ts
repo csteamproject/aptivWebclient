@@ -16,9 +16,6 @@ import {
   LoginComponent
 } from '../login/login.component';
 import {
-  AccountComponent
-} from '../account/account.component';
-import {
   NotFoundComponent
 } from 'src/app/not-found';
 import {
@@ -49,7 +46,6 @@ describe('LocationsComponent', () => {
         declarations: [LocationsComponent,
           LoginComponent,
           InventoryComponent,
-          AccountComponent,
           UsersComponent,
           NotFoundComponent
         ],
