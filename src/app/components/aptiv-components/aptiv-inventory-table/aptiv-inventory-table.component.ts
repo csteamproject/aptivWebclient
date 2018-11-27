@@ -117,12 +117,13 @@ export class AptivInventoryTableComponent implements OnInit {
         'jwt-token': currentUser.token
       })
     };
-    console.log('here');
+    console.log('file name = ' + this.selectedFile.name);
     const fd = new FormData();
-    fd.append('csv', this.selectedFile, this.selectedFile.name);
-    this.http.post(environment.baseURL + 'csvuploads', this.selectedFile, httpOptions)
+    fd.append('file', this.selectedFile, this.selectedFile.name);
+    this.http.post(environment.baseURL + 'csvuploads', fd, httpOptions)
     .subscribe(res => {
       console.log(res);
+      console.log('results');
     });
   }
   filter() {
