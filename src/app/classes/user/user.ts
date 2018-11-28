@@ -6,6 +6,7 @@ export class User implements IUser {
     public role: string;
     public success: Boolean;
     public token: string;
+    public id: number;
 
     public static Deseralize(obj: Object | string): User {
         const u = new User();

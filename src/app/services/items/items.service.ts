@@ -111,6 +111,7 @@ export class ItemsService {
       location_id: item.Location_id,
       price: item.Price,
       quantity: item.Quantity,
+      user_id: currentUser.id,
     };
     this.http.patch(environment.baseURL + 'items/' + item.id, UpdatedItem, httpOptions)
       .subscribe(() => {
