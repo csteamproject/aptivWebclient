@@ -72,17 +72,17 @@
         <th class="aptivTblHeaderColumns">
           <div class="row aptivTblFilterSectionTop">
             <div class="col-sm">
-              Checked out?
+              Checked Out
             </div>
           </div>
           <div class="row aptivTblFilterSectionBottomRow">
             <div class="col-sm aptivTblFilterSectionBottomCol">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+                  <span class="input-group-text" id="basic-addon1"></span>
                 </div>
-                <input type="text" class="form-control aptivTblFilterInput" name="filters.checked_out_id" (keyup)="filter()"
-                  [(ngModel)]="filters.checked_out_id" />
+                <input type="text" class="form-control aptivTblFilterInput CornerInput" name="filters.checked_out_id" (keyup)="filter()"
+                  [(ngModel)]="filters.checked_out_id" disabled />
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@
           {{Row.serial_number}}
         </td>
         <td class="aptivTblBodyColumns">
-          <div *ngIf="Row.checked_out_id != null"> YES </div>
-          <div *ngIf="Row.checked_out_id == null"> NO </div>
+          <div *ngIf="Row.checked_out_id != null">True</div>
+          <div *ngIf="Row.checked_out_id == null">False</div>
         </td>
         <td class="aptivTblBodyColumns">
           {{Row.user_id}}
@@ -139,7 +139,7 @@
           <span>
             <app-edit-item-modal [(Keys)]="FormsData" [(EditData)]="pagedData[i]"></app-edit-item-modal> |
             <app-delete-modal [(Key)]="Row.id"></app-delete-modal>
-            <span *ngIf="Row.computer"> | View</span>
+            <!-- <span *ngIf="Row.computer"> | View</span> -->
           </span>
         </td>
       </tr>

@@ -10,9 +10,17 @@ import {
 import {
   PageinationService
 } from 'src/app/services/pageination/pageination.service';
-import { ExcelService } from '../../../services/excel/excel.service';
-import {  FileUploader, FileSelectDirective } from 'ng2-file-upload/ng2-file-upload';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {
+  ExcelService
+} from '../../../services/excel/excel.service';
+import {
+  FileUploader,
+  FileSelectDirective
+} from 'ng2-file-upload/ng2-file-upload';
+import {
+  HttpClient,
+  HttpHeaders
+} from '@angular/common/http';
 import {
   environment
 } from '../../../../environments/environment';
@@ -108,7 +116,7 @@ export class AptivInventoryTableComponent implements OnInit {
   }
   onFileSelected(event) {
     console.log(event);
-    this.selectedFile = <File>event.target.files[0];
+    this.selectedFile = < File > event.target.files[0];
   }
   onUpload() {
     const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
@@ -121,33 +129,40 @@ export class AptivInventoryTableComponent implements OnInit {
     const fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
     this.http.post(environment.baseURL + 'csvuploads', fd, httpOptions)
-    .subscribe(res => {
-      console.log(res);
-      console.log('results');
-    });
+      .subscribe(res => {
+        console.log(res);
+        console.log('results');
+      });
   }
   filter() {
     this.DataValue = this.BeforeFilterationData;
     this.DataValue = this.DataValue.filter(data => {
       let FlagTF = false;
       if ((this.filters.all === null || this.filters.all === '') &&
-      (this.filters.name === null || this.filters.name === '') &&
-      (this.filters.serial_number === null || this.filters.serial_number === '') &&
-      (this.filters.checked_out_id === null || this.filters.checked_out_id === '') &&
-      (this.filters.user_id === null || this.filters.user_id === '')) {
+        (this.filters.name === null || this.filters.name === '') &&
+        (this.filters.serial_number === null || this.filters.serial_number === '') &&
+        // (this.filters.checked_out_id === null || this.filters.checked_out_id === '') &&
+        (this.filters.user_id === null || this.filters.user_id === '')) {
         FlagTF = true;
       } else {
         if (this.filters.all !== null && this.filters.all !== '') {
-          // if (data['id'] === Number(this.filters.all)) {
           if (data['name'].toString().indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['serial_number'].indexOf(this.filters.all) >= 0) {
+          if (data['serial_number'] === null && (this.filters.all === '' || this.filters.all === null)) {
             FlagTF = true;
+          } else {
+            if (data['serial_number'] === null) {
+              FlagTF = false;
+            } else {
+              if (data['serial_number'].indexOf(this.filters.all) >= 0) {
+                FlagTF = true;
+              }
+            }
           }
-          if (data['checked_out_id'].indexOf(this.filters.all) >= 0) {
-            FlagTF = true;
-          }
+          // if (data['checked_out_id'].indexOf(this.filters.all) >= 0) {
+          //   FlagTF = true;
+          // }
           if (data['user_id'] === Number(this.filters.all)) {
             FlagTF = true;
           }
@@ -156,7 +171,6 @@ export class AptivInventoryTableComponent implements OnInit {
           }
         }
         if (this.filters.name !== null && this.filters.name !== '') {
-          // if (data['id'] === Number(this.filters.id)) {
           if (data['name'].toString().indexOf(this.filters.name) >= 0) {
             FlagTF = true;
           } else {
@@ -164,21 +178,28 @@ export class AptivInventoryTableComponent implements OnInit {
           }
         }
         if (this.filters.serial_number !== null && this.filters.serial_number !== '') {
-          if (data['serial_number'].indexOf(this.filters.serial_number) >= 0) {
+          if (data['serial_number'] === null && (this.filters.serial_number === null || this.filters.serial_number === '')) {
             FlagTF = true;
           } else {
-            return false;
+            if (data['serial_number'] === null) {
+              return false;
+            } else {
+              if (data['serial_number'].indexOf(this.filters.serial_number) >= 0) {
+                FlagTF = true;
+              } else {
+                return false;
+              }
+            }
           }
         }
-        if (this.filters.checked_out_id !== null && this.filters.checked_out_id !== '') {
-          if (data['checked_out_id'].toString().indexOf(this.filters.checked_out_id) >= 0) {
-            FlagTF = true;
-          } else {
-            return false;
-          }
-        }
+        // if (this.filters.checked_out_id !== null && this.filters.checked_out_id !== '') {
+        //   if (data['checked_out_id'].toString().indexOf(this.filters.checked_out_id) >= 0) {
+        //     FlagTF = true;
+        //   } else {
+        //     return false;
+        //   }
+        // }
         if (this.filters.user_id !== null && this.filters.user_id !== '') {
-          // if (data['user_id'] === Number(this.filters.user_id)) {
           if (data['user_id'].toString().indexOf(this.filters.user_id) >= 0) {
             FlagTF = true;
           } else {
