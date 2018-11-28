@@ -149,15 +149,11 @@ export class AptivInventoryTableComponent implements OnInit {
           if (data['name'].toString().indexOf(this.filters.all) >= 0) {
             FlagTF = true;
           }
-          if (data['serial_number'] === null && (this.filters.all === '' || this.filters.all === null)) {
-            FlagTF = true;
+          if (data['serial_number'] === null) {
+
           } else {
-            if (data['serial_number'] === null) {
-              FlagTF = false;
-            } else {
-              if (data['serial_number'].indexOf(this.filters.all) >= 0) {
-                FlagTF = true;
-              }
+            if (data['serial_number'].indexOf(this.filters.all) >= 0) {
+              FlagTF = true;
             }
           }
           // if (data['checked_out_id'].indexOf(this.filters.all) >= 0) {

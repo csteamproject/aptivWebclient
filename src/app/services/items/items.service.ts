@@ -62,6 +62,7 @@ export class ItemsService {
           serial_number: item.Serial_number,
           location_id: item.Location_id,
           checked_out_id: item.Checked_out_id,
+          user_id: currentUser.id,
           price: item.Price,
           quantity: item.Quantity,
         };
@@ -70,6 +71,7 @@ export class ItemsService {
           name: item.Name,
           price: item.Price,
           quantity: item.Quantity,
+          user_id: currentUser.id,
           computer_attributes: {
             utag: item.Computer.UTag,
             cpu: item.Computer.CPU,
@@ -98,6 +100,7 @@ export class ItemsService {
     console.log('ItemService editItem item: ', item);
     return Observable.create(observer => {
     const currentUser: User = User.Deseralize(localStorage.getItem('CurrentUser'));
+    console.log('currentUser: ', currentUser);
     const httpOptions = {
       headers: new HttpHeaders({
         'jwt-token': currentUser.token
@@ -113,6 +116,7 @@ export class ItemsService {
       quantity: item.Quantity,
       user_id: currentUser.id,
     };
+    console.log('UpdatedItem: ', UpdatedItem);
     this.http.patch(environment.baseURL + 'items/' + item.id, UpdatedItem, httpOptions)
       .subscribe(() => {
         console.log('Success');
