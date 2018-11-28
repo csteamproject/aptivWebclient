@@ -128,6 +128,7 @@ export class AptivInventoryTableComponent implements OnInit {
     console.log('file name = ' + this.selectedFile.name);
     const fd = new FormData();
     fd.append('file', this.selectedFile, this.selectedFile.name);
+    console.log('fd: ', fd, httpOptions);
     this.http.post(environment.baseURL + 'csvuploads', fd, httpOptions)
       .subscribe(res => {
         console.log(res);

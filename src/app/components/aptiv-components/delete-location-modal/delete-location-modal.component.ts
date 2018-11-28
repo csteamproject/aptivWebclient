@@ -13,7 +13,7 @@ import {
 } from '@angular/common/http';
 import {
   environment
-} from 'src/environments/environment.dev';
+} from 'src/environments/environment';
 import {
   User
 } from 'src/app/classes/user/user';
