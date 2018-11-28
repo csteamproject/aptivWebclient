@@ -107,13 +107,13 @@ export class ItemsService {
       })
     };
     const UpdatedItem = {
-      name: item.Name,
-      brand: item.Brand,
-      model: item.Model,
-      serial_number: item.Serial_number,
-      location_id: item.Location_id,
-      price: item.Price,
-      quantity: item.Quantity,
+      name: item.name,
+      brand: item.brand,
+      model: item.model,
+      serial_number: item.serial_number,
+      location_id: item.location_id,
+      price: item.price,
+      quantity: item.quantity,
       user_id: currentUser.id,
     };
     console.log('UpdatedItem: ', UpdatedItem);
